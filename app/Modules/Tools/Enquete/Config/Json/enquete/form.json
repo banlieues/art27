@@ -1,0 +1,22 @@
+{
+    "id_request_type": {
+        "label_fr": "Type de demande",
+        "type": "tesorus",
+        "tesorus": {
+            "road": "request",
+            "type": "radio"
+        },
+        "grid": {
+            "label_col" : "col-1 invisible", 
+            "answer_col" : "col-11"    
+        }
+    },
+    "ids_question" : {
+        "label_fr": "Questions associées",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    }
+}

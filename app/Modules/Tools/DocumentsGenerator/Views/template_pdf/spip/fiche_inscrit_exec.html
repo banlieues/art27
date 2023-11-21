@@ -1,0 +1,169 @@
+<?php
+if (!defined("_ECRIRE_INC_VERSION")) return;
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+
+include_spip('fonctions_gestion_cemea');
+
+include_spip('prive/gestion_update_db');
+
+gros_titre('Fiche de l\'inscrit');
+
+// Pour les administrateurs, afficher l'icone de modification.
+if (session_get('statut') == '0minirezo') {
+    echo icone_inline(_T('gestion:modifier_inscrit'), generer_url_ecrire("editer_inscrit_exec","id_contact=#id_contact"), "auteur-24.gif","edit.gif", 'left');
+}
+?>
+<BOUCLE_inscrit(AUTEURS auteurs_articles){id_contact}{tout}>
+<div class="nettoyeur"></div>
+
+[(#REM) Cette boucle creer le formulaire pour inscrire une personne a une activité ]
+#FORMULAIRE_INSCRIRE_ACTIVITE
+
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px; margin-top: 10px;">
+	
+	<tr>
+		<td><:gestion:sexe:>:</td> 
+		<td><strong>[(#CODECOURTOISIE|code_courtoisie)]</strong></td>
+	</tr>
+	<tr class="tr_liste">
+		<td><:gestion:nom:>:</td> 
+		<td><strong>#NOM</strong></td>
+	</tr>
+	<tr>
+		<td><:gestion:prenom:>:</td> 
+		<td><strong>#PRENOM</strong></td>
+	</tr>
+	<tr class="tr_liste">
+		<td><:gestion:nom_court_institution:>:</td> 
+		<td><strong>#NOM_COURT_INSTITUTION</strong></td>
+	</tr>
+		<td><:gestion:date_naissance:></td> 
+		<td><strong>[(#DATE_NAISSANCE|affdate)]</strong></td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td><:gestion:age:></td> 
+		<td><strong>[(#DATE_NAISSANCE|age)]</strong></td>
+	</tr>
+		<td><:gestion:remarque:></td> 
+		<td><strong>#BIO</strong></td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td><:gestion:adresse:>:</td> 
+		<td>
+			<strong>
+				#ADRESSE_NO #ADRESSE
+				[<br />(#CODEPOSTAL) #LOCALITE]
+			</strong>
+		</td>
+	</tr>
+		<td><:gestion:telephone:>:</td>
+		<td>
+			#TEL1 
+			[<br />(#TEL2)]
+		</td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td><:gestion:gsm:>:</td>
+		<td>
+			#GSM1
+			[<br />(#GSM2)]
+		</td>
+	</tr>
+		<td><:gestion:fax:>:</td>
+		<td>
+			#FAX1
+			[<br />(#FAX2)]
+		</td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td><:gestion:demandeur_emploi:></td>
+		<td>
+			[(#DEMANDEUR_EMPLOI|non) Non]
+			[(#DEMANDEUR_EMPLOI|oui) Oui]
+		</td>
+	</tr>
+		<td><:gestion:email:>:</td>
+		<td>
+			[<a href="mailto: #EMAIL">(#EMAIL)</a>]
+			[<br /><a href="mailto: #EMAIL2">(#EMAIL2)</a>]
+		</td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td>Statut Form Cemea</td>
+		<td>
+            <BOUCLE_get_desc_sfc(MOTS){titre=#STATUT_FORM_CEMEA}>
+                [(#DESCRIPTIF|supprimer_tags) [ ((#STATUT_FORM_CEMEA)) ]]
+            </BOUCLE_get_desc_sfc>
+        </td>
+	</tr>
+		<td>Statut anim Cemea</td>
+		<td>
+            <BOUCLE_get_desc_sac(MOTS){titre=#STATUT_ANIM_CEMEA}>
+                [(#DESCRIPTIF|supprimer_tags) [ ((#STATUT_ANIM_CEMEA)) ]]
+            </BOUCLE_get_desc_sac>
+        </td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td>Statut EP</td>
+		<td>
+            <BOUCLE_get_desc_se(MOTS){titre=#STATUT_EP}>
+                [(#DESCRIPTIF|supprimer_tags) [ ((#STATUT_EP)) ]]
+            </BOUCLE_get_desc_se>
+        </td>
+	</tr>
+		<td>Statut SJ</td>
+		<td>
+            <BOUCLE_get_desc_sj(MOTS){titre=#STATUT_SJ}>
+                [(#DESCRIPTIF|supprimer_tags) [ ((#STATUT_SJ)) ]]
+            </BOUCLE_get_desc_sj>
+        </td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td>Membre du groupe institué</td>
+		<td>
+		[(#GROUPE|explode_groupe)]
+	        </td>
+	</tr>
+		<td>Stage pratique animateur</td>
+		<td>
+			[(#STAGE_PRATIQUE_ANIMATEUR|oui) oui]
+			[(#STAGE_PRATIQUE_ANIMATEUR|non) non]
+		</td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td>Stage pratique coordinateur adjoint</td>
+		<td>
+			[(#STAGE_PRATIQUE_COORDINATEUR_ADJOINT|oui) oui ]
+			[(#STAGE_PRATIQUE_COORDINATEUR_ADJOINT|non) non ]
+		</td>
+	</tr>
+		<td>Stage pratique coordinateur</td>
+		<td>
+			[(#STAGE_PRATIQUE_COORDINATEUR|oui) oui ]
+			[(#STAGE_PRATIQUE_COORDINATEUR|non) non ]
+		</td>
+	</tr>
+	<tr>
+	<tr class="tr_liste">
+		<td>Membre</td>
+		<td>
+			[(#MEMBRE|oui) oui ]
+			[(#MEMBRE|non) non ]
+		</td>
+	</tr>
+</table>
+
+<INCLURE{fond=prive/fiche_inscrit/fiche_activite}{env}{ajax}>
+<div class="nettoyeur"></div>
+<?php echo icone_inline(_T('gestion:telecharger_pdf'), generer_url_ecrire('gestion_dompdf_exec','id_contact=#id_contact&modele=liste_participant_action'), 'doc-24.gif', '', 'right'); ?>
+
+</BOUCLE_inscrit>

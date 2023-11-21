@@ -1,0 +1,292 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+	<?php gros_titre('[(#TITRE|supprimer_numero)] - #DATES_RA à #LIEU*'); ?>
+<script type="text/php">
+        if ( isset($pdf) ) {
+	  $date = date("d-m-Y");
+          $font = Font_Metrics::get_font("helvetica");
+          $pdf->page_text(250, 550, "Numéro d'activité : #IDACT - Page: {PAGE_NUM} de {PAGE_COUNT} - Liste éditée le : $date", $font, 10, array(0,0,0));
+        }
+        </script>
+</BOUCLE_getTitre>
+
+<h2>Encadrants</h2>
+<B_encadrant>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+
+<BOUCLE_encadrant(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=E}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_encadrant>
+	</tbody>
+</table>
+</B_encadrant>
+<p>Il n'y a aucun encadrant à cette action.</p>
+<//B_encadrant>
+
+<h2>Inscrits</h2>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=I}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>
+
+<h2>Participants "Cemea"</h2>
+<B_cemea>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_cemea(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=C}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_cemea>
+	</tbody>
+</table>
+</B_cemea>
+<p>Il n'y a aucune personne identifié particulièrement en accord avec les CEMEA à cette action.</p>
+<//B_cemea>
+
+<h2>Accompagnants</h2>
+<B_accompagnants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_accompagnants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=B}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_accompagnants>
+	</tbody>
+</table>
+</B_accompagnants>
+<p>Il n'y a aucun accompagnant à cette action.</p>
+<//B_accompagnants>
+
+
+<h2>Personnes refusées</h2>
+<B_refuse>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_refuse(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=R}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_refuse>
+	</tbody>
+</table>
+</B_refuse>
+<p>Il n'y a aucune personne refusée à cette action.</p>
+<//B_refuse>
+
+<h2>Places réservées</h2>
+<B_reserve>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>	
+<BOUCLE_reserve(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=X}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_reserve>
+	</tbody>
+</table>
+</B_reserve>
+<p>Il n'y a aucune réservation à cette action.</p>
+<//B_reserve>
+
+<h2>Liste d'attente</h2>
+<B_attente>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_attente(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=L}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_reserve>
+	</tbody>
+</table>
+</B_attente>
+<p>Il n'y a aucune personne en attente pour cette action.</p>
+<//B_attente>
+
+<h2>Personnes à traiter</h2>
+<B_traite>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="left"><:gestion:tel1:></th>
+			<th align="left"><:gestion:gsm1:></th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_traite(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=T}{par nom}>
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" style="border:1px solid black">#NOM</td>
+		<td align="left" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|age)]</td>		
+		<td align="left" width="20%" style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black">[(#TEL1)]</td>
+		<td align="left" style="border:1px solid black">[(#GSM1)]</td>
+	</tr>
+</BOUCLE_traite>
+	</tbody>
+</table>
+</B_traite>
+<p>Il n'y a aucune personne à traiter à cette action.</p>
+<//B_traite>

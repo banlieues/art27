@@ -1,0 +1,95 @@
+[
+    { 
+        "label_fr": "Utilisation d'isolants biosourcés", 
+        "label_nl": "Gebruik van biobased isolatiematerialen", 
+        "children": [
+            { 
+                "label_fr": "Laine de bois / fibre de bois", 
+                "label_nl": "Houtwol/houtvezel" 
+            },
+            { 
+                "label_fr": "Laine de chanvre", 
+                "label_nl": "Hennepwol"
+            },
+            { 
+                "label_fr": "Laine de lin", 
+                "label_nl": "Vlaswol" 
+            },
+            { 
+                "label_fr": "Fibres d'herbe", 
+                "label_nl": "Grasvezels" 
+            },
+            { 
+                "label_fr": "Liège", 
+                "label_nl": "Kurk" 
+            },
+            { 
+                "label_fr": "Paille", 
+                "label_nl": "Stro" 
+            },
+            { 
+                "label_fr": "Chaux-chanvre", 
+                "label_nl": "Kalkhennep" 
+            },
+            { 
+                "label_fr": "Autre", 
+                "has_text": 1
+            }
+        ]
+    },
+    { 
+        "label_fr": "Utilisation d'isolants recyclés", 
+        "label_nl": "Gebruik van gerecycleerde isolatiematerialen", 
+        "children": [ 
+            { 
+                "label_fr": "Cellulose" 
+            },
+            { 
+                "label_fr": "Coton / textile", 
+                "label_nl": "Katoen/ textiel" 
+            },
+            { 
+                "label_fr": "Autre", 
+                "has_text": 1
+            }
+        ],
+        "input_text": { "label_fr": "Autre" }
+    },
+    { 
+        "label_fr": "Réemploi des matériaux", 
+        "label_nl": "Hergebruik van materialen", 
+        "children" : [
+            {
+                "label_fr": "Lesquels ?",
+                "label_nl": "Welke ?",
+                "has_text": 1
+            }
+        ]
+    },
+    { 
+        "label_fr": "Gestion des déchets de chantier (tri, …)", 
+        "label_nl": "Beheer van werfafval (sorteren,…)"
+    },
+    { 
+        "label_fr": "Projet BuildCircular de la Confédération de la Construction", 
+        "label_nl": "Project BuildCircular van de Confederatie Bouw", 
+        "children" : [
+            { 
+                "label_fr": "Accompagnement", 
+                "label_nl": "Begeleiding" 
+            },
+            { 
+                "label_fr": "Membre effectif", 
+                "label_nl": "Effectief lid" 
+            }
+        ]
+    },
+    { 
+        "label_fr": "Membre cluster Ecobuild", 
+        "label_nl": "Lid cluster Ecobuild"
+    },
+    {
+        "label_fr": "Autre",
+        "has_text": 1
+    }
+]

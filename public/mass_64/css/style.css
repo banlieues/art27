@@ -1,0 +1,21 @@
+﻿/**
+ * style.css v0.1 by djphil (CC-BY-NC-SA 4.0)
+**/
+
+html {scroll-behavior: smooth;}
+.w3-link {text-decoration: none;}
+.w3-link:hover {text-decoration: underline;}
+.w3-text-right {text-align: right;}
+.w3-button, .w3-tag, .w3-table tr {transition: 0.25s ease;}
+.w3-custom-border th {border: 1px solid #ccc;}
+#progress {height: 23px; width: 0%; transition: width 0.25s ease;}
+
+#btn {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 99;
+    padding: 0px 5px;
+}
+

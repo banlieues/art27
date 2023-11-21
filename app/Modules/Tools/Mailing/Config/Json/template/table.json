@@ -1,0 +1,118 @@
+{
+    "id_template": {
+        "name": "id_template",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "is_activated": {
+        "name": "is_activated",
+        "type": "int",
+        "max_length": 4,
+        "default": 1
+    },
+    "ref": {
+        "name": "ref",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "label": {
+        "name": "label",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "subject_ref": {
+        "name": "subject_ref",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "subject_fr": {
+        "name": "subject_fr",
+        "type": "text",
+        "default": "null"
+    },
+    "hello_fr": {
+        "name": "hello_fr",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "content_fr": {
+        "name": "content_fr",
+        "type": "text",
+        "default": "null"
+    },
+    "greetings_fr": {
+        "name": "greetings_fr",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "subject_nl": {
+        "name": "subject_nl",
+        "type": "text",
+        "default": "null"
+    },
+    "hello_nl": {
+        "name": "hello_nl",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "content_nl": {
+        "name": "content_nl",
+        "type": "text",
+        "default": "null"
+    },
+    "greetings_nl": {
+        "name": "greetings_nl",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "subject_en": {
+        "name": "subject_nl",
+        "type": "text",
+        "default": "null"
+    },
+    "hello_en": {
+        "name": "hello_nl",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "content_en": {
+        "name": "content_nl",
+        "type": "text",
+        "default": "null"
+    },
+    "greetings_en": {
+        "name": "greetings_nl",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "updated_at": {
+        "name": "updated_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "updated_by": {
+        "name": "updated_by",
+        "type": "int",
+        "max_length": 11,
+        "default": 25
+    },
+    "created_at": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "created_by": {
+        "name": "created_by",
+        "type": "int",
+        "max_length": 11,
+        "default": 25
+    }
+}

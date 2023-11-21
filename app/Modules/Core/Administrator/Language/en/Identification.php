@@ -1,0 +1,40 @@
+<?php
+// Identification translation
+return [
+    'identification' => 'Identification',
+    'pleaselogin' => 'Please login',
+    'pleaseregister' => 'Please register',
+    'rememberme' => 'Remember me',
+    'login' => 'Login',
+    'register' => 'Register',
+    'reset' => 'Reset',
+    'noaccountyet' => 'No account yet ?',
+    'forgetpassword' => 'Forget password ?',
+    'resetpassword' => 'Reset password',
+    'alreadyregistred' => 'Already registred ?',
+    'username' => 'Username', 
+    'email' => 'Email', 
+    'password' => 'Password', 
+    'confirmpassword' => 'Confirm Password', 
+    'registrationdisabled' => '<strong>SORRY!</strong> User registration on this website is currently disabled.', 
+    'send' => 'Send', 
+    'emailverifaccountvalid' => 'Email verifycation & Account validation', 
+    'reverify' => 'Reverify', 
+    '' => '', 
+
+    // For IdentificationModel
+    'id' => 'Id', 
+    // 'username' => 'Username', 
+    // 'email' => 'Email', 
+    // 'password' => 'Password', 
+    'token' => 'Token', 
+    'created_at' => 'Created at', 
+    'updated_at' => 'Updated at', 
+    'created_by' => 'Created by', 
+    'updated_by' => 'Updated by', 
+    'valided' => 'Valided', 
+    'is_actif' => 'Actived', 
+    'role_id' => 'Role Id', 
+    '' => '', 
+
+];

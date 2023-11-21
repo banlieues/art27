@@ -1,0 +1,40 @@
+<?php
+// Identification translation
+return [
+    'identification' => 'Identification',
+    'pleaselogin' => 'Veuillez vous connecter',
+    'pleaseregister' => 'Veuillez vous enregistrer',
+    'rememberme' => 'Se souvenir de moi',
+    'login' => 'Connexion',
+    'register' => 'Inscription',
+    'reset' => 'Réinitialiser',
+    'noaccountyet' => 'Pas encore de compte ?',
+    'forgetpassword' => 'Mot de passe oublié ?',
+    'resetpassword' => 'Réinitialiser le mot de passe',
+    'alreadyregistred' => 'Déjà enregistré ?',
+    'username' => 'Nom d\'utilisateur', 
+    'email' => 'E-mail', 
+    'password' => 'Mot de passe', 
+    'confirmpassword' => 'Confirmez le mot de passe', 
+    'registrationdisabled' => '<strong>DÉSOLÉ!</strong> L\'inscription des utilisateurs sur ce site Web est actuellement désactivée.', 
+    'send' => 'Envoyer',
+    'emailverifaccountvalid' => 'Vérification de l\'e-mail et validation du compte', 
+    'reverify' => 'Revérifier', 
+    '' => '', 
+
+    // For IdentificationModel
+    'id' => 'Id', 
+    // 'username' => 'Nom d\'utilisateur', 
+    // 'email' => 'E-mail', 
+    // 'password' => 'Mot de passe', 
+    'token' => 'Jeton', 
+    'created_at' => 'Créé à', 
+    'updated_at' => 'Mis à jour à', 
+    'created_by' => 'Créé par', 
+    'updated_by' => 'Mis à jour par',
+    'valided' => 'Validé', 
+    'is_actif' => 'Activé', 
+    'role_id' => 'Id du Rôle', 
+    '' => '', 
+
+];

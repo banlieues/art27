@@ -1,0 +1,127 @@
+{
+    "label": {
+        "label_fr" : "Dénomination, sociale ou commerciale, de l'entreprise", 
+        "label_nl" : "Maatschappelijke naam of handelsnaam van de onderneming", 
+        "type" : "text"
+    },
+    "id_juridic_form": {
+        "label_fr" : "Forme juridique", 
+        "label_nl" : "Vennootschapsvorm", 
+        "type" : "select",
+        "answer" : [
+            { "value" : "1", "label_fr" : "SA" },
+            { "value" : "2", "label_fr" : "SRL" },
+            { "value" : "3", "label_fr" : "ASBL" }
+        ]
+    },
+    "website": {
+        "label_fr" : "Site web", 
+        "label_nl" : "Website", 
+        "type" : "text"
+    },
+    "bce": {
+        "label_fr" : "Numéro de l'entreprise (BCE)", 
+        "label_nl" : "Ondernemingsnummer", 
+        "type" : "text"
+    },
+    "address_street": {
+        "label_fr" : "Adresse du siège social", 
+        "label_nl" : "Adres", 
+        "type" : "text"
+    },
+    "address_pc": {
+        "label_fr" : "Code postal", 
+        "type" : "text"
+    },
+    "address_city": {
+        "label_fr" : "Ville", 
+        "type" : "text"
+    },
+    "id_lang": {
+        "label_fr" : "Langue", 
+        "type" : "radio",
+        "answer_table" : "liste_langue"
+    },
+    "contact_name": {
+        "label_fr" : "Prénom", 
+        "label_nl" : "Voornaam", 
+        "type" : "text"
+    },
+    "contact_lastname": {
+        "label_fr" : "Nom", 
+        "label_nl" : "Naam", 
+        "type" : "text"
+    },
+    "contact_phone": {
+        "label_fr" : "Téléphone", 
+        "label_nl" : "Telefoon", 
+        "type" : "text"
+    },
+    "contact_email": {
+        "label_fr" : "Email", 
+        "label_nl" : "Email", 
+        "type" : "email"
+    },
+    "ids_contact_schedule": {
+        "label_fr" : "Période de disponibilité", 
+        "day" : [
+            { "id" : "1", "label_fr" : "Lundi" },
+            { "id" : "2", "label_fr" : "Mardi" },
+            { "id" : "3", "label_fr" : "Mercredi" },
+            { "id" : "4", "label_fr" : "Jeudi" },
+            { "id" : "5", "label_fr" : "Vendredi" }
+        ],
+        "time" : [
+            { "id" : "1", "label_fr" : "Tôt le matin" },
+            { "id" : "2", "label_fr" : "Matinée" },
+            { "id" : "3", "label_fr" : "Temps de midi" },
+            { "id" : "4", "label_fr" : "Début d'après-midi" },
+            { "id" : "5", "label_fr" : "Fin d'après-midi" },
+            { "id" : "6", "label_fr" : "Soirée" }
+        ],
+        "clock" : [
+            { "id" : "1", "label_fr" : "7h à 9h" },
+            { "id" : "2", "label_fr" : "9h à 12h" },
+            { "id" : "3", "label_fr" : "12h à 14h" },
+            { "id" : "4", "label_fr" : "14h à 16h" },
+            { "id" : "5", "label_fr" : "16h à 18h" },
+            { "id" : "6", "label_fr" : "18h à 20h" }
+        ],
+        "answer" : [
+            { "id" : "1", "id_day" : "1", "id_time" : "1" },
+            { "id" : "2", "id_day" : "1", "id_time" : "2" },
+            { "id" : "3", "id_day" : "1", "id_time" : "3" },
+            { "id" : "4", "id_day" : "1", "id_time" : "4" },
+            { "id" : "5", "id_day" : "1", "id_time" : "5" },
+            { "id" : "6", "id_day" : "1", "id_time" : "6" },
+            { "id" : "7", "id_day" : "2", "id_time" : "1" },
+            { "id" : "8", "id_day" : "2", "id_time" : "2" },
+            { "id" : "9", "id_day" : "2", "id_time" : "3" },
+            { "id" : "10", "id_day" : "2", "id_time" : "4" },
+            { "id" : "11", "id_day" : "2", "id_time" : "5" },
+            { "id" : "12", "id_day" : "2", "id_time" : "6" },
+            { "id" : "13", "id_day" : "3", "id_time" : "1" },
+            { "id" : "14", "id_day" : "3", "id_time" : "2" },
+            { "id" : "15", "id_day" : "3", "id_time" : "3" },
+            { "id" : "16", "id_day" : "3", "id_time" : "4" },
+            { "id" : "17", "id_day" : "3", "id_time" : "5" },
+            { "id" : "18", "id_day" : "3", "id_time" : "6" },
+            { "id" : "19", "id_day" : "4", "id_time" : "1" },
+            { "id" : "20", "id_day" : "4", "id_time" : "2" },
+            { "id" : "21", "id_day" : "4", "id_time" : "3" },
+            { "id" : "22", "id_day" : "4", "id_time" : "4" },
+            { "id" : "23", "id_day" : "4", "id_time" : "5" },
+            { "id" : "24", "id_day" : "4", "id_time" : "6" },
+            { "id" : "25", "id_day" : "5", "id_time" : "1" },
+            { "id" : "26", "id_day" : "5", "id_time" : "2" },
+            { "id" : "27", "id_day" : "5", "id_time" : "3" },
+            { "id" : "28", "id_day" : "5", "id_time" : "4" },
+            { "id" : "29", "id_day" : "5", "id_time" : "5" },
+            { "id" : "30", "id_day" : "5", "id_time" : "6" }
+        ]
+    },
+    "comment": {
+        "label_fr" : "Commentaires", 
+        "type" : "text"
+    }
+}

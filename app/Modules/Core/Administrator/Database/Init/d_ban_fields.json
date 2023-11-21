@@ -1,0 +1,219 @@
+[
+    {
+        "field_index": "adherent",
+        "field_sql": "adherent",
+        "label": "Adhérente",
+        "table": "contact",
+        "type_field": "radio",
+        "table_list": "liste_adherent",
+        "key_list": "ref",
+        "label_list": "label",
+        "order_list": "rank",
+        "rule": "trim|required",
+        "type": "contact"
+    },
+    {
+        "field_index": "adresse",
+        "field_sql": "adresse",
+        "label": "Adresse",
+        "table": "contact",
+        "type": "contact"    
+    },
+    {
+        "field_index": "archive_per",
+        "field_sql": "archive_per",
+        "label": "Archivé",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "codepostal",
+        "field_sql": "codepostal",
+        "label": "Code postal",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "date_creation",
+        "field_sql": "date_creation",
+        "label": "Date de création",
+        "table": "contact",
+        "type_field": "date",
+        "type": "contact"
+    },
+    {
+        "field_index": "date_maj",
+        "field_sql": "date_maj",
+        "label": "Date de modification",
+        "table": "contact",
+        "type_field": "date",
+        "type": "contact"
+    },
+    {
+        "field_index": "date_naissance",
+        "field_sql": "date_naissance",
+        "label": "Date de naissance",
+        "table": "contact",
+        "type_field": "birthday",
+        "type": "contact"
+    },
+    {
+        "field_index": "diffusion",
+        "field_sql": "diffusion",
+        "label": "Centre d’intérêt",
+        "table": "contact",
+        "type_field": "check",
+        "table_list": "liste_centre_interet",
+        "key_list": "ref",
+        "label_list": "label",
+        "order_list": "rank",
+        "type": "contact"
+    },
+    {
+        "field_index": "email",
+        "field_sql": "email",
+        "label": "Email de contact",
+        "table": "contact",
+        "type_field": "email",
+        "rule": "trim|required",
+        "type": "contact"
+    },
+    {
+        "field_index": "email2",
+        "field_sql": "email2",
+        "label": "Adresse email 2",
+        "table": "contact",
+        "type_field": "email",
+        "rule": "trim|permit_empty|valid_email",
+        "type": "contact"
+    },
+    {
+        "field_index": "enordredecotisation",
+        "field_sql": "enordredecotisation",
+        "label": "En ordre de cotisation",
+        "table": "contact",
+        "type_field": "radio",
+        "table_list": "liste_oui_non_cotisation",
+        "key_list": "ref",
+        "label_list": "label",
+        "order_list": "rank",
+        "type": "contact"
+    },
+    {
+        "field_index": "envoi_diffusion",
+        "field_sql": "envoi_diffusion",
+        "label": "Envoi diffusion",
+        "table": "contact",
+        "type_field": "radio",
+        "table_list": "liste_oui_non_envoi_diffusion",
+        "key_list": "ref",
+        "label_list": "label",
+        "order_list": "rank",
+        "type": "contact"
+    },
+    {
+        "field_index": "fonction",
+        "field_sql": "fonction",
+        "label": "Si institution, fonction de la pers. Contact",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "gsm1",
+        "field_sql": "gsm1",
+        "label": "GSM 1",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "gsm2",
+        "field_sql": "gsm2",
+        "label": "GSM 2",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "localite",
+        "field_sql": "localite",
+        "label": "Localité",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "maj",
+        "field_sql": "maj",
+        "label": "maj",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "membre",
+        "field_sql": "membre",
+        "label": "Membre",
+        "table": "contact",
+        "type_field": "radio",
+        "table_list": "liste_membre",
+        "key_list": "ref",
+        "label_list": "label",
+        "order_list": "rank",
+        "type": "contact",
+        "created_at": "2022-03-30 11:47:25"
+    },
+    {
+        "field_index": "nom_contact",
+        "field_sql": "nom",
+        "label": "Nom",
+        "table": "contact",
+        "rule": "trim|required",
+        "type": "contact"
+    },
+    {
+        "field_index": "nom_court_institution",
+        "field_sql": "nom_court_institution",
+        "label": "Nom court de l’institution",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "nom_long_institution",
+        "field_sql": "nom_long_institution",
+        "label": "Nom long de l’institution",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "pays",
+        "field_sql": "pays",
+        "label": "Pays",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "prenom",
+        "field_sql": "prenom",
+        "label": "Prénom",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "statut",
+        "field_sql": "statut",
+        "label": "Statut",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "tel1",
+        "field_sql": "tel1",
+        "label": "Téléphone 1",
+        "table": "contact",
+        "type": "contact"
+    },
+    {
+        "field_index": "tel2",
+        "field_sql": "tel2",
+        "label": "Téléphone 2",
+        "table": "contact",
+        "type": "contact"
+    }
+]

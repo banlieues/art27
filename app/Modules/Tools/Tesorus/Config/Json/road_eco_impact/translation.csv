@@ -1,0 +1,121 @@
+travaux_structurels;"Travaux structurels";
+demolition;Démolition;
+fondation;Fondation;
+assainissement;Assainissement;
+structures;Structures;
+humidite;Humidité;
+autre;Autre;Andere
+travaux_de_toiture;"Travaux de toiture";"Dak werken"
+toiture_inclinee;"Toiture inclinée";"Hellend dak"
+structure;Structure;"Structuur "
+isolation_et_pare-vapeur;"Isolation et pare-vapeur";
+isolation_interieure;"Isolation intérieure";
+semi-rigide/rigide;Semi-rigide/rigide;
+insufflation;Insufflation;Inblazing
+isolation_exterieure;"Isolation extérieure";
+autre;Autre;Andere
+revetement_de_toiture;"Revêtement de toiture";Dakbedekking
+tuiles;Tuiles;Dakpannen
+ardoises_naturelles;"Ardoises naturelles";Natuurleien
+ardoises_artificielles;"Ardoises artificielles";Kunstleien
+zinc;Zinc;Zink
+recuperation;Récupération;
+autre;Autre;Andere
+toiture_plate;"Toiture plate";"Plat dak"
+structure;Structure;Structuur
+isolation_et_pare-vapeur;"Isolation et pare-vapeur";
+isolation_interieure;"Isolation intérieure";
+isolation_exterieure;"Isolation extérieure";
+autre;Autre;Andere
+revetement;Revêtement;
+roofing;Roofing;
+epdm;EPDM;
+membrane_pvc;"Membrane PVC";
+toiture_verte;"Toiture verte";
+extensive;Extensive;
+intensive;Intensive;
+toiture_jardin;"Toiture Jardin";
+autres;Autres;
+isolation_plancher_des_greniers;"Isolation plancher des greniers";"Isolatie zoldervloer"
+puits_de_lumiere_domes_lucarnes;"Puits de lumière, dômes, lucarnes";
+renovation_de_cheminees;"Rénovation de cheminées";
+materiaux_d_isolation;"Matériaux d'isolation";
+type;Type;
+rigide;Rigide;
+semi-rigide;Semi-rigide;
+souple;Souple;
+en_vrac;"En vrac";
+mousse_projetee;"Mousse projetée";
+origine;Origine;
+synthetique;Synthétique;
+polyurethane_(pur/pir);"Polyuréthane (PUR/PIR)";
+polystyrene_(eps/xps);"Polystyrène (EPS/XPS)";
+mousse_phenolique_/_resolique;"Mousse phénolique / résolique";
+mineral;Minéral;
+blocs_type_«_multipor_»;"Blocs type « multipor »";
+laine_de_roche_/_laine_de_verre;"Laine de roche / laine de verre";
+verre_cellulaire;"Verre cellulaire";
+perlite_/_vermiculite;"Perlite / Vermiculite";
+vegetal;Végétal;
+cellulose;Cellulose;
+chanvre;Chanvre;
+lin;Lin;
+laine_/_fibre_de_bois;"Laine / Fibre de bois";
+liege;Liège;
+coton/_textile_recycle;"Coton/ Textile recyclé";
+herbe;Herbe;
+animal;Animal;
+laine_de_mouton;"Laine de mouton";
+plumes_de_canard;"Plumes de canard";
+travaux_de_facades;"Travaux de façades";
+isolation;Isolation;
+par_l_interieur;"Par l'intérieur";
+murs_creux;"Murs creux";
+par_l_exterieur;"Par l'extérieur";
+finition;Finition;
+crepi_/_enduit;"Crépi / enduit";
+bardage_bois;"Bardage bois";
+bardage_autre_que_bois;"Bardage autre que bois";
+briques_de_parement;"Briques de parement";
+briquettes;Briquettes;
+enduit_sur_isolant_(methode_etics);"Enduit sur isolant (méthode ETICS)";
+autre;Autre;Andere
+facades_anciennes;"Façades anciennes";
+enduit;Enduit;
+peinture;Peinture;
+autre;Autre;Andere
+facades_vertes;"Façades vertes";
+travaux_techniques;"Travaux techniques";
+electricite;Electricité;
+bio_electricite;"Bio électricité";
+domotique;Domotique;
+ventilation;Ventilation;
+naturelle_(a);"Naturelle (A)";
+simple_flux_(b,c);"Simple flux (B,C)";
+simple_flux_centralise_(b,c);"Simple flux centralisé (B,C)";
+double_flux_(d);"Double flux (D)";
+plomberie;Plomberie;
+chauffage_chaudiere_et_distribution_de_chaleur;"Chauffage, chaudière et distribution de chaleur";
+chauffage_par_le_sol_/_les_murs;"Chauffage par le sol / les murs";
+production_ecs;"Production ECS";
+recuperation_d_eau_de_pluie;"Récupération d'eau de pluie";
+renovation_citerne_d_eau_de_pluie;"Rénovation citerne d'eau de pluie";
+panneaux_photovoltaiques;"Panneaux photovoltaïques";
+pompe_a_chaleur;"Pompe à chaleur";
+chauffe-eau_solaire;"Chauffe-eau solaire";
+travaux_interieurs_et_de_finition;"Travaux intérieurs et de finition";
+menuiserie_interieure;"Menuiserie intérieure";
+escaliers;Escaliers;
+murs_interieurs_plaque_de_platre;"Murs intérieurs, plaque de plâtre";
+enduisage;Enduisage;
+platre;Plâtre;
+chaux;Chaux;
+argile;Argile;
+carrelage;Carrelage;
+mur;Mur;
+sol;Sol;
+planchers;Planchers;
+mobilier_de_cuisine;"Mobilier de cuisine";
+finition_de_la_salle_de_bain;"Finition de la salle de bain";
+agencement_des_greniers;"Agencement des greniers";
+peintures;Peintures;

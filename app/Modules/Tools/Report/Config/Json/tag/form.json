@@ -1,0 +1,22 @@
+{
+    "id_tag": {
+        "type": "hidden"
+    },
+    "label": {
+        "label_fr": "Label",
+        "type": "text",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "comment" : {
+        "label_fr": "Notes",
+        "type": "textarea",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    }
+}

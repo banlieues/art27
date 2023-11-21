@@ -1,0 +1,157 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+	<?php gros_titre('[(#TITRE|supprimer_numero)] - #DATES_RA à #LIEU*'); ?>
+	<script type="text/php">
+        if ( isset($pdf) ) {
+	  $date = date("d-m-Y");
+          $font = Font_Metrics::get_font("helvetica");
+          $pdf->page_text(250, 550, "Numéro d'activité : #IDACT - Page: {PAGE_NUM} de {PAGE_COUNT} - Liste éditée le : $date", $font, 10, array(0,0,0));
+        }
+        </script>
+</BOUCLE_getTitre>
+
+<h2>Equipe d'encadrement</h2>
+<B_encadrants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 25%; border: 0px;">
+	<thead>
+		<tr>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>			
+		</tr>
+	</thead>
+	<tbody>
+	
+	<BOUCLE_encadrants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=E}>
+		<tr>		
+			<td align="left">#NOM</td>
+			<td align="left">#PRENOM</td>
+		</tr>
+	</BOUCLE_encadrants>
+	</tbody>
+</table>
+</B_encadrants>
+<p>Il n'y a pas d'encadrants pour cette action.</p>
+<//B_encadrants>
+
+<h2>Participants</h2>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="center">Absences 1er module</th>
+			<th align="center">Absences 2ème module</th>
+			<th align="center">Absences 3ème module</th>
+			<th align="center">Absences 4ème module</th>
+			<th align="center">Refus</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=I}{par nom}>
+
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>		
+		<td align="left" width="15%" style="border:1px solid black">#NOM</td>
+		<td align="left" width="15%" style="border:1px solid black">#PRENOM</td>		
+		<td align="left" width="20%"style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>
+
+<B_cemea>
+<p><b>Personnes identifiées CEMEA</b></p>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="center">Absences 1er module</th>
+			<th align="center">Absences 2ème module</th>
+			<th align="center">Absences 3ème module</th>
+			<th align="center">Absences 4ème module</th>
+			<th align="center">Refus</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_cemea(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=C}{par nom}>
+
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>		
+		<td align="left" width="15%" style="border:1px solid black">#NOM</td>
+		<td align="left" width="15%" style="border:1px solid black">#PRENOM</td>		
+		<td align="left" width="20%"style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+	</tr>
+</BOUCLE_cemea>
+	</tbody>
+</table>
+</B_cemea>
+
+<B_refuse>
+<p><b>Personnes refusées</b></p>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:nom:></th>
+			<th align="left"><:gestion:prenom:></th>			
+			<th align="left"><:gestion:adresse:></th>
+			<th align="center">Absences 1er module</th>
+			<th align="center">Absences 2ème module</th>
+			<th align="center">Absences 3ème module</th>
+			<th align="center">Absences 4ème module</th>
+			<th align="center">Refus</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_refuse(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=R}{par nom}>
+
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>		
+		<td align="left" width="15%" style="border:1px solid black">#NOM</td>
+		<td align="left" width="15%" style="border:1px solid black">#PRENOM</td>		
+		<td align="left" width="20%"style="border:1px solid black">#ADRESSE, #ADRESSE_NO à #CODEPOSTAL #LOCALITE</td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+		<td align="left" style="border:1px solid black"></td>
+	</tr>
+</BOUCLE_refuse>
+	</tbody>
+</table>
+</B_refuse>

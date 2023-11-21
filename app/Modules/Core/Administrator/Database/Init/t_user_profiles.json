@@ -1,0 +1,89 @@
+{
+    "id": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "user_id": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": true,
+        "default": "null"
+    },
+    "role_id": {
+        "type": "tinyint",
+        "max_length": 4,
+        "nullable": true,
+        "default": "null"
+    },
+    "gender_id": {
+        "type": "tinyint",
+        "max_length": 4,
+        "nullable": true,
+        "default": "null"
+    },
+    "country_id": {
+        "type": "tinyint",
+        "max_length": 4,
+        "nullable": true,
+        "default": "null"
+    },
+    "avatar": {
+        "type": "varchar",
+        "max_length": 64,
+        "nullable": true,
+        "default": "null"
+    },
+    "website": {
+        "type": "varchar",
+        "max_length": 64,
+        "nullable": true,
+        "default": "null"
+    },
+    "phone": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": true,
+        "default": "null"
+    },
+    "gsm": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": true,
+        "default": "null"
+    },
+    "birthday": {
+        "type": "datetime",
+        "nullable": true,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "datetime",
+        "nullable": true,
+        "default": "null"
+    },
+    "updated_at": {
+        "type": "datetime",
+        "nullable": true,
+        "default": "null"
+    },
+    "created_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": true,
+        "default": "null"
+    },
+    "updated_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": true,
+        "default": "null"
+    },
+    "is_actif": {
+        "type": "tinyint",
+        "max_length": 1,
+        "nullable": true,
+        "default": "null"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "id_component_field_index": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "id_component": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "field_index": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    }
+}

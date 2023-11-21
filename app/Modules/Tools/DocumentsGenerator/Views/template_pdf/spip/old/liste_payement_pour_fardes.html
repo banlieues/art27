@@ -1,0 +1,58 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_afficher_titre(ARTICLES){id_activity}>
+	<?php gros_titre('<:gestion:liste_payement:>'); ?>
+	<?php gros_titre('[(#TITRE|supprimer_numero)] - #DATES_RA à #LIEU*'); ?>
+	<script type="text/php">
+        if ( isset($pdf) ) {
+	  $date = date("d-m-Y");
+          $font = Font_Metrics::get_font("helvetica");
+          $pdf->page_text(125, 800, "Numéro d'activité : #IDACT - Page: {PAGE_NUM} de {PAGE_COUNT} - Liste éditée le : $date", $font, 10, array(0,0,0));
+        }
+        </script>
+</BOUCLE_afficher_titre>
+
+<B_listing_payement>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%;">
+    <tr>
+        <th></th>
+        <th></th>
+        <th align=left><:gestion:nom:></th>
+        <th align=center>A percevoir</th>
+        <th align=center>Perçu</th>
+        <th align=center>Solde</th>
+    </tr>
+
+    <BOUCLE_listing_payement(auteurs_articles articles auteurs){id_activity}{inscrit=Y}{par nom}{statutsuivi!=E}>
+
+    [(#REM) On séléctionne le type de prix de la personne ]
+    [(#TYPEPART|=={S}|oui) #SET{prix_a_paye, #PRIX} ]
+    [(#TYPEPART|=={I}|oui) #SET{prix_a_paye, #PRIX_ORGANISME} ]
+    [(#DEMANDEUR_EMPLOI|=={oui}|oui) #SET{prix_a_paye, #PRIX_ETUDIANT}]
+    [(#PRIX_SPECIAL|oui|ou{#PRIX_SPECIAL|=={0}}) #SET{prix_a_paye, #PRIX_SPECIAL} ]
+
+    [(#REM) Calcule du solde ]
+    #SET{solde, (#GET{prix_a_paye}|moins{#HISTORIQUE_PAYEMENT|calculer_payement})}
+    
+    [(#REM) Calcule du montant payé ]
+    #SET{paye, #HISTORIQUE_PAYEMENT|calculer_payement}
+
+    <tr class="valigntop" style="border-bottom:1px solid black;">
+	<td align=left>#COMPTEUR_BOUCLE. </td>
+        <td align=left>[(#CODECOURTOISIE|code_courtoisie)]</td>
+        <td align=left>#NOM_COURT_INSTITUTION #NOM #PRENOM</td>
+        <td align=center>[(#GET{prix_a_paye})] €</td>
+        <td align=center>[(#GET{paye})] €</td>
+        <td align=center>[(#GET{solde})] €</td>
+
+    </tr>
+    </BOUCLE_listing_payement>
+</table>
+</B_listing_payement>
+<//B_listing_payement>

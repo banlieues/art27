@@ -1,0 +1,90 @@
+{
+    "id": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "username": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": true,
+        "default": "null"
+    },
+    "nom": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "prenom": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "email": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": true,
+        "default": "null"
+    },
+    "password": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "token": {
+        "type": "varchar",
+        "max_length": 64,
+        "nullable": true,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "datetime",
+        "nullable": true,
+        "default": "current_timestamp()"
+    },
+    "updated_at": {
+        "type": "datetime",
+        "nullable": true,
+        "default": "null"
+    },
+    "created_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "updated_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "valided": {
+        "type": "tinyint",
+        "max_length": 1,
+        "nullable": true,
+        "default": "null"
+    },
+    "is_actif": {
+        "type": "tinyint",
+        "max_length": 1,
+        "nullable": true,
+        "default": "null"
+    },
+    "role_id": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": true,
+        "default": "null"
+    },
+    "source": {
+        "type": "varchar",
+        "max_length": 4,
+        "nullable": false,
+        "default": "crm"
+    }
+}

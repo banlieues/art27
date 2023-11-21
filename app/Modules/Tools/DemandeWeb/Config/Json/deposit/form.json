@@ -1,0 +1,111 @@
+{
+    "id_deposit": {
+        "label_fr" : "ID deposit", 
+        "type" : "hidden"
+    },
+    "gf_id": {
+        "label_fr" : "ID wordpress", 
+        "type" : "hidden"
+    },
+    "id_request_type": {
+        "label_fr" : "Type de la demande", 
+        "type" : "radio"
+    },
+    "id_gender": {
+        "label_fr" : "Titre", 
+        "type" : "radio"
+    },
+    "contact_name": {
+        "label_fr" : "Prénom", 
+        "label_nl" : "Voornaam", 
+        "type" : "text"
+    },
+    "contact_lastname": {
+        "label_fr" : "Nom", 
+        "label_nl" : "Naam", 
+        "type" : "text"
+    },
+    "contact_phone": {
+        "label_fr" : "Téléphone", 
+        "label_nl" : "Telefoon", 
+        "type" : "text"
+    },
+    "contact_email": {
+        "label_fr" : "Email", 
+        "label_nl" : "Email", 
+        "type" : "email"
+    },
+    "id_lang": {
+        "label_fr" : "Langue de contact", 
+        "type" : "radio"
+    },
+    "address" : {
+        "label_fr": "Rechercher une adresse via Brugis",
+        "type": "text",
+        "isBrugis": 1,
+        "annotation": "Veuillez encoder le nom de la rue et le numéro. Le système va alors rechercher sur Brugis les correspondances en français et néerlandais. Le numéro de la boîte doit être encodé séparément."
+    },
+    "address_fr": {
+        "label_fr" : "Adresse FR", 
+        "label_nl" : "Adres", 
+        "type" : "text"
+    },
+    "address_nl": {
+        "label_fr" : "Adresse NL", 
+        "label_nl" : "Adres", 
+        "type" : "text"
+    },
+    "address_street": {
+        "label_fr" : "Adresse du bien", 
+        "label_nl" : "Adres", 
+        "type" : "text"
+    },
+    "address_pc": {
+        "label_fr" : "Code postal", 
+        "type" : "text"
+    },
+    "address_city": {
+        "label_fr" : "Ville", 
+        "type" : "text"
+    },
+    "address_box": {
+        "label_fr" : "Boîte", 
+        "type" : "text"
+    },
+    "address_floor": {
+        "label_fr" : "Etage", 
+        "type" : "text"
+    },
+    "id_building_type": {
+        "label_fr" : "Type de logement",
+        "type" : "radio"
+    },
+    "ids_profile": {
+        "label_fr" : "Profil",
+        "type" : "checkbox"
+    },
+    "subject": {
+        "label_fr" : "Sujet",
+        "type": "text"
+    },
+    "comment": {
+        "label_fr" : "Descriptif", 
+        "type" : "text"
+    },
+    "id_demande_origine": {
+        "label_fr" : "Origine de la demande", 
+        "type" : "radio"
+    },
+    "id_moyen_contact": {
+        "label_fr" : "Moyen de contact", 
+        "type" : "radio"
+    },
+    "urls_file": {
+        "label_fr" : "Fichiers",
+        "type" : "file"
+    },
+    "gf_date_created": {
+        "label_fr" : "Date d'introduction", 
+        "type" : "text"
+    }
+}

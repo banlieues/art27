@@ -1,0 +1,59 @@
+{
+    "id_entities_params": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "type": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "label": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "labels": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "key_primary": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "table_primary": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "rank": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "condition_queries": {
+        "type": "text",
+        "nullable": true,
+        "default": "null"
+    },
+    "uri_fiche_modelisation": {
+        "type": "text",
+        "nullable": true,
+        "default": "null"
+    },
+    "jointure": {
+        "type": "text",
+        "nullable": true,
+        "default": "null"
+    }
+}

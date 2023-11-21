@@ -1,0 +1,46 @@
+<?php 
+if (!defined("_ECRIRE_INC_VERSION")) return;
+include_spip('inc/presentation');
+
+include_spip('gestion_autorisation');
+
+gros_titre('<:gestion:recherche:>: '._request('recherche_activite'));
+
+// Possibilité d'ajouter une nouvelle activité.
+    if (session_get('statut') == '0minirezo') {
+        echo icone_inline(_T('gestion:ecrire_nouvelle_action'), generer_url_ecrire("editer_activite_exec","id_rubrique=43&new=oui"), "article-24.gif","creer.gif", 'right');
+    }
+
+?>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#recherche").keypress(function(event) {
+            setTimeout(function () {
+                var value = $("#recherche").val();
+                $.getJSON('?exec=action_json', {search: value}).done(function (json) {
+                    $("#recherche").autocomplete({
+                        source: json
+                    });
+                }).fail(function (jqxhr, textStatus, error) {
+                    console.log(error);
+                });
+            }, 50);
+        });
+    });
+</script>
+
+<form action="#" method="get">
+	<fieldset>
+		<input type="text" placeholder="<:gestion:rechercher:>" name="recherche_activite" id="recherche" value="#ENV{recherche_inscrit}" />
+		<input type="hidden" name="exec" value="gestion_action_recherche_exec">
+		<input type="submit" value=">>" />
+	</fieldset>
+</form>
+<div class="nettoyeur"></div>
+
+<?php echo debut_cadre_relief() ?>
+
+<INCLURE{fond=prive/gestion_activite/recherche_action}{env}{ajax}>
+
+<?php echo fin_cadre_relief(); ?>

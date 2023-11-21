@@ -1,0 +1,16 @@
+[
+    {
+        "ref": "demande_close",
+        "label": "Clôture d'une demande",
+        "id_module": 1,
+        "subject_ref": "#Ref:##numero_demande###",
+        "subject_fr": "Clôture de votre Demande \"##type_demande_fr##\" : Votre avis sur nos services",
+        "hello_fr": "##titre## ##nom## ##prenom##,",
+        "content_fr": "<p>Votre demande ##type_demande## (N°##numero_demande##) a été clôturée.<br><br>Afin d'améliorer notre service, nous réalisons une enquête de satisfaction auprès des personnes qui ont bénéficié de nos services. Vous trouverez ci-joint le lien vers ce questionnaire :<br><br>##link_enquete_demande_close_fr##<br><br>Nous vous remercions d'avance pour votre temps, vos réponses sont essentielles et précieuses pour l'évaluation de notre travail.<br></p>",
+        "greetings_fr": "Cordialement, L'équipe de Homegrade",
+        "subject_nl": "Afsluiting aanvraag om \"##type_demande_nl##\" : uw mening over onze dienstverlening",
+        "hello_nl": "##titre_nl## ##nom## ##prenom##, ",
+        "content_nl": "<p>Uw aanvraag ##type_demande_nl## (N°##numero_demande##) werd afgesloten.<br><br>Om onze dienstverlening te verbeteren, voeren wij een tevredenheidsenquete uit onder de personen die van dienstverlening hebben genoten. U vindt hier de link naar deze vragenlijst:<br><br>##link_enquete_demande_close_fr##<br><br>Wij danken u alvast voor uw tijd, uw antwoorden zijn essentieel en waardevol voor de evaluatie van ons werk.<br></p>",
+        "greetings_nl": "Vriendelijke groeten, Het Homegrade team"
+    }
+]

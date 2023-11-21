@@ -1,0 +1,855 @@
+
+[(#REM) tableau des statuts, pour convertir ]
+#SET{statut, #ARRAY{T,A traiter,A,Annulé,C,Cemea,E,Encadrant,D,Désisté,I,Inscrit,L,Liste d'attente,R,Refusé,X,Réservé,B,Accompagnant,F,Facture}}
+#SET{statut_payement, #ARRAY{1,En attente,2,Accompte payé,3,Payement terminé,4,A rembourser,5,Facture}}
+
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+include_spip('fonctions_gestion_cemea');
+include_spip('prive/gestion_update_db');
+?>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de la page/PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+	<?php gros_titre('<:gestion:liste_participant:> - [(#TITRE|supprimer_numero)]'); ?>
+</BOUCLE_getTitre>
+
+<?php
+// On récupère la variable PDF pour déterminer si on est dans un PDF ou non
+$pdf = '#ENV{pdf}';
+// Si on est pas dans un PDF, on affiche le bouton pour télécharger le PDF
+if ($pdf != 1) {
+	echo icone_inline(_T('gestion:telecharger_pdf'), generer_url_ecrire('gestion_dompdf_exec','id_activity=#id_activity&modele=liste_participant'), 'doc-24.gif', '', 'right');
+
+	echo icone_inline(_T('gestion:retour'), generer_url_ecrire('gestion_activite_exec'), find_in_path('img/gestion-24.png'), '', 'left');
+}
+?>
+<div class="nettoyeur"></div>
+<h2>Liste des personnes inscrites</h2>
+<B_participants>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+			<th>Confirmation envoyée ?</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=I}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+		<td>[(#REMARQUES_GESTION|match{confirmation}|oui) Oui ]</td>
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>
+
+<h2>Liste des encadrants</h2>
+<B_encadrants>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_encadrants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=E}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_encadrants>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_encadrants>
+<p>Il n'y a aucun encadrant à cette action.</p>
+<//B_encadrants>
+
+<h2>Liste des animateurs</h2>
+<B_animateurs>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_animateurs(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=M}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_animateurs>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_animateurs>
+<p>Il n'y a aucun animateur à cette action.</p>
+<//B_animateurs>
+
+<h2>Liste des personnes accompagnantes</h2>
+<B_accompagnants>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+			<th>Confirmation envoyée ?</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_accompagnants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi= B}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+		<td>[(#REMARQUES_GESTION|match{confirmation}|oui) Oui ]</td>
+	</tr>
+</BOUCLE_accompagnants>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_accompagnants>
+<p>Il n'y a aucune personne accompagnante à cette action.</p>
+<//B_accompagnants>
+
+<h2>Liste des places réservées</h2>
+<B_reserve>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+			<th>Confirmation envoyée ?</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_reserve(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=X}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+		<td>[(#REMARQUES_GESTION|match{confirmation}|oui) Oui ]</td>
+	</tr>
+</BOUCLE_reserve>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_reserve>
+<p>Il n'y a aucune place réservée pour cette action.</p>
+<//B_reserve>
+
+<h2>Liste des places désistées</h2>
+<B_desiste>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_desiste(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=D}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_desiste>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_desiste>
+<p>Il n'y a aucune personne désistée pour cette action.</p>
+<//B_desiste>
+
+<h2>Liste des places annulées</h2>
+<B_annule>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_annule(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=A}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+			
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_annule>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_annule>
+<p>Il n'y a aucune place annulée pour cette action.</p>
+<//B_annule>
+
+
+<h2>Liste des personnes refusées</h2>
+<B_refuse>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_refuse(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=R}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]	
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_refuse>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_refuse>
+<p>Il n'y a aucune personne refusée pour cette action.</p>
+<//B_refuse>
+
+<h2>Liste des participants "Cemea"</h2>
+<B_cemea>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th><:gestion:nom:></th>
+			<th><:gestion:prenom:></th>
+			<th><:gestion:age:></th>
+			[(#ENV{pdf}|non)
+				<th><:gestion:statut:></th>
+			]
+            		[(#ENV{pdf}|non)
+                
+                		<th><:gestion:statut_payement:></th>
+            		]
+			<th><:gestion:remarque:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	[(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_cemea(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=C}{par nom}{pagination #ENV{pagination}}>
+	<tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #NOM ]
+		</td>
+		<td>
+			[(#ENV{pdf}|non)
+				[<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+			]
+			[(#ENV{pdf}|oui) #PRENOM ]
+		</td>
+		<td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+		[(#ENV{pdf}|non)
+
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+		]
+	        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	        ]
+		<td>#REMARQUES_INSCRIPTION</td>
+	</tr>
+</BOUCLE_cemea>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_cemea>
+<p>Il n'y a aucune personne "Cemea" pour cette action.</p>
+<//B_cemea>
+
+<h2>Liste des personnes à traiter</h2>
+<B_traiter>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+    <thead>
+        <tr>
+            <th><:gestion:nom:></th>
+            <th><:gestion:prenom:></th>
+            <th><:gestion:age:></th>
+            [(#ENV{pdf}|non)
+                
+                <th><:gestion:statut:></th>
+            ]
+            [(#ENV{pdf}|non)
+                
+            	<th><:gestion:statut_payement:></th>
+            ]
+            <th><:gestion:remarque:></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    [(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_traiter(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=T}{par nom}{pagination #ENV{pagination}}>
+    <tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+        <td>
+            [(#ENV{pdf}|non)
+                [<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+            ]
+            [(#ENV{pdf}|oui) #NOM ]
+        </td>
+        <td>
+            [(#ENV{pdf}|non)
+                [<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+            ]
+            [(#ENV{pdf}|oui) #PRENOM ]
+        </td>
+        <td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+        ]
+	[(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	]
+		<td>#REMARQUES_INSCRIPTION</td>
+    </tr>
+</BOUCLE_traiter>
+    </tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_traiter>
+<p>Il n'y a aucune personne à traîter pour cette action.</p>
+<//B_traiter>
+
+<h2>Liste des Factures</h2>
+<B_facture>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+    <thead>
+        <tr>
+            <th><:gestion:nom_court_institution:></th>
+            [(#ENV{pdf}|non)
+                
+                <th><:gestion:statut:></th>
+            ]
+            [(#ENV{pdf}|non)
+                
+                <th><:gestion:statut_payement:></th>
+            ]
+	    <th><:gestion:remarque:></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    [(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_facture(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=F}{par nom}{pagination #ENV{pagination}}>
+    <tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+        <td>
+            [(#ENV{pdf}|non)
+                <a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">#NOM_COURT_INSTITUTION-#NOM #PRENOM</a>
+            ]
+            [(#ENV{pdf}|oui) #NOM_COURT_INSTITUTION-#NOM #PRENOM ]
+        </td>
+        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+        ]
+	[(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+	]
+		<td>#REMARQUES_INSCRIPTION</td>
+    </tr>
+</BOUCLE_facture>
+    </tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_facture>
+<p>Il n'y a aucune facture.</p>
+<//B_facture>
+
+<h2>Liste des personnes en liste d'attente</h2>
+<B_Attente>
+[<p class="pagination">(#PAGINATION)</p>]
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+    <thead>
+        <tr>
+            <th><:gestion:nom:></th>
+            <th><:gestion:prenom:></th>
+            <th><:gestion:age:></th>
+            [(#ENV{pdf}|non)
+                
+                <th><:gestion:statut:></th>
+            ]
+            [(#ENV{pdf}|non)
+                
+                <th><:gestion:statut_payement:></th>
+            ]
+            <th><:gestion:date_suivi:></th>
+            <th><:gestion:heure_suivi:></th>
+	    <th><:gestion:remarque:></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    [(#REM) On calcule la pagination. Si PDF, pas de pagination. ]
+<BOUCLE_Attente(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=L}{par date_suivi}{par heure_suivi}{pagination #ENV{pagination}}>
+    <tr [class="(#COMPTEUR_BOUCLE|alterner{'tr_liste',''})"]>
+        <td>
+            [(#ENV{pdf}|non)
+                [<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#NOM)</a>]
+            ]
+            [(#ENV{pdf}|oui) #NOM ]
+        </td>
+        <td>
+            [(#ENV{pdf}|non)
+                [<a href="#URL_ECRIRE{fiche_inscrit_exec, id_contact=#id_contact}" title="Fiche">(#PRENOM)</a>]
+            ]
+            [(#ENV{pdf}|oui) #PRENOM ]
+        </td>
+        <td>[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT})]</td>
+        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut}|table_valeur{#STATUTSUIVI})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT_INSCRIT{#STATUTSUIVI, #id_contact, #id_activity}
+				
+                #FORMULAIRE_CREER_PDF{#id_activity, #id_contact, #ASBL}
+				[(#EMAIL|oui|et{#SEND_EMAIL|oui}) #FORMULAIRE_ENVOYER_PDF{#id_activity, #id_contact, #ASBL}]
+			</td>]
+        ]
+        [(#ENV{pdf}|non)
+            
+			[(#SESSION{statut}|!={0minirezo}|oui)
+				<td>[(#GET{statut_payement}|table_valeur{#STATUT_PAYEMENT})]</td>
+			]
+			[(#SESSION{statut}|=={0minirezo}|oui)<td>
+				#FORMULAIRE_CHANGER_STATUT{#id_contact, #id_activity, #STATUT_PAYEMENT}
+			</td>]
+        ]
+       <td>[(#DATE_SUIVI|affdate)]</td>
+       <td>[(#HEURE_SUIVI)]</td>
+       <td>#REMARQUES_INSCRIPTION</td>
+    </tr>
+</BOUCLE_Attente>
+    </tbody>
+</table>
+[<p class="pagination">(#PAGINATION)</p>]
+</B_Attente>
+<p>Il n'y a aucune personne en liste d'attente à cette action.</p>
+<//B_Attente>

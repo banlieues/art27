@@ -1,0 +1,50 @@
+[
+    {
+        "label_fr" : "Coordonnées de l'entreprise",
+        "label_nl" : "Bedrijfsgegevens"
+    },
+    {
+        "label_fr" : "Vérifier les accès à la profession de l'entreprise",
+        "label_nl" : "Controleer de toegang tot het beroep van de onderneming"
+    },
+    {
+        "label_fr" : "Vérifier les accès à la profession de l'entreprise",
+        "label_nl" : "Controleer de toegang tot het beroep van de onderneming"
+    },
+    {
+        "label_fr" : "Accès à la profession",
+        "label_nl" : "Toegang tot het beroep"
+    },
+    {
+        "label_fr" : "http://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&la=F&cn=2007012950&table_name=loi",
+        "label_nl" : "http://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=2007012950&table_name=wet"
+    },
+    {
+        "label_fr" : "Type de travaux",
+        "label_nl" : "Type van werken"
+    },
+    {
+        "label_fr" : "Impact environnemental",
+        "label_nl" : "Milieu-impact"
+    },
+    {
+        "label_fr" : "Homegrade traite les données personnelles dans le respect de la vie privée, selon le Règlement Général sur la Protection des Données (RGPD).",
+        "label_nl" : "Homegrade verwerkt de persoonsgegevens met eerbiediging van het privéleven, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG)."
+    },
+    {
+        "label_fr" : "Plus d'information sur le site de Homegrade",
+        "label_nl" : "Meer informatie op de website van Homegrade"
+    },
+    {
+        "label_fr" : "en bas de page « Privacy »",
+        "label_nl" : "onderaan de « Privacy »-pagina"
+    },
+    {
+        "label_fr" : "Nom et signature, précédé de « lu et approuvé »",
+        "label_nl" : "Naam en handtekening, voorafgegaan door « gelezen en goedgekeurd »"
+    },
+    {
+        "label_fr" : "Notes",
+        "label_nl" : "Notes"
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "username": "buzzu",
+        "nom": "Blampain",
+        "prenom": "Jeremy",
+        "email": "jeremy.blampain@banlieues.be",
+        "password": "$2y$10$JCVKpyO5WB7AYYCSFShyje5XhlPLIH9hr2uD8U.jfZ.mXGlbcLRwy",
+        "token": "e4b64a79ad6ef59ed1e445289e889f40",
+        "created_at": "2020-02-20 20:20:20",
+        "updated_at": "2020-02-20 20:20:20",
+        "created_by": "0",
+        "updated_by": "1",
+        "valided": "1",
+        "is_actif": "1",
+        "role_id": "1",
+        "source": "init"
+    },
+    {
+        "username": "tamo",
+        "nom": "Tam Hau",
+        "prenom": "Nguyen Ba",
+        "email": "tamhau@esoha.be",
+        "password": "$2y$10$lKxnjEed0ChB9b37\/JTUh.H\/ZnXNYrm1TsWe760Kql0HXR6\/A2dLq",
+        "token": null,
+        "created_at": "2020-02-20 20:20:20",
+        "updated_at": "2020-02-20 20:20:20",
+        "created_by": "0",
+        "updated_by": "2",
+        "valided": "1",
+        "is_actif": "1",
+        "role_id": "1",
+        "source": "init"
+    }
+]

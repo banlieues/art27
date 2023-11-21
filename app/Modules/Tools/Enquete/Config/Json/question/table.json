@@ -1,0 +1,48 @@
+{
+    "id_question": {
+        "name": "id_question",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "num_question": {
+        "name": "num_question",
+        "type": "int",
+        "max_length": 11
+    },
+    "type_question": {
+        "name": "type_question",
+        "type": "int",
+        "max_length": 11
+    },
+    "question_fr": {
+        "name": "question_fr",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "question_nl": {
+        "name": "question_nl",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "aide_question_fr": {
+        "name": "aide_question_fr",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "aide_question_nl": {
+        "name": "aide_question_nl",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "name_question": {
+        "name": "name_question",
+        "type": "varchar",
+        "max_length": 155
+    },
+    "is_not_required": {
+        "name": "is_not_required",
+        "type": "tinyint",
+        "max_length": 4
+    }
+}

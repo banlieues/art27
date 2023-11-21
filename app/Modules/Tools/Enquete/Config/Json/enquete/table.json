@@ -1,0 +1,52 @@
+{
+    "id_enquete": {
+        "name": "id_enquete",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "rank": {
+        "name": "rank",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "id_request_type": {
+        "name": "id_request_type",
+        "type": "int",
+        "max_length": 11
+    },
+    "ids_question": {
+        "name": "ids_question",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "updated_at": {
+        "name": "updated_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "updated_at": {
+        "name": "updated_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "updated_by": {
+        "name": "updated_by",
+        "type": "int",
+        "max_length": 11,
+        "default": "1"
+    },
+    "created_at": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "created_by": {
+        "name": "created_by",
+        "type": "int",
+        "max_length": 11,
+        "default": "1"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "id_road": {
+        "name": "id_road",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "isActive": {
+        "name": "isActive",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "1"
+    },
+    "id_cell": {
+        "name": "id_cell",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_road_parent": {
+        "name": "id_road_parent",
+        "type": "int",
+        "max_length": 11
+    },
+    "rank": {
+        "name": "rank",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "has_text": {
+        "name": "has_text",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "annotation_fr": {
+        "name": "annotation_fr",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "annotation_nl": {
+        "name": "annotation_nl",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    }
+}

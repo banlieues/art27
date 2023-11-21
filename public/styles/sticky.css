@@ -1,0 +1,7 @@
+.sticky_button {
+    z-index: 9 !important;
+}
+.sticky_button.is_stuck {
+    background-color: white;
+    z-index: 99 !important;
+}

@@ -1,0 +1,28 @@
+{
+    "id_tag": {
+        "name": "id_tag",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "label": {
+        "name": "label",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "comment": {
+        "name": "comment",
+        "type": "text",
+        "default": "null"
+    },
+    "created_by": {
+        "name": "created_by",
+        "type": "int",
+        "max_length": 11
+    },
+    "created_at": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    }
+}

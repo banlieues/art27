@@ -1,0 +1,1 @@
+<?=convert_date_en_to_fr_with_h($value,false)?>

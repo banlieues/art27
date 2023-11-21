@@ -1,0 +1,23 @@
+[
+    {
+        "type": "contact",
+        "fields": "date_creation,date_naissance,nom_contact,prenom,@#<hr>,nom_court_institution,fonction",
+        "title": "Données administratives",
+        "column": "1",
+        "rank": "1"
+    },
+    {
+        "type": "contact",
+        "fields": "email,email2,tel1,tel2,gsm1,gsm2,@#<hr>,adresse,codepostal,localite,pays",
+        "title": "Données de contact",
+        "column": "1",
+        "rank": "2"
+    },
+    {
+        "type": "contact",
+        "fields": "adherent,membre,enordredecotisation,@#<hr>,envoi_diffusion,diffusion",
+        "title": "Données de statut",
+        "column": "2",
+        "rank": "1"
+    }
+]

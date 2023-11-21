@@ -1,0 +1,71 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+<?php gros_titre('Module'); ?>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_afficher_titre(ARTICLES){id_activity}>
+<h2>[(#TITRE|supprimer_numero)] - #DATES_RA [(#LIEU*|spip_replace{week-end})]</h2>
+</BOUCLE_afficher_titre>
+
+<h2>Participants</h2>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th><center>Module 1</center></th>
+			<th><center>Module 2</center></th>
+			<th><center>Module 3</center></th>
+			<th><center>Module 4</center></th>
+		</tr>
+	</thead>
+	<tbody>
+
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{statutsuivi=I}{par nom}>
+
+	<tr>
+		<td align="left" width="3%" height="50px" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="37%" height="50px" style="border:1px solid black">#NOM #PRENOM</td>
+		<td align="left" width="12%" height="50px" style="border:1px solid black"></td>
+		<td align="left" width="12%" height="50px" style="border:1px solid black"></td>
+		<td align="left" width="12%" height="50px" style="border:1px solid black"></td>
+		<td align="left" width="12%" height="50px" style="border:1px solid black"></td>
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+	<tr>
+		<td align="left" width="3%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="37%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+	</tr>
+	<tr>
+		<td align="left" width="3%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="37%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+	</tr>
+	<tr>
+		<td align="left" width="3%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="37%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+		<td align="left" width="15%" height="50px" style="border:1px solid black"><br><br><br></td>
+	</tr>
+
+
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>

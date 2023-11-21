@@ -1,0 +1,52 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+
+    [(#REM) On place le logo de Cemea ]
+    <div style="width: 10%;">
+        [<span >
+            (#CHEMIN{LogoProvinceLG.jpg}|balise_img{logo, }|image_reduire{150,0})
+        </span>]
+    </div>
+
+	<h2><center>LISTE DES PERSONNES HEBERGEES</center></h2>
+	<p><b>Nom de l'organisation :</b> CEMEA
+	<br><b>Nom du responsable : </b>
+	<br><b>GSM : </b>
+	<br><b>Séjour : </b> #DATES_RA
+	<br><br>Je certifie avoir pris connaissance et avoir communiqué au groupe la procédure en cas d'incendie<br>(telle que reprise ci-dessous).</p>
+</BOUCLE_getTitre>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th align="center"><:gestion:nom:></th>			
+			<th align="center"><:gestion:prenom:></th>
+			<th align="center"><:gestion:date_naissance:></th>
+			<th align="center">Pays de résidence</th>
+			<th align="center"><:gestion:gsm:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{par nom}{statutsuivi IN C,E,I,B,M}>
+
+	<tr>
+		<td align="left" width="20%" style="border:1px solid black">#NOM</td>
+		<td align="left" width="20%" style="border:1px solid black">#PRENOM</td>
+		<td align="left" width="20%" style="border:1px solid black">[(#DATE_NAISSANCE|affdate{'d-m-Y'})]</td>		
+		<td align="left" width="20%" style="border:1px solid black">[(#PAYS|?{#PAYS,Belgique})]</td>
+		<td align="center" width="20%" style="border:1px solid black">#GSM1</td>
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>

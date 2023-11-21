@@ -1,0 +1,75 @@
+<?php
+// Cropper translation
+return [
+    'title' => 'Recadreur', 
+    'subtitle' => '', 
+    'cropper' => 'Recadreur',
+    'settings' => 'Paramètres du recadreur',
+    'settings_of' => 'Paramètres du recadreur', 
+    'edit' => 'Editer', 
+    'select' => 'Selectionner',
+    'dashboard' => 'Tableau de bord', 
+    'selectcropper' => 'Sélectionnez un recadreur', 
+    'nocropper' => 'Pas de recadreur', 
+    'simplecropper' => 'Simple recadreur', 
+    'crop' => 'recadrer', 
+    'move' => 'déplacer', 
+    'none' => 'aucun', 
+    'view' => 'Vue', 
+    'viewmode' => 'Mode de vue', 
+    'dragmode' => 'Mode de déplacement', 
+    'aspectratio' => 'Aspect du ratio', 
+    'mincropboxwidth' => 'Largeur minimum', 
+    'mincropboxheight' => 'Hauteur minimum', 
+    '' => '', 
+
+    // For ConfigAvatarModel
+    'label' => 'Label', 
+    'description' => 'Description', 
+    'rank' => 'Rang', 
+    'parameter' => 'Paramètre', 
+    'value' => 'Valeur', 
+    'created_at' => 'Créé à', 
+    'updated_at' => 'Mis à jour à', 
+    'created_by' => 'Créé par', 
+    'updated_by' => 'Mis à jour par', 
+    '' => '', 
+
+    // For IdentificationModel
+    'id' => 'Id', 
+    'username' => 'Nom d\'utilisateur', 
+    'email' => 'E-mail', 
+    'password' => 'Mot de passe', 
+    'token' => 'Jeton', 
+    'created_at' => 'Créé à', 
+    'updated_at' => 'Mis à jour à', 
+    'valided' => 'Valided', 
+    'is_actif' => 'Actived', 
+    'role_id' => 'Role id', 
+    '' => '', 
+
+    // For ListUserRolesModel
+    'id' => 'Id', 
+    'label' => 'Label', 
+    'description' => 'Description', 
+    'rang' => 'Rang', 
+    'created_at' => 'Créé à', 
+    'updated_at' => 'Mis à jour à', 
+    'created_by' => 'Créé par', 
+    'updated_by' => 'Mis à jour par', 
+    '' => '', 
+
+    // For UserProfileModel
+    'id' => 'Id', 
+    'user_id' => 'Id utilisateur', 
+    'gender' => 'Genre', 
+    'avatar' => 'Avatar', 
+    'website' => 'Site Internet', 
+    'created_at' => 'Créé à', 
+    'updated_at' => 'Mis à jour à', 
+    'created_by' => 'Créé par', 
+    'updated_by' => 'Mis à jour par', 
+    '' => '', 
+
+];
+

@@ -1,0 +1,101 @@
+{
+    "id_moyen_contact": {
+        "table": "liste_moyen_contact"
+    },
+    "id_demande_origine": {
+        "table": "liste_demande_origine"
+    },
+    "id_lang": {
+        "table": "liste_langue"
+    },
+    "id_gender": {
+        "table": "liste_sexe"
+    },
+    "id_file_lang": {
+        "table": "liste_langue"
+    },
+    "id_status" : [
+        { "id": 1, "rank": 1, "label_fr": "À traiter" },
+        { "id": 2, "rank": 2, "label_fr": "Incomplet" },
+        { "id": 3, "rank": 3, "label_fr": "Agréé" },
+        { "id": 4, "rank": 4, "label_fr": "Refusé" },
+        { "id": 5, "rank": 5, "label_fr": "Retiré" }
+    ],
+    "id_request_type" : [
+        { "id": 1, "rank": 1, "label_fr": "Question" },
+        { "id": 2, "rank": 2, "label_fr": "Demande d'accompagnement" }
+    ],
+    "id_contact_source" : [
+        { "id": 1, "rank": 1, "label_fr": "Formulaire du siteweb" },
+        { "id": 2, "rank": 2, "label_fr": "Téléphone" },
+        { "id": 3, "rank": 3, "label_fr": "Email" }
+    ],
+    "ids_contact_type" : [
+        { "id": 1, "rank": 1, "label_fr": "Téléphone" },
+        { "id": 2, "rank": 2, "label_fr": "Email" }
+    ],
+    "ids_contact_schedule_day": [
+        { "id": 1, "rank": 1, "label_fr": "Lundi" },
+        { "id": 2, "rank": 2, "label_fr": "Mardi" },
+        { "id": 3, "rank": 3, "label_fr": "Mercredi" },
+        { "id": 4, "rank": 4, "label_fr": "Jeudi" },
+        { "id": 5, "rank": 5, "label_fr": "Vendredi" }
+    ],
+    "ids_contact_schedule_time": [
+        { "id": 1, "rank": 1, "label_fr": "Tôt le matin" },
+        { "id": 2, "rank": 2, "label_fr": "Matinée" },
+        { "id": 3, "rank": 3, "label_fr": "Temps de midi" },
+        { "id": 4, "rank": 4, "label_fr": "Début d'après-midi" },
+        { "id": 5, "rank": 5, "label_fr": "Fin d'après-midi" },
+        { "id": 6, "rank": 6, "label_fr": "Soirée" }
+    ],
+    "ids_contact_schedule_clock": [
+        { "id": 1, "rank": 1, "label_fr": "7h à 9h" },
+        { "id": 2, "rank": 2, "label_fr": "9h à 12h" },
+        { "id": 3, "rank": 3, "label_fr": "12h à 14h" },
+        { "id": 4, "rank": 4, "label_fr": "14h à 16h" },
+        { "id": 5, "rank": 5, "label_fr": "16h à 18h" },
+        { "id": 6, "rank": 6, "label_fr": "18h à 20h" }
+    ],
+    "ids_contact_schedule": [
+        { "id": 1, "rank": 1, "id_day": 1, "id_time": 1 },
+        { "id": 2, "rank": 2, "id_day": 1, "id_time": 2 },
+        { "id": 3, "rank": 3, "id_day": 1, "id_time": 3 },
+        { "id": 4, "rank": 4, "id_day": 1, "id_time": 4 },
+        { "id": 5, "rank": 5, "id_day": 1, "id_time": 5 },
+        { "id": 6, "rank": 6, "id_day": 1, "id_time": 6 },
+        { "id": 7, "rank": 7, "id_day": 2, "id_time": 1 },
+        { "id": 8, "rank": 8, "id_day": 2, "id_time": 2 },
+        { "id": 9, "rank": 9, "id_day": 2, "id_time": 3 },
+        { "id": 10, "rank": 10, "id_day": 2, "id_time": 4 },
+        { "id": 11, "rank": 11, "id_day": 2, "id_time": 5 },
+        { "id": 12, "rank": 12, "id_day": 2, "id_time": 6 },
+        { "id": 13, "rank": 13, "id_day": 3, "id_time": 1 },
+        { "id": 14, "rank": 14, "id_day": 3, "id_time": 2 },
+        { "id": 15, "rank": 15, "id_day": 3, "id_time": 3 },
+        { "id": 16, "rank": 16, "id_day": 3, "id_time": 4 },
+        { "id": 17, "rank": 17, "id_day": 3, "id_time": 5 },
+        { "id": 18, "rank": 18, "id_day": 3, "id_time": 6 },
+        { "id": 19, "rank": 19, "id_day": 4, "id_time": 1 },
+        { "id": 20, "rank": 20, "id_day": 4, "id_time": 2 },
+        { "id": 21, "rank": 21, "id_day": 4, "id_time": 3 },
+        { "id": 22, "rank": 22, "id_day": 4, "id_time": 4 },
+        { "id": 23, "rank": 23, "id_day": 4, "id_time": 5 },
+        { "id": 24, "rank": 24, "id_day": 4, "id_time": 6 },
+        { "id": 25, "rank": 25, "id_day": 5, "id_time": 1 },
+        { "id": 26, "rank": 26, "id_day": 5, "id_time": 2 },
+        { "id": 27, "rank": 27, "id_day": 5, "id_time": 3 },
+        { "id": 28, "rank": 28, "id_day": 5, "id_time": 4 },
+        { "id": 29, "rank": 29, "id_day": 5, "id_time": 5 },
+        { "id": 30, "rank": 30, "id_day": 5, "id_time": 6 }
+    ],
+    "id_building_type" : {
+        "table": "liste_bien_type"
+    },
+    "ids_profile" : {
+        "table": "liste_rel_personne_bien"
+    },
+    "id_demande_statut" : {
+        "table": "liste_demande_statut"
+    }
+}

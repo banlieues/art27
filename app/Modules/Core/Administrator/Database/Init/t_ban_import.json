@@ -1,0 +1,82 @@
+{
+    "id_ban_import": {
+        "type": "int",
+        "max_length": 10,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "name_file_origin": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "name_table": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "name_fields_origin": {
+        "type": "text",
+        "nullable": false,
+        "default": "null"
+    },
+    "name_fields_index": {
+        "type": "text",
+        "nullable": false,
+        "default": "null"
+    },
+    "number_line": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "number_total_import": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "number_total_insert": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "number_total_update": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "number_total_reste": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "datetime",
+        "nullable": false,
+        "default": "null"
+    },
+    "updated_at": {
+        "type": "datetime",
+        "nullable": false,
+        "default": "null"
+    },
+    "created_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "updated_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    }
+}

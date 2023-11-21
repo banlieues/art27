@@ -1,0 +1,60 @@
+{
+    "id": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "label": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": false,
+        "default": "null"
+    },
+    "description": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "rank": {
+        "type": "tinyint",
+        "max_length": 4,
+        "nullable": false,
+        "default": "null"
+    },
+    "param": {
+        "type": "varchar",
+        "max_length": 32,
+        "nullable": false,
+        "default": "null"
+    },
+    "value": {
+        "type": "varchar",
+        "max_length": 16,
+        "nullable": false,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "datetime",
+        "nullable": false,
+        "default": "current_timestamp()"
+    },
+    "updated_at": {
+        "type": "datetime",
+        "nullable": false,
+        "default": "current_timestamp()"
+    },
+    "created_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "updated_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    }
+}

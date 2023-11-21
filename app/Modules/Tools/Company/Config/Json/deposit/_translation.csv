@@ -1,0 +1,37 @@
+label;"Dénomination, sociale ou commerciale, de l'entreprise";"Maatschappelijke naam of handelsnaam van de onderneming"
+id_juridic_form;"Forme juridique";Vennootschapsvorm
+id_juridic_form_1;SA;
+id_juridic_form_2;SRL;
+id_juridic_form_3;ASBL;
+website;"Site web";Website
+bce;"Numéro de l'entreprise (BCE)";Ondernemingsnummer
+address_street;"Adresse du siège social";Adres
+address_pc;"Code postal";
+address_city;Ville;
+id_lang;Langue;
+contact_name;Prénom;Voornaam
+contact_lastname;Nom;Naam
+ids_contact_type;"Moyen de contact préféré";
+ids_contact_type_1;Téléphone;
+ids_contact_type_2;Email;
+contact_phone;Téléphone;Telefoon
+contact_email;Email;Email
+ids_contact_schedule;"Période de disponibilité";
+comment;Commentaires;
+ids_contact_schedule_day_1;Lundi;
+ids_contact_schedule_day_2;Mardi;
+ids_contact_schedule_day_3;Mercredi;
+ids_contact_schedule_day_4;Jeudi;
+ids_contact_schedule_day_5;Vendredi;
+ids_contact_schedule_time_1;"Tôt le matin";
+ids_contact_schedule_time_2;Matinée;
+ids_contact_schedule_time_3;"Temps de midi";
+ids_contact_schedule_time_4;"Début d'après-midi";
+ids_contact_schedule_time_5;"Fin d'après-midi";
+ids_contact_schedule_time_6;Soirée;
+ids_contact_schedule_clock_1;"7h à 9h";
+ids_contact_schedule_clock_2;"9h à 12h";
+ids_contact_schedule_clock_3;"12h à 14h";
+ids_contact_schedule_clock_4;"14h à 16h";
+ids_contact_schedule_clock_5;"16h à 18h";
+ids_contact_schedule_clock_6;"18h à 20h";

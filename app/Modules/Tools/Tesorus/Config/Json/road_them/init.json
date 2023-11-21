@@ -1,0 +1,135 @@
+[
+    { "label_fr": "Aides financières", "children": [
+        { "label_fr": "Energie" },
+        { "label_fr": "Rénovation" },
+        { "label_fr": "Embellissement façades" },
+        { "label_fr": "Prêt vert bruxellois" },
+        { "label_fr": "Subvention petit patrimoine" },
+        { "label_fr": "Subvention bien classé" },
+        { "label_fr": "Certificats verts" },
+        { "label_fr": "Sol" },
+        { "label_fr": "Autre aides financières" }
+    ]},
+    { "label_fr": "Acoustique", "children": [
+        { "label_fr": "Chassis" },
+        { "label_fr": "Murs et planchers" },
+        { "label_fr": "Toit" },
+        { "label_fr": "Installations techniques" },
+        { "label_fr": "Activité et entreprises" },
+        { "label_fr": "Enquête acousticiens" },
+        { "label_fr": "Autre acoustique" }
+    ]},
+    { "label_fr": "Energie", "children": [
+        { "label_fr": "Chassis" },
+        { "label_fr": "Chauffage" },
+        { "label_fr": "Energies renouvelables", "children": [
+            { "label_fr": "Photovoltaïque" },
+            { "label_fr": "Thermique" },
+            { "label_fr": "PAC" }
+        ]},
+        { "label_fr": "Gestes URE" },
+        { "label_fr": "Isolation", "children": [
+            { "label_fr": "Toit" },
+            { "label_fr": "Murs" },
+            { "label_fr": "Sol" }
+        ]},
+        { "label_fr": "PEB", "children": [
+            { "label_fr": "Certificat" },
+            { "label_fr": "Chauffage" },
+            { "label_fr": "Travaux" }
+        ]},
+        { "label_fr": "Petites Interventions" },
+        { "label_fr": "Ventilation" },
+        { "label_fr": "Surchauffe" },
+        { "label_fr": "Autre énergie" }
+    ]},
+    { "label_fr": "Logement", "children": [
+        { "label_fr": "Copropriétés" },
+        { "label_fr": "Normes incendie" },
+        { "label_fr": "Aides locatives", "children": [
+            { "label_fr": "Allocation loyer" },
+            { "label_fr": "Allocation loyer hors délais" },
+            { "label_fr": "Logements sociaux (SLRB, SISP)" },
+            { "label_fr": "Logements AIS" },
+            { "label_fr": "Logements FdL" },
+            { "label_fr": "Garantie locative (CPAS, FDL)" },
+            { "label_fr": "Structure d'accueil spécialisée" }
+        ]},
+        { "label_fr": "Aides à l'achat", "children": [
+            { "label_fr": "FdL" },
+            { "label_fr": "Citydev" },
+            { "label_fr": "CLT" }
+        ]},
+        { "label_fr": "Aides juridiques", "children": [
+            { "label_fr": "Droit du bail" },
+            { "label_fr": "Renvoi vers autre structure" }
+        ]},
+        { "label_fr": "Insalubrité", "children": [
+            { "label_fr": "Normes logements mis en location" },
+            { "label_fr": "Procédure et service DIRL" }
+        ]},
+        { "label_fr": "Litiges" },
+        { "label_fr": "Logements inoccupés", "children": [
+            { "label_fr": "Cadre légal" },
+            { "label_fr": "Sanctions régionales / communales" },
+            { "label_fr": "Conseils pour mettre fin à l'occupation" }
+        ]},
+        { "label_fr": "Autre logement" }
+    ]},
+    { "label_fr": "Rénovation", "children": [
+        { "label_fr": "Adoucisseur" },
+        { "label_fr": "Couverture/Etanchéité" },
+        { "label_fr": "Egouts" },
+        { "label_fr": "Electricité" },
+        { "label_fr": "Enduit/Bardage" },
+        { "label_fr": "Finitions intérieures" },
+        { "label_fr": "Pathologies" },
+        { "label_fr": "Plomberies" },
+        { "label_fr": "PMR" },
+        { "label_fr": "Stabilité" },
+        { "label_fr": "Structure" },
+        { "label_fr": "Autre rénovation" }
+    ]},
+    { "label_fr": "Patrimoine", "children": [
+        { "label_fr": "Inventaire ascenseurs" },
+        { "label_fr": "Ascenseur" },
+        { "label_fr": "Bien classé" },
+        { "label_fr": "Châssis" },
+        { "label_fr": "Décors intérieurs" },
+        { "label_fr": "Eléments de façades", "children": [
+            { "label_fr": "Balcon" },
+            { "label_fr": "Corniche" },
+            { "label_fr": "Décor peint" },
+            { "label_fr": "Garde-corps en bois" },
+            { "label_fr": "Loggia" },
+            { "label_fr": "Mosaïques" },
+            { "label_fr": "Moulures" },
+            { "label_fr": "Porte" },
+            { "label_fr": "Sgraffites" },
+            { "label_fr": "Vitraux" },
+            { "label_fr": "Autre éléments de façades" }
+        ]},
+        { "label_fr": "Façades" },
+        { "label_fr": "Jardinet" },
+        { "label_fr": "Répertoire des métiers" },
+        { "label_fr": "Autre patrimoine" }
+    ]},
+    { "label_fr": "Urbanisme", "children": [
+        { "label_fr": "Permis" },
+        { "label_fr": "Régularisation" },
+        { "label_fr": "Réglementation", "children": [
+            { "label_fr": "Code civil" },
+            { "label_fr": "Règlement Régional d'Urbanisme" }
+        ]}
+    ]},
+    { "label_fr": "Bâtiment durable", "children": [
+        { "label_fr": "Biodiversité" },
+        { "label_fr": "Citerne d'eau de pluie" },
+        { "label_fr": "Economie circulaire" },
+        { "label_fr": "Matériaux écologiques" },
+        { "label_fr": "Puit" },
+        { "label_fr": "Toiture verte" },
+        { "label_fr": "Ventilation" },
+        { "label_fr": "Autre bâtiment durable" }
+    ]}
+]

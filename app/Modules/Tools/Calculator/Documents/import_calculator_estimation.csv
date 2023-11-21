@@ -1,0 +1,175 @@
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité";;"isolation PIR 10cm (R=4,5w/m2K)";;
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité";;"étanchéité goudronnée";;
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité + pare-vapeur";;"enlèvement de l'étanchéité existante";;
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité + pare-vapeur";;"pare-vapeur goudronné";;
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité + pare-vapeur";;"isolation PIR 10cm (R=4,5w/m2K)";;
+"Toiture";"Toiture plate";"Isolation par l'extérieur + étanchéité + pare-vapeur";;"étanchéité goudronnée";;
+"Toiture";"Toiture plate";"Remplacement de l'étanchéité";;"enlèvement de l'étanchéité existante";;
+"Toiture";"Toiture plate";"Remplacement de l'étanchéité";;"étanchéité goudronnée";;
+"Toiture";"Toiture plate";"Accessoires de toiture";;"rehausse rives maçonnerie et casse goute aluminium";"couvre murs aluminium";
+"Toiture";"Toiture plate";"Accessoires de toiture";;"rehausse rives maçonnerie et casse goute aluminium";"casse goute aluminium";
+"Toiture";"Toiture plate";"Accessoires de toiture";;"rehausse rives maçonnerie et couvre murs en terre cuite";"couvre mur en béton";
+"Toiture";"Toiture plate";"Accessoires de toiture";;"rehausse rives maçonnerie et couvre murs en terre cuite";"couvre mur en terre cuite";
+"Toiture";"Toiture plate";"Accessoires de toiture";;"rehausse rives maçonnerie et couvre murs en terre cuite";"couvre mur en pierre bleue";
+"Toiture";"Toiture plate";"Accessoires de toiture";;"coupole (sans trémie)";;
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"enlèvement couverture + sous toiture";;
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"pare-vapeur";;
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"isolation laine de bois 18cm";"laine de bois 18cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"isolation laine de bois 18cm";"PIR 10cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"sous-toiture souple";;
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"couverture tuiles";"tuiles";
+"Toiture";"Toiture à versants";"Isolation par l'extérieur";;"couverture tuiles";"ardoises";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"isolation extérieure laine de bois 18cm";"laine de bois 18cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"isolation extérieure laine de verre 15cm";"laine de verre 15cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"pare-vapeur";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"structure bois secondaire";"structure bois secondaire";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"structure bois secondaire";"pas de structure bois secondaire";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"parachèvement intérieur";"parachèvement intérieur";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur SANS remplacement de la sous-toiture";;"parachèvement intérieur";"pas de parachèvement intérieur";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"enlèvement couverture + sous toiture";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"pare-vapeur";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"structure bois secondaire";"structure bois secondaire";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"structure bois secondaire";"pas de structure bois secondaire";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"isolation laine de bois 18cm (R=4,5w/m2K)";"laine de bois 18cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"isolation laine de bois 18cm (R=4,5w/m2K)";"PIR 10cm (R=4,5w/m2K)";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"sous-toiture souple";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"couverture tuiles";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"couverture ardoises";;
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"parachèvement intérieur";"parachèvement intérieur";
+"Toiture";"Toiture à versants";"Isolation par l'intérieur AVEC remplacement de la sous-toiture";;"parachèvement intérieur";"pas de parachèvement intérieur";
+"Toiture";"Toiture à versants";"Remplacement de la couverture + sous-toiture";;"enlèvement couverture + sous toiture";;
+"Toiture";"Toiture à versants";"Remplacement de la couverture + sous-toiture";;"sous-toiture";;
+"Toiture";"Toiture à versants";"Remplacement de la couverture + sous-toiture";;"couverture tuiles";"tuiles";
+"Toiture";"Toiture à versants";"Remplacement de la couverture + sous-toiture";;"couverture tuiles";"ardoises";
+"Toiture";"Accessoires";"Remplacement complet de la corniche";;"enlèvement total corniche (bac en bois)";;
+"Toiture";"Accessoires";"Remplacement complet de la corniche";;"enlèvement étanchéité corniche";;
+"Toiture";"Accessoires";"Remplacement complet de la corniche";;"nouveau bac en bois + structure";;
+"Toiture";"Accessoires";"Remplacement complet de la corniche";;"étanchéité du bac de la corniche";;
+"Toiture";"Accessoires";"Remplacement complet de la corniche";;"planche de rive + peinture";;
+"Toiture";"Accessoires";"Etanchéité de la corniche + habillage";;"enlèvement étanchéité corniche";;
+"Toiture";"Accessoires";"Etanchéité de la corniche + habillage";;"étanchéité du bac de la corniche";;
+"Toiture";"Accessoires";"Etanchéité de la corniche + habillage";;"planche de rive + peinture";;
+"Toiture";"Accessoires";"Remplacement vélux";;"velux bois";;
+"Toiture";"Accessoires";"Remplacement vélux";;"velux PUR";;
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"PVC";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"PVC";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"PVC";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"bois";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"bois";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"bois";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"alu";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"alu";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"alu";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"mixte bois/alu";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"mixte bois/alu";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"fenêtres/portes-fenêtres oscillo battantes";;"fenêtres/portes-fenêtres oscillo battantes";"mixte bois/alu";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"PVC";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"PVC";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"PVC";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"bois";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"bois";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"bois";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"alu";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"alu";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"alu";"niveau difficulté 3"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"mixte bois/alu";"niveau difficulté 1"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"mixte bois/alu";"niveau difficulté 2"
+"Menuiseries extérieures";"Fenêtres et portes-fenêtres";"portes-fenêtres coulissantes";;"portes-fenêtres coulissantes";"mixte bois/alu";"niveau difficulté 3"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"PVC";"niveau difficulté 1"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"PVC";"niveau difficulté 2"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"PVC";"niveau difficulté 3"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"bois";"niveau difficulté 1"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"bois";"niveau difficulté 2"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"bois";"niveau difficulté 3"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"alu";"niveau difficulté 1"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"alu";"niveau difficulté 2"
+"Menuiseries extérieures";"Portes";"porte d'entrée";;"porte d'entrée";"alu";"niveau difficulté 3"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"Isolation ";"isolation laine de bois 18cm (R=4,5w/m2K)"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"Isolation ";"isolation laine de verre 15cm (R=4,5w/m2K)"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"pare-vapeur";
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"structure bois secondaire";"structure bois secondaire"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"structure bois secondaire";"pas de structure bois secondaire"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"parachèvement intérieur";"parachèvement intérieur"
+"Façades";"isolation ";"Isolation par l'intérieur";;"Isolation par l'intérieur";"parachèvement intérieur";"pas de parachèvement intérieur"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"Isolation ";"isolation laine de bois 18cm (R=4,5w/m2K)"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"Isolation ";"PSE 16 cm (R=4,5w/m2K)"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"pare-vapeur";
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"structure bois secondaire";"structure bois secondaire"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"structure bois secondaire";"pas de structure bois secondaire"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"pare pluie";
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"parachèvement extérieur";"enduit"
+"Façades";"isolation ";"Isolation par l'extérieur";;"Isolation par l'extérieur";"parachèvement extérieur";"bardage bois"
+"Façades";"revêtement extérieur";"enduisage";;"ciment hydrofuge";;
+"Façades";"revêtement extérieur";"enduisage";;"chaux";;
+"Façades";"revêtement extérieur";"enduisage";;"crépi";;
+"Façades";"revêtement extérieur";"enduisage";;"peinture";;
+"Façades";"revêtement extérieur";"bardage";;"bois";;
+"Façades";"revêtement extérieur";"bardage";;"fibre ciment";;
+"Façades";"revêtement extérieur";"bardage";;"structure bois secondaire";;
+"Façades";"revêtement extérieur";"hydrofugation";;"par pulvérisation";;
+"Façades";"revêtement extérieur";"rejointoyage";;"rejointoyage ciment";;
+"Façades";"Accessoires";"nouveau seuils";;"aluminium";;
+"Façades";"Accessoires";"nouveau seuils";;"pierre bleue";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"démolition du sol (finition-chape-dalle)";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"terrassement 15cm";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"dalle de sol";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"isolation PUR 10cm";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"chape ciment";;
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"finition de sol";"bois";
+"Sol";"isolation ";"isolation d'une dalle de sol sur terre plein";;"finition de sol";"carrelage";
+"Sol";"isolation ";"isolation d'un plancher + parquet";;"isolation de verre 15cm";"laine de verre";
+"Sol";"isolation ";"isolation d'un plancher + parquet";;"isolation de verre 15cm";"laine de bois";
+"Sol";"isolation ";"isolation d'un plancher + parquet";;"panneautage en bois";;
+"Sol";"isolation ";"isolation d'un plancher + parquet";;"parquet";;
+"Sol";"isolation ";"isolation d'un plafond de cave";;"isolation";"laine de verre";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"isolation";"laine de bois";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"isolation";"PUR/PIR";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"avec freine -vapeur";"avec panneau OSB";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"avec freine -vapeur";"sans panneaux OSB";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"avec finition plaques de platre";"avec finition plaques de platre";
+"Sol";"isolation ";"isolation d'un plafond de cave";;"avec finition plaques de platre";"sans finition plaques de platre";
+"Electricité";"conformité électrique";"installation lourde (equipements + cablages + tableaux divisionnaire)";;;;
+"Electricité";"conformité électrique";"installation légère (petits équipements)";;;;
+"Electricité";"conformité électrique";"remplacement compteurs électriques";;;;
+"Electricité";"conformité électrique";"rapport de conformité électrique + schémas unifilaires";;;;
+"Electricité";"Panneaux photovoltaïques";"panneaux";;;;
+"Chauffage / ECS / Ventilation";"chaudière ";"chaudière gaz condensation ";;"puissance 1";;
+"Chauffage / ECS / Ventilation";"chaudière ";"chaudière gaz condensation ";;"puissance 2";;
+"Chauffage / ECS / Ventilation";"chaudière ";"chaudière gaz condensation ";;"puissance 3";;
+"Chauffage / ECS / Ventilation";"PAC ";"air/eau";;"puissance 1";;
+"Chauffage / ECS / Ventilation";"PAC ";"air/eau";;"puissance 2";;
+"Chauffage / ECS / Ventilation";"PAC ";"air/eau";;"puissance 3";;
+"Chauffage / ECS / Ventilation";"Boiler ECS relié";"gaz";;"100l";;
+"Chauffage / ECS / Ventilation";"Boiler ECS relié";"gaz";;"200l";;
+"Chauffage / ECS / Ventilation";"Boiler ECS relié";"gaz";;"300l";;
+"Chauffage / ECS / Ventilation";"Boiler ECS indépendant";"gaz";;"100l";;
+"Chauffage / ECS / Ventilation";"Boiler ECS indépendant";"gaz";;"200l";;
+"Chauffage / ECS / Ventilation";"Boiler ECS indépendant";"gaz";;"300l";;
+"Chauffage / ECS / Ventilation";"Boiler thermodynamique";"gaz";;"100l";;
+"Chauffage / ECS / Ventilation";"Boiler thermodynamique";"gaz";;"200l";;
+"Chauffage / ECS / Ventilation";"Boiler thermodynamique";"gaz";;"300l";;
+"Chauffage / ECS / Ventilation";"équipements";"chauffage sol";;;;
+"Chauffage / ECS / Ventilation";"équipements";"radiateur + canalisation";;;;
+"Chauffage / ECS / Ventilation";"équipements";"radiateur basse température + canalisations";;;;
+"Chauffage / ECS / Ventilation";"accessoires";"vannes thermostatiques";;;;
+"Chauffage / ECS / Ventilation";"accessoires";"thermostat";;;;
+"Chauffage / ECS / Ventilation";"accessoires";"tubage";;;;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"extracteur individuel";;;;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC simple flux";;"2 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC simple flux";;"3 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC simple flux";;"4 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC simple flux";;"5 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC double flux";;"2 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC double flux";;"3 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC double flux";;"4 pièces humides";;
+"Chauffage / ECS / Ventilation";"ventilation mécanique";"VMC double flux";;"5 pièces humides";;
+"Plomberie";"Equipements sanitaires";"Lavabo ";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"Lavabo ";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"Douche";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"Douche";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"Baignoire";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"Baignoire";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"WC sur pied";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"WC sur pied";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"WC suspendu";;"sans alimentation / évacuation";;
+"Plomberie";"Equipements sanitaires";"WC suspendu";;"sans alimentation / évacuation";;

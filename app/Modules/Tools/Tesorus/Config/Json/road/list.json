@@ -1,0 +1,34 @@
+{
+    "accomp": {
+        "label": "Types d'accompagnement",
+        "table": "tesorus_road_accomp"
+    },
+    "batiment": {
+        "label": "Eléments du bâtiment",
+        "table": "tesorus_road_batiment"
+    },
+    "calculator": {
+        "label": "Postes du module Calculator",
+        "table": "tesorus_road_calculator"
+    },
+    "demande": {
+        "label": "Types de demande",
+        "table": "tesorus_road_demande"
+    },
+    "eco_impact": {
+        "label": "Efforts environnementaux",
+        "table": "tesorus_road_eco_impact"
+    },
+    "them": {
+        "label": "Thématiques",
+        "table": "tesorus_road_them"
+    },
+    "thematique": {
+        "label": "Nouvelles thématiques",
+        "table": "tesorus_road_thematique"
+    },
+    "work": {
+        "label": "Types de travaux",
+        "table": "tesorus_road_work"
+    }
+}

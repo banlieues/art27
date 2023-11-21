@@ -1,0 +1,39 @@
+{
+    "id_var": {
+        "type": "hidden"
+    },
+    "ref": {
+        "label_fr": "Référence",
+        "type": "text",
+        "isRequired": 1,
+        "form_type" : {
+            "new": {
+                "annotation": "La référence doit être sans accent, caractères spéciaux, ni espace. Une fois encodée, elle ne pourra plus être modifiée."
+            },
+            "details": {
+                "isReadonly": 1
+            }
+        },
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },   
+    "label": {
+        "label_fr": "Label",
+        "type": "text",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "comment" : {
+        "label_fr": "Notes",
+        "type": "textarea",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    }
+}

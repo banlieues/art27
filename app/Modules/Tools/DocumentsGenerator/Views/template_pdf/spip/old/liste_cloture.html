@@ -1,0 +1,59 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+	<?php gros_titre('[(#TITRE|supprimer_numero)] - #DATES_RA à #LIEU*'); ?>
+	<script type="text/php">
+        if ( isset($pdf) ) {
+	  $date = date("d-m-Y");
+          $font = Font_Metrics::get_font("helvetica");
+          $pdf->page_text(250, 550, "Numéro d'activité : #IDACT - Page: {PAGE_NUM} de {PAGE_COUNT} - Liste éditée le : $date", $font, 10, array(0,0,0));
+        }
+        </script>
+</BOUCLE_getTitre>
+
+<h2>Inscrits</h2>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th align="left"><:gestion:age:></th>			
+			<th align="left"><:gestion:statut:></th>
+			<th align="left"><:gestion:adherent:></th>
+			<th align="left"><:gestion:menu:></th>
+			<th align="left"><:gestion:remarque:></th>
+			<th align="left"><:gestion:adresse_facturation:></th>
+			<th align="left"><:gestion:etablissement:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{par statutsuivi}{par nom}>
+
+	<tr>
+		<td align="left" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="left" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="left" width="25%" style="border:1px solid black">#NOM #PRENOM</td>
+		<td align="left" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}choixsiegal{2015,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}})]</td>		
+		<td align="left" width="3%" style="border:1px solid black">[(#STATUTSUIVI|statut_suivi)]</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#ADHERENT|choixsiegal{Y,"X",""})]</td>
+		<td align="left" width="3%" style="border:1px solid black">[(#ALIMENTATION)]</td>
+		<td align="left" width="3%" style="border:1px solid black">[(#REMARQUES_INSCRIPTION)]</td>
+		<td align="left" style="border:1px solid black">#ADRESSE_FACTURATION</td>
+		<td align="left" style="border:1px solid black">#ETUDE_ETABLISSEMENT</td>
+
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>

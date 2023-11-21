@@ -1,0 +1,147 @@
+{
+    "id_answer": {
+        "name": "id_answer",
+        "type": "int",
+        "max_length": 11,
+        "default": "0",
+        "primary_key": 1
+    },
+    "date_envoi": {
+        "name": "date_envoi",
+        "type": "timestamp",
+        "max_length": null,
+        "default": "current_timestamp()"
+    },
+    "date_consultation": {
+        "name": "date_consultation",
+        "type": "timestamp",
+        "max_length": null,
+        "default": "null"
+    },
+    "date_reponse": {
+        "name": "date_reponse",
+        "type": "timestamp",
+        "max_length": null,
+        "default": "null"
+    },
+    "id_request_type": {
+        "name": "id_request_type",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_contact_profil": {
+        "name": "id_contact_profil",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_demande": {
+        "name": "id_demande",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_statut_answer": {
+        "name": "id_statut_answer",
+        "type": "int",
+        "max_length": 11,
+        "default": "1"
+    },
+    "token": {
+        "name": "token",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "is_first_time": {
+        "name": "is_first_time",
+        "type": "tinyint",
+        "max_length": 2,
+        "default": "null"
+    },
+    "answer_time": {
+        "name": "answer_time",
+        "type": "tinyint",
+        "max_length": 2,
+        "default": "null"
+    },
+    "has_solution_concrete": {
+        "name": "has_solution_concrete",
+        "type": "tinyint",
+        "max_length": 2,
+        "default": "null"
+    },
+    "conseil_connaissance": {
+        "name": "conseil_connaissance",
+        "type": "tinyint",
+        "max_length": 2,
+        "default": "null"
+    },
+    "source_personne": {
+        "name": "source_personne",
+        "type": "text",
+        "default": "null"
+    },
+    "delai_visite": {
+        "name": "delai_visite",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "rapport_ecrit_appreciation": {
+        "name": "rapport_ecrit_appreciation",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "rapport_ecrit_accessibilite": {
+        "name": "rapport_ecrit_accessibilite",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "delai_visite_rapport": {
+        "name": "delai_visite_rapport",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "accessible_message": {
+        "name": "accessible_message",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "plan_travaux": {
+        "name": "plan_travaux",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "delai_rdv": {
+        "name": "delai_rdv",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "appreciation_rdv": {
+        "name": "appreciation_rdv",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "qualite_expose": {
+        "name": "qualite_expose",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "qualite_orateurs": {
+        "name": "qualite_orateurs",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "suggestions": {
+        "name": "suggestions",
+        "type": "text",
+        "default": "null"
+    }
+}

@@ -1,0 +1,189 @@
+{
+    "id_lang": {
+        "table": "liste_langue"
+    },
+    "id_file_lang": {
+        "table": "liste_langue"
+    },
+    "id_status" : [
+        { "id": 1, "rank": 1, "label_fr": "À traiter" },
+        { "id": 2, "rank": 2, "label_fr": "Incomplet" },
+        { "id": 3, "rank": 3, "label_fr": "Agréé" },
+        { "id": 4, "rank": 4, "label_fr": "Refusé" },
+        { "id": 5, "rank": 5, "label_fr": "Retiré" }
+    ],
+    "id_juridic_form" : [
+        { "id": 1, "rank": 1, "label_fr": "SA" },
+        { "id": 2, "rank": 2, "label_fr": "SRL" },
+        { "id": 3, "rank": 3, "label_fr": "ASBL" }
+    ],
+    "ids_access_prof" : [
+        { 
+            "id": 1,
+            "rank": 1,
+            "label_fr": "Le gros-oeuvre (art. 7 à 9 AR 2007)", 
+            "label_nl": "De ruwbouw (art. 7 tot 9 KB 2007)" 
+        },
+        { 
+            "id": 2,
+            "rank": 2,
+            "label_fr": "Les activités de plafonnage, de cimentage et de pose de chapes (art. 10 à 12 AR 2007)", 
+            "label_nl": "De stukadoor-, cementeer- en dekvloeractiviteiten (art. 10 tot 12 KB 2007)" 
+        },
+        { 
+            "id": 3,
+            "rank": 3,
+            "label_fr": "Les activités de carrelage, du marbre et de la pierre naturelle (art. 13 à 15 AR 2007)", 
+            "label_nl": "De tegel-, marmer- en natuursteenactiviteiten (art. 13 tot 15 KB 2007)" 
+        },
+        { 
+            "id": 4,
+            "rank": 4,
+            "label_fr": "Les activités de toiture et d'étanchéité (art. 16 à 18 AR 2007)", 
+            "label_nl": "De dakdekkers- en waterdichtingsactiviteiten (art. 16 tot 18 KB 2007)" 
+        },
+        { 
+            "id": 5,
+            "rank": 5,
+            "label_fr": "Les activités de menuiserie et vitrerie (art. 19 à 21 AR 2007)", 
+            "label_nl": "De schrijnwerkers- en glazenmakersactiviteiten (art. 19 tot 21 KB 2007)" 
+        },
+        { 
+            "id": 6,
+            "rank": 6,
+            "label_fr": "Les activités de finition (art 22 à 24 AR 2007)", 
+            "label_nl": "De eindafwerkingsactiviteiten (art. 22 tot 24 KB 2007)" 
+        },
+        { 
+            "id": 7,
+            "rank": 7,
+            "label_fr": "Les activités d'installation de chauffage central, de climatisation, de gaz et de sanitaire (art. 25 à 27 AR 2007)", 
+            "label_nl": "De installatieactiviteiten voor centrale verwarming, klimaatregeling, gas en sanitair (art. 25 tot 27 KB 2007)" 
+        },
+        { 
+            "id": 8,
+            "rank": 8,
+            "label_fr": "Les activités d'électrotechnique (art. 28 à 30 AR 2007)", 
+            "label_nl": "De elektrotechnische activiteiten (art. 28 tot 30 KB 2007)" 
+        },
+        { 
+            "id": 9,
+            "rank": 9,
+            "label_fr": "Les activités d'entreprise générale (art. 31 à 33 AR 2007)", 
+            "label_nl": "Algemene aannemingsactiviteiten (art. 31 tot 33 KB 2007)" 
+        }
+    ],
+    "id_contact_source" : [
+        { "id": 1, "rank": 1, "label_fr": "Formulaire du siteweb" },
+        { "id": 2, "rank": 2, "label_fr": "Téléphone" },
+        { "id": 3, "rank": 3, "label_fr": "Email" }
+    ],
+    "ids_contact_type" : [
+        { "id": 1, "rank": 1, "label_fr": "Téléphone" },
+        { "id": 2, "rank": 2, "label_fr": "Email" }
+    ],
+    "ids_contact_schedule_day": [
+        { "id": 1, "rank": 1, "label_fr": "Lundi" },
+        { "id": 2, "rank": 2, "label_fr": "Mardi" },
+        { "id": 3, "rank": 3, "label_fr": "Mercredi" },
+        { "id": 4, "rank": 4, "label_fr": "Jeudi" },
+        { "id": 5, "rank": 5, "label_fr": "Vendredi" }
+    ],
+    "ids_contact_schedule_time": [
+        { "id": 1, "rank": 1, "label_fr": "Tôt le matin" },
+        { "id": 2, "rank": 2, "label_fr": "Matinée" },
+        { "id": 3, "rank": 3, "label_fr": "Temps de midi" },
+        { "id": 4, "rank": 4, "label_fr": "Début d'après-midi" },
+        { "id": 5, "rank": 5, "label_fr": "Fin d'après-midi" },
+        { "id": 6, "rank": 6, "label_fr": "Soirée" }
+    ],
+    "ids_contact_schedule_clock": [
+        { "id": 1, "rank": 1, "label_fr": "7h à 9h" },
+        { "id": 2, "rank": 2, "label_fr": "9h à 12h" },
+        { "id": 3, "rank": 3, "label_fr": "12h à 14h" },
+        { "id": 4, "rank": 4, "label_fr": "14h à 16h" },
+        { "id": 5, "rank": 5, "label_fr": "16h à 18h" },
+        { "id": 6, "rank": 6, "label_fr": "18h à 20h" }
+    ],
+    "ids_contact_schedule": [
+        { "id": 1, "rank": 1, "id_day": 1, "id_time": 1 },
+        { "id": 2, "rank": 2, "id_day": 1, "id_time": 2 },
+        { "id": 3, "rank": 3, "id_day": 1, "id_time": 3 },
+        { "id": 4, "rank": 4, "id_day": 1, "id_time": 4 },
+        { "id": 5, "rank": 5, "id_day": 1, "id_time": 5 },
+        { "id": 6, "rank": 6, "id_day": 1, "id_time": 6 },
+        { "id": 7, "rank": 7, "id_day": 2, "id_time": 1 },
+        { "id": 8, "rank": 8, "id_day": 2, "id_time": 2 },
+        { "id": 9, "rank": 9, "id_day": 2, "id_time": 3 },
+        { "id": 10, "rank": 10, "id_day": 2, "id_time": 4 },
+        { "id": 11, "rank": 11, "id_day": 2, "id_time": 5 },
+        { "id": 12, "rank": 12, "id_day": 2, "id_time": 6 },
+        { "id": 13, "rank": 13, "id_day": 3, "id_time": 1 },
+        { "id": 14, "rank": 14, "id_day": 3, "id_time": 2 },
+        { "id": 15, "rank": 15, "id_day": 3, "id_time": 3 },
+        { "id": 16, "rank": 16, "id_day": 3, "id_time": 4 },
+        { "id": 17, "rank": 17, "id_day": 3, "id_time": 5 },
+        { "id": 18, "rank": 18, "id_day": 3, "id_time": 6 },
+        { "id": 19, "rank": 19, "id_day": 4, "id_time": 1 },
+        { "id": 20, "rank": 20, "id_day": 4, "id_time": 2 },
+        { "id": 21, "rank": 21, "id_day": 4, "id_time": 3 },
+        { "id": 22, "rank": 22, "id_day": 4, "id_time": 4 },
+        { "id": 23, "rank": 23, "id_day": 4, "id_time": 5 },
+        { "id": 24, "rank": 24, "id_day": 4, "id_time": 6 },
+        { "id": 25, "rank": 25, "id_day": 5, "id_time": 1 },
+        { "id": 26, "rank": 26, "id_day": 5, "id_time": 2 },
+        { "id": 27, "rank": 27, "id_day": 5, "id_time": 3 },
+        { "id": 28, "rank": 28, "id_day": 5, "id_time": 4 },
+        { "id": 29, "rank": 29, "id_day": 5, "id_time": 5 },
+        { "id": 30, "rank": 30, "id_day": 5, "id_time": 6 }
+    ],
+    "ids_building_type" : [
+        { "id": 1, "rank": 1, "label_fr": "Maison unifamiliale" },
+        { "id": 2, "rank": 2, "label_fr": "Appartements" },
+        { "id": 3, "rank": 3, "label_fr": "Copropriété (immeuble à appartements)" }
+    ],
+    "ids_build_circular" : [
+        { "id": 1, "rank": 1, "label_fr": "Connaissance" },
+        { "id": 2, "rank": 2, "label_fr": "Accompagnement" }
+    ],
+    "ids_durability_label" : [
+        { "id": 1, "rank": 1, "label_fr": "Label Construction Quality (CQ-Label)" },
+        { "id": 2, "rank": 2, "label_fr": "Label Energiebewuste (EBA-Label)" },
+        { "id": 3, "rank": 3, "label_fr": "Rescert" }
+    ],
+    "ids_ecological_dim" : [
+        { "id": 1, "rank": 1, "label_fr": "Isolants biosourcés" },
+        { "id": 2, "rank": 2, "label_fr": "Peintures et enduits naturels" },
+        { "id": 3, "rank": 3, "label_fr": "Produits et matériaux labellisés" },
+        { "id": 4, "rank": 4, "label_fr": "Matériaux recyclés" },
+        { "id": 5, "rank": 5, "label_fr": "Réemploi des matériaux" },
+        { "id": 6, "rank": 6, "label_fr": "Gestion des déchets" },
+        { "id": 7, "rank": 7, "label_fr": "Limitation des nuisances pour l'environnement" }
+    ],
+    "ids_declaration" : [
+        { 
+            "id": 1,
+            "rank": 1,
+            "label_fr": "Etre enregistré auprès de la Banque-Carrefour des Entreprises (BCE).", 
+            "label_nl": "Ingeschreven te zijn bij de Kruispuntbank van Ondernemingen (KBO)." 
+        },
+        { 
+            "id": 2,
+            "rank": 2,
+            "label_fr": "Payer correctement ses cotisations de sécurité sociale et respecter scrupuleusement ses obligations fiscales.", 
+            "label_nl": "Zijn socialezekerheidsbijdragen correct te betalen en zijn fiscale verplichtingen nauwgezet na te komen." 
+        },
+        { 
+            "id": 3,
+            "rank": 3,
+            "label_fr": "Disposer des assurances nécessaires à l'exécution des travaux pour lesquels l'entreprise se porte candidate.", 
+            "label_nl": "Over de nodige verzekeringen te beschikken voor de uitvoering van de werken waarvoor de onderneming zich kandidaat stelt." 
+        },
+        { 
+            "id": 4,
+            "rank": 4,
+            "label_fr": "Respecter la charte d'engagement.", 
+            "label_nl": "Het verbintenishandvest na te leven." 
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+[
+    { "label_fr": "Information/conseil" },
+    { "label_fr": "Visite" },
+    { "label_fr": "Accompagnement", "children": [
+        { "label_fr": "Général" },
+        { "label_fr": "Prêt Vert" },
+        { "label_fr": "Facilitateur urbanisme" },
+        { "label_fr": "Petites copropriétés" },
+        { "label_fr": "Be-exemplary" },
+        { "label_fr": "Allocation loyer" },
+        { "label_fr": "Petit patrimoine" },
+        { "label_fr": "Facilitation locataire-propriétaire" }
+    ]}
+]

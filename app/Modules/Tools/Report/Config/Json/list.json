@@ -1,0 +1,10 @@
+{
+    "ids_road_them": {
+        "table": "tesorus_road_them"
+    },
+    "id_level": [
+        { "id": 1, "label_fr": "schéma", "rank": 1, "var": "schema" },
+        { "id": 2, "label_fr": "modèle", "rank": 2, "var": "template" },
+        { "id": 3, "label_fr": "publication", "rank": 3, "var": "publication" }
+    ]
+}

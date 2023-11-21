@@ -1,0 +1,68 @@
+{
+    "id_report": {
+        "name": "id_report",
+        "type": "int",
+        "max_length": 11,
+        "default": "null",
+        "primary_key": 1
+    },
+    "id_level": {
+        "name": "id_level",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_parent": {
+        "name": "id_parent",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "label": {
+        "name": "label",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "ids_road_them": {
+        "name": "ids_road_them",
+        "type": "text",
+        "default": "null"
+    },
+    "id_person": {
+        "name": "id_person",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "id_request": {
+        "name": "id_request",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "comment": {
+        "name": "comment",
+        "type": "text",
+        "default": "null"
+    },
+    "created_at": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "created_by": {
+        "name": "created_by",
+        "type": "int",
+        "max_length": 11
+    },
+    "updated_at": {
+        "name": "updated_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "updated_by": {
+        "name": "updated_by",
+        "type": "int",
+        "max_length": 11
+    }
+}

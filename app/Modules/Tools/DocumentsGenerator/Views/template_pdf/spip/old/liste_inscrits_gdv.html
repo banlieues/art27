@@ -1,0 +1,108 @@
+<?php 
+include_spip('inc/presentation');
+include_spip('gestion_autorisation');
+?>
+
+<div class="nettoyeur"></div>
+
+[(#REM) On récupère le titre de l'article pour l'afficher dans le titre de le PDF ]
+<BOUCLE_getTitre(ARTICLES){id_activity}>
+	<?php gros_titre('[(#TITRE|supprimer_numero)] - #DATES_RA à #LIEU*'); ?>
+	<script type="text/php">
+        if ( isset($pdf) ) {
+	  $date = date("d-m-Y");
+          $font = Font_Metrics::get_font("helvetica");
+          $pdf->page_text(250, 550, "Numéro d'activité : #IDACT - Page: {PAGE_NUM} de {PAGE_COUNT} - Liste éditée le : $date", $font, 10, array(0,0,0));
+        }
+        </script>
+</BOUCLE_getTitre>
+
+<h2>Inscrits</h2>
+<B_participants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th align="center">N°</th>
+			<th align="center"><:gestion:sexe:></th>
+			<th align="center"><:gestion:prenom:> - <:gestion:nom:></th>
+			<th align="center">Naissance</th>
+			<th align="center"><:gestion:age:></th>
+			<th align="center">CP - <:gestion:ville:></th>		
+			<th align="center">Adh.</th>
+			<th align="center">Alim.</th>
+			<th align="center"><:gestion:remarque:></th>
+			<th align="center"><:gestion:adresse_facturation:></th>
+			<th align="center">Employeur</th>
+			<th align="center"><:gestion:profession:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_participants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{par statutsuivi}{par nom}{statutsuivi=I}>
+
+	<tr>
+		<td align="center" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="center" width="3%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="center" width="15%" style="border:1px solid black">#PRENOM #NOM</td>
+		<td align="center" width="10%" style="border:1px solid black">[(#DATE_NAISSANCE|affdate{'d-m-Y'})]</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}choixsiegal{2015,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}>{100}|?{"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}})]</td>		
+		<td align="center" width="10%" style="border:1px solid black">#CODEPOSTAL #LOCALITE</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#ADHERENT|choixsiegal{Y,"X",""})]</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#ALIMENTATION)]</td>
+		<td align="center" width="10%" style="border:1px solid black">[(#REMARQUES_INSCRIPTION)]</td>
+		<td align="center" width="10%" style="border:1px solid black">#ADRESSE_FACTURATION</td>
+		<td align="center" width="10%" style="border:1px solid black">#ETUDE_ETABLISSEMENT</td>
+		<td align="center" width="20%" style="border:1px solid black">[(#PROFESSION|statut_ONE)]</td>
+
+	</tr>
+</BOUCLE_participants>
+	</tbody>
+</table>
+</B_participants>
+<p>Il n'y a aucune personne inscrite à cette action.</p>
+<//B_participants>
+
+<h2>Accompagants</h2>
+<B_accompagnants>
+<table class="arial2" cellpadding="2" cellspacing="0" style="width: 100%; border: 0px;">
+	<thead>
+		<tr>
+			<th align="center">N°</th>
+			<th align="center"><:gestion:sexe:></th>
+			<th align="center"><:gestion:prenom:> - <:gestion:nom:></th>
+			<th align="center">Naissance</th>
+			<th align="center"><:gestion:age:></th>
+			<th align="center">CP - <:gestion:ville:></th>		
+			<th align="center">Adh.</th>
+			<th align="center">Alim.</th>
+			<th align="center"><:gestion:remarque:></th>
+			<th align="center"><:gestion:adresse_facturation:></th>
+			<th align="center">Employeur</th>
+			<th align="center"><:gestion:profession:></th>
+		</tr>
+	</thead>
+	<tbody>
+	
+<BOUCLE_accompagnants(auteurs_articles auteurs articles){id_activity}{inscrit=Y}{par statutsuivi}{par nom}{statutsuivi=B}>
+
+	<tr>
+		<td align="center" width="3%" style="border:1px solid black">#COMPTEUR_BOUCLE. </td>
+		<td align="center" width="4%" style="border:1px solid black">[(#CODECOURTOISIE|code_courtoisie)]</td>
+		<td align="center" width="15%" style="border:1px solid black">#PRENOM #NOM</td>
+		<td align="center" width="10%" style="border:1px solid black">[(#DATE_NAISSANCE|affdate{'d-m-Y'})]</td>
+		<td align="center" width="4%" style="border:1px solid black">[(#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}choixsiegal{2015,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}|choixsiegal{0,"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}>{100}|?{"",#DATE_NAISSANCE|agedebut{#DATE_DEBUT}}})]</td>		
+		<td align="center" width="10%" style="border:1px solid black">#CODEPOSTAL #LOCALITE</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#ADHERENT|choixsiegal{Y,"X",""})]</td>
+		<td align="center" width="3%" style="border:1px solid black">[(#ALIMENTATION)]</td>
+		<td align="center" width="10%" style="border:1px solid black">[(#REMARQUES_INSCRIPTION)]</td>
+		<td align="center" width="10%" style="border:1px solid black">#ADRESSE_FACTURATION</td>
+		<td align="center" width="10%" style="border:1px solid black">#ETUDE_ETABLISSEMENT</td>
+		<td align="center" width="20%" style="border:1px solid black">[(#PROFESSION|statut_ONE)]</td>
+
+	</tr>
+</BOUCLE_accompagnants>
+	</tbody>
+</table>
+</B_accompagnants>
+<p>Il n'y a aucune personne accompagnante à cette action.</p>
+<//B_accompagnants>

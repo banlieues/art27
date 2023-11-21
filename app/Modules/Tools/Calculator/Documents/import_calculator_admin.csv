@@ -1,0 +1,147 @@
+Toiture;Toiture plate;enlèvement de l'étanchéité existante;;;;m2;40 €;;30 €;33 €;41 €;37 €;41 €;51 €;36 €;39 €;49 €
+Toiture;Toiture plate;pare-vapeur goudronné;;;;mct;93 €;;70 €;77 €;96 €;87 €;95 €;119 €;83 €;92 €;115 €
+Toiture;Toiture plate;isolation PIR 10cm (R=4,5w/m2K);;;;m2;150 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Toiture;Toiture plate;étanchéité goudronnée;;;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Toiture;Toiture plate;rehausse rives maçonnerie et casse goute aluminium;couvre murs aluminium;;;ml;331 €;;250 €;275 €;344 €;309 €;340 €;425 €;298 €;328 €;409 €
+Toiture;Toiture plate;rehausse rives maçonnerie et casse goute aluminium;casse goute aluminium;;;ml;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Toiture;Toiture plate;rehausse rives maçonnerie et couvre murs en terre cuite;couvre mur en béton;;;ml;530 €;;400 €;440 €;550 €;495 €;545 €;681 €;476 €;524 €;655 €
+Toiture;Toiture plate;rehausse rives maçonnerie et couvre murs en terre cuite;couvre mur en terre cuite;;;ml;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Toiture;Toiture plate;rehausse rives maçonnerie et couvre murs en terre cuite;couvre mur en pierre bleue;;;ml;794 €;;600 €;660 €;825 €;743 €;817 €;1.021 €;715 €;786 €;983 €
+Toiture;Toiture plate;coupole (sans trémie);;;;m2;1.191 €;;900 €;990 €;1.238 €;1.114 €;1.225 €;1.531 €;1.072 €;1.179 €;1.474 €
+Toiture;Toiture à versants;enlèvement couverture + sous toiture;;;;m2;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Toiture;Toiture à versants;pare-vapeur;;;;m2;53 €;;40 €;44 €;55 €;50 €;54 €;68 €;48 €;52 €;66 €
+Toiture;Toiture à versants;laine de bois 18cm (R=4,5w/m2K);;;;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Toiture;Toiture à versants;laine de verre 15cm (R=4,5w/m2K);;;;m2;662 €;;500 €;550 €;688 €;619 €;681 €;851 €;596 €;655 €;819 €
+Toiture;Toiture à versants;PIR 10cm (R=4,5w/m2K);;;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Toiture;Toiture à versants;sous-toiture souple;;;;m2;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Toiture;Toiture à versants;sous-toiture en fibres de bois;;;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Toiture;Toiture à versants;structure bois secondaire;;;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Toiture;Toiture à versants;parachèvement intérieur;;;;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Toiture;Toiture à versants;tuiles;;;;m2;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Toiture;Toiture à versants;ardoises;;;;m2;212 €;;160 €;176 €;220 €;198 €;218 €;272 €;191 €;210 €;262 €
+Toiture;Accessoires;enlèvement total corniche (bac en bois);;;;mct;199 €;;150 €;165 €;206 €;186 €;204 €;255 €;179 €;197 €;246 €
+Toiture;Accessoires;enlèvement étanchéité corniche;;;;mct;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Toiture;Accessoires;nouveau bac en bois + structure;;;;mct;199 €;;150 €;165 €;206 €;186 €;204 €;255 €;179 €;197 €;246 €
+Toiture;Accessoires;étanchéité du bac de la corniche;;;;mct;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Toiture;Accessoires;planche de rive + peinture;;;;mct;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Toiture;Accessoires;velux bois ;;;;m2;1.191 €;;900 €;990 €;1.238 €;1.114 €;1.225 €;1.531 €;1.072 €;1.179 €;1.474 €
+Toiture;Accessoires;velux PUR;;;;m2;1.589 €;;1.200 €;1.320 €;1.650 €;1.485 €;1.634 €;2.042 €;1.429 €;1.572 €;1.965 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;PVC;niveau difficulté 1;;m2;530 €;;400 €;440 €;550 €;495 €;545 €;681 €;476 €;524 €;655 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;PVC;niveau difficulté 2;;m2;596 €;;450 €;495 €;619 €;557 €;613 €;766 €;536 €;590 €;737 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;PVC;niveau difficulté 3;;m2;662 €;;500 €;550 €;688 €;619 €;681 €;851 €;596 €;655 €;819 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;bois;niveau difficulté 1;;m2;728 €;;550 €;605 €;756 €;681 €;749 €;936 €;655 €;721 €;901 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;bois;niveau difficulté 2;;m2;794 €;;600 €;660 €;825 €;743 €;817 €;1.021 €;715 €;786 €;983 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;bois;niveau difficulté 3;;m2;860 €;;650 €;715 €;894 €;804 €;885 €;1.106 €;774 €;852 €;1.065 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;alu;niveau difficulté 1;;m2;927 €;;700 €;770 €;963 €;866 €;953 €;1.191 €;834 €;917 €;1.146 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;alu;niveau difficulté 2;;m2;993 €;;750 €;825 €;1.031 €;928 €;1.021 €;1.276 €;893 €;983 €;1.228 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;alu;niveau difficulté 3;;m2;1.059 €;;800 €;880 €;1.100 €;990 €;1.089 €;1.361 €;953 €;1.048 €;1.310 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;mixte bois/alu;niveau difficulté 1;;m2;1.125 €;;850 €;935 €;1.169 €;1.052 €;1.157 €;1.446 €;1.012 €;1.114 €;1.392 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;mixte bois/alu;niveau difficulté 2;;m2;1.191 €;;900 €;990 €;1.238 €;1.114 €;1.225 €;1.531 €;1.072 €;1.179 €;1.474 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;fenêtres/portes-fenêtres oscillo battantes;mixte bois/alu;niveau difficulté 3;;m2;1.258 €;;950 €;1.045 €;1.306 €;1.176 €;1.293 €;1.616 €;1.132 €;1.245 €;1.556 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;PVC;niveau difficulté 1;;m2;530 €;;400 €;440 €;550 €;495 €;545 €;681 €;476 €;524 €;655 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;PVC;niveau difficulté 2;;m2;596 €;;450 €;495 €;619 €;557 €;613 €;766 €;536 €;590 €;737 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;PVC;niveau difficulté 3;;m2;662 €;;500 €;550 €;688 €;619 €;681 €;851 €;596 €;655 €;819 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;bois;niveau difficulté 1;;m2;728 €;;550 €;605 €;756 €;681 €;749 €;936 €;655 €;721 €;901 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;bois;niveau difficulté 2;;m2;794 €;;600 €;660 €;825 €;743 €;817 €;1.021 €;715 €;786 €;983 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;bois;niveau difficulté 3;;m2;860 €;;650 €;715 €;894 €;804 €;885 €;1.106 €;774 €;852 €;1.065 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;alu;niveau difficulté 1;;m2;927 €;;700 €;770 €;963 €;866 €;953 €;1.191 €;834 €;917 €;1.146 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;alu;niveau difficulté 2;;m2;993 €;;750 €;825 €;1.031 €;928 €;1.021 €;1.276 €;893 €;983 €;1.228 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;alu;niveau difficulté 3;;m2;1.059 €;;800 €;880 €;1.100 €;990 €;1.089 €;1.361 €;953 €;1.048 €;1.310 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;mixte bois/alu;niveau difficulté 1;;m2;1.125 €;;850 €;935 €;1.169 €;1.052 €;1.157 €;1.446 €;1.012 €;1.114 €;1.392 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;mixte bois/alu;niveau difficulté 2;;m2;1.191 €;;900 €;990 €;1.238 €;1.114 €;1.225 €;1.531 €;1.072 €;1.179 €;1.474 €
+Menuiseries extérieures;Fenêtres et portes-fenêtres;portes-fenêtres coulissantes;mixte bois/alu;niveau difficulté 3;;m2;1.258 €;;950 €;1.045 €;1.306 €;1.176 €;1.293 €;1.616 €;1.132 €;1.245 €;1.556 €
+Menuiseries extérieures;Portes;porte d'entrée;PVC;niveau difficulté 1;;m2;1.307 €;;2.000 €;950 €;1.045 €;1.306 €;1.176 €;1.293 €;1.616 €;1.132 €;1.245 €
+Menuiseries extérieures;Portes;porte d'entrée;PVC;niveau difficulté 2;;m2;3.310 €;;2.500 €;2.750 €;3.438 €;3.094 €;3.403 €;4.254 €;2.978 €;3.276 €;4.094 €
+Menuiseries extérieures;Portes;porte d'entrée;PVC;niveau difficulté 3;;m2;3.971 €;;3.000 €;3.300 €;4.125 €;3.713 €;4.084 €;5.105 €;3.573 €;3.931 €;4.913 €
+Menuiseries extérieures;Portes;porte d'entrée;bois;niveau difficulté 1;;m2;4.633 €;;3.500 €;3.850 €;4.813 €;4.331 €;4.764 €;5.955 €;4.169 €;4.586 €;5.732 €
+Menuiseries extérieures;Portes;porte d'entrée;bois;niveau difficulté 2;;m2;5.295 €;;4.000 €;4.400 €;5.500 €;4.950 €;5.445 €;6.806 €;4.764 €;5.241 €;6.551 €
+Menuiseries extérieures;Portes;porte d'entrée;bois;niveau difficulté 3;;m2;5.957 €;;4.500 €;4.950 €;6.188 €;5.569 €;6.126 €;7.657 €;5.360 €;5.896 €;7.370 €
+Menuiseries extérieures;Portes;porte d'entrée;alu;niveau difficulté 1;;m2;6.619 €;;5.000 €;5.500 €;6.875 €;6.188 €;6.806 €;8.508 €;5.955 €;6.551 €;8.189 €
+Menuiseries extérieures;Portes;porte d'entrée;alu;niveau difficulté 2;;m2;7.281 €;;5.500 €;6.050 €;7.563 €;6.806 €;7.487 €;9.359 €;6.551 €;7.206 €;9.008 €
+Menuiseries extérieures;Portes;porte d'entrée;alu;niveau difficulté 3;;m2;1.059 €;;800 €;880 €;1.100 €;990 €;1.089 €;1.361 €;953 €;1.048 €;1.310 €
+Façades;isolation ;Isolation par l'intérieur;Isolation ;isolation laine de bois 18cm (R=4,5w/m2K);;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Façades;isolation ;Isolation par l'intérieur;Isolation ;isolation laine de verre 15cm (R=4,5w/m2K);;m2;93 €;;70 €;77 €;96 €;87 €;95 €;119 €;83 €;92 €;115 €
+Façades;isolation ;Isolation par l'intérieur;pare-vapeur;;;m2;33 €;;25 €;28 €;34 €;31 €;34 €;43 €;30 €;33 €;41 €
+Façades;isolation ;Isolation par l'intérieur;structure bois secondaire;;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Façades;isolation ;Isolation par l'intérieur;parachèvement intérieur;;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Façades;isolation ;Isolation par l'intérieur;pas de parachèvement intérieur;;;m2;0 €;;0 €;0 €;0 €;0 €;0 €;0 €;0 €;0 €;0 €
+Façades;isolation ;Isolation par l'extérieur;Isolation ;isolation laine de bois 18cm (R=4,5w/m2K);;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Façades;isolation ;Isolation par l'extérieur;Isolation ;PSE 16 cm (R=4,5w/m2K);;m2;93 €;;70 €;77 €;96 €;87 €;95 €;119 €;83 €;92 €;115 €
+Façades;isolation ;Isolation par l'extérieur;pare-vapeur;;;m2;33 €;;25 €;28 €;34 €;31 €;34 €;43 €;30 €;33 €;41 €
+Façades;isolation ;Isolation par l'extérieur;structure bois secondaire;;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Façades;isolation ;Isolation par l'extérieur;pas de structure bois secondaire;;;m2;0 €;;0 €;0 €;0 €;0 €;0 €;0 €;0 €;0 €;0 €
+Façades;isolation ;Isolation par l'extérieur;pare-pluie;;;m2;40 €;;30 €;33 €;41 €;37 €;41 €;51 €;36 €;39 €;49 €
+Façades;isolation ;Isolation par l'extérieur;parachèvement extérieur;enduit;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Façades;isolation ;Isolation par l'extérieur;parachèvement extérieur;bardage bois;;m2;265 €;;200 €;220 €;275 €;248 €;272 €;340 €;238 €;262 €;328 €
+Façades;revêtement extérieur;enduisage;ciment hydrofuge;;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Façades;revêtement extérieur;enduisage;chaux;;;m2;199 €;;150 €;165 €;206 €;186 €;204 €;255 €;179 €;197 €;246 €
+Façades;revêtement extérieur;enduisage;crépi;;;m2;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Façades;revêtement extérieur;enduisage;peinture;;;m2;53 €;;40 €;44 €;55 €;50 €;54 €;68 €;48 €;52 €;66 €
+Façades;revêtement extérieur;bardage;bois;;;m2;265 €;;200 €;220 €;275 €;248 €;272 €;340 €;238 €;262 €;328 €
+Façades;revêtement extérieur;bardage;fibre ciment;;;m2;146 €;;110 €;121 €;151 €;136 €;150 €;187 €;131 €;144 €;180 €
+Façades;revêtement extérieur;bardage;structure bois secondaire;;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Façades;revêtement extérieur;hydrofugation;par pulvérisation;;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Façades;revêtement extérieur;rejointoyage;rejointoyage ciment;;;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Façades;Accessoires;nouveaux seuils;aluminium;;;mct;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Façades;Accessoires;nouveaux seuils;pierre bleue;;;mct;225 €;;170 €;187 €;234 €;210 €;231 €;289 €;202 €;223 €;278 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;démolition du sol (finition-chape-dalle);;;m2;53 €;;40 €;44 €;55 €;50 €;54 €;68 €;48 €;52 €;66 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;terrassement 15cm;;;m2;33 €;;25 €;28 €;34 €;31 €;34 €;43 €;30 €;33 €;41 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;dalle de sol;;;m2;132 €;;100 €;110 €;138 €;124 €;136 €;170 €;119 €;131 €;164 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;isolation PUR 10cm;;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;chape ciment;;;m2;40 €;;30 €;33 €;41 €;37 €;41 €;51 €;36 €;39 €;49 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;finition de sol;bois;;m2;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Sol;isolation ;isolation d'une dalle de sol sur terre plein;finition de sol;carrelage;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Sol;isolation ;isolation d'un plancher + parquet;isolation de verre 15cm;laine de verre;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Sol;isolation ;isolation d'un plancher + parquet;isolation de verre 15cm;laine de bois;;m2;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Sol;isolation ;isolation d'un plancher + parquet;panneautage en bois;;;m2;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Sol;isolation ;isolation d'un plancher + parquet;parquet;;;m2;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Sol;isolation ;isolation d'un plafond de cave;isolation;laine de verre;;m2;79 €;;60 €;66 €;83 €;74 €;82 €;102 €;71 €;79 €;98 €
+Sol;isolation ;isolation d'un plafond de cave;isolation;laine de bois;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Sol;isolation ;isolation d'un plafond de cave;isolation;PUR/PIR;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Sol;isolation ;isolation d'un plafond de cave;avec freine -vapeur;avec panneau OSB;;m2;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Sol;isolation ;isolation d'un plafond de cave;avec finition plaques de platre;avec finition plaques de platre;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Electricité;conformité électrique;installation lourde (equipements + cablages + tableaux divisionnaire);;;;m2;119 €;;90 €;99 €;124 €;111 €;123 €;153 €;107 €;118 €;147 €
+Electricité;conformité électrique;installation légère (petits équipements);;;;m2;66 €;;50 €;55 €;69 €;62 €;68 €;85 €;60 €;66 €;82 €
+Electricité;conformité électrique;remplacement compteurs électriques;;;;m2;1.986 €;;1.500 €;1.650 €;2.063 €;1.856 €;2.042 €;2.552 €;1.787 €;1.965 €;2.457 €
+Electricité;conformité électrique;rapport de conformité électrique + schémas unifilaires;;;;fft;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Electricité;Panneaux photovoltaïques;panneaux;;;;m2;927 €;;700 €;770 €;963 €;866 €;953 €;1.191 €;834 €;917 €;1.146 €
+Chauffage / ECS / Ventilation;chaudière ;chaudière gaz condensation;puissance 1;;;pce;3.310 €;;2.500 €;2.750 €;3.438 €;3.094 €;3.403 €;4.254 €;2.978 €;3.276 €;4.094 €
+Chauffage / ECS / Ventilation;chaudière ;chaudière gaz condensation;puissance 2;;;pce;4.633 €;;3.500 €;3.850 €;4.813 €;4.331 €;4.764 €;5.955 €;4.169 €;4.586 €;5.732 €
+Chauffage / ECS / Ventilation;chaudière ;chaudière gaz condensation;puissance 3;;;pce;6.619 €;;5.000 €;5.500 €;6.875 €;6.188 €;6.806 €;8.508 €;5.955 €;6.551 €;8.189 €
+Chauffage / ECS / Ventilation;PAC ;air/eau;puissance 1;;;pce;9.267 €;;7.000 €;7.700 €;9.625 €;8.663 €;9.529 €;11.911 €;8.338 €;9.171 €;11.464 €
+Chauffage / ECS / Ventilation;PAC ;air/eau;puissance 2;;;pce;13.238 €;;10.000 €;11.000 €;13.750 €;12.375 €;13.613 €;17.016 €;11.911 €;13.102 €;16.378 €
+Chauffage / ECS / Ventilation;PAC ;air/eau;puissance 3;;;pce;17.210 €;;13.000 €;14.300 €;17.875 €;16.088 €;17.696 €;22.120 €;15.484 €;17.033 €;21.291 €
+Chauffage / ECS / Ventilation;Boiler ECS relié;gaz;100l;;;pce;2.648 €;;2.000 €;2.200 €;2.750 €;2.475 €;2.723 €;3.403 €;2.382 €;2.620 €;3.276 €
+Chauffage / ECS / Ventilation;Boiler ECS relié;gaz;200l;;;pce;3.971 €;;3.000 €;3.300 €;4.125 €;3.713 €;4.084 €;5.105 €;3.573 €;3.931 €;4.913 €
+Chauffage / ECS / Ventilation;Boiler ECS relié;gaz;300l;;;pce;5.295 €;;4.000 €;4.400 €;5.500 €;4.950 €;5.445 €;6.806 €;4.764 €;5.241 €;6.551 €
+Chauffage / ECS / Ventilation;Boiler ECS indépendant;gaz;100l;;;pce;5.295 €;;4.000 €;4.400 €;5.500 €;4.950 €;5.445 €;6.806 €;4.764 €;5.241 €;6.551 €
+Chauffage / ECS / Ventilation;Boiler ECS indépendant;gaz;200l;;;pce;6.619 €;;5.000 €;5.500 €;6.875 €;6.188 €;6.806 €;8.508 €;5.955 €;6.551 €;8.189 €
+Chauffage / ECS / Ventilation;Boiler ECS indépendant;gaz;300l;;;pce;7.943 €;;6.000 €;6.600 €;8.250 €;7.425 €;8.168 €;10.209 €;7.147 €;7.861 €;9.827 €
+Chauffage / ECS / Ventilation;Boiler thermodynamique;gaz;100l;;;pce;7.943 €;;6.000 €;6.600 €;8.250 €;7.425 €;8.168 €;10.209 €;7.147 €;7.861 €;9.827 €
+Chauffage / ECS / Ventilation;Boiler thermodynamique;gaz;200l;;;pce;9.267 €;;7.000 €;7.700 €;9.625 €;8.663 €;9.529 €;11.911 €;8.338 €;9.171 €;11.464 €
+Chauffage / ECS / Ventilation;Boiler thermodynamique;gaz;300l;;;pce;10.591 €;;8.000 €;8.800 €;11.000 €;9.900 €;10.890 €;13.613 €;9.529 €;10.482 €;13.102 €
+Chauffage / ECS / Ventilation;équipements;chauffage sol;;;;m2;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Chauffage / ECS / Ventilation;équipements;radiateur + canalisation;;;;pce;1.589 €;;1.200 €;1.320 €;1.650 €;1.485 €;1.634 €;2.042 €;1.429 €;1.572 €;1.965 €
+Chauffage / ECS / Ventilation;équipements;radiateur basse température + canalisations;;;;pce;2.118 €;;1.600 €;1.760 €;2.200 €;1.980 €;2.178 €;2.723 €;1.906 €;2.096 €;2.620 €
+Chauffage / ECS / Ventilation;accessoires;vannes thermostatiques;;;;pce;106 €;;80 €;88 €;110 €;99 €;109 €;136 €;95 €;105 €;131 €
+Chauffage / ECS / Ventilation;accessoires;thermostat;;;;pce;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Chauffage / ECS / Ventilation;accessoires;tubage;;;;mct;159 €;;120 €;132 €;165 €;149 €;163 €;204 €;143 €;157 €;197 €
+Chauffage / ECS / Ventilation;ventilation mécanique;extracteur individuel;;;;pce;3.177 €;;2.400 €;2.640 €;3.300 €;2.970 €;3.267 €;4.084 €;2.859 €;3.144 €;3.931 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC simple flux;2 pièces humides;;;pce;3.574 €;;2.700 €;2.970 €;3.713 €;3.341 €;3.675 €;4.594 €;3.216 €;3.538 €;4.422 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC simple flux;3 pièces humides;;;pce;3.971 €;;3.000 €;3.300 €;4.125 €;3.713 €;4.084 €;5.105 €;3.573 €;3.931 €;4.913 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC simple flux;4 pièces humides;;;pce;4.369 €;;3.300 €;3.630 €;4.538 €;4.084 €;4.492 €;5.615 €;3.931 €;4.324 €;5.405 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC simple flux;5 pièces humides;;;pce;4.766 €;;3.600 €;3.960 €;4.950 €;4.455 €;4.901 €;6.126 €;4.288 €;4.717 €;5.896 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC double flux;2 pièces humides;;;pce;7.943 €;;6.000 €;6.600 €;8.250 €;7.425 €;8.168 €;10.209 €;7.147 €;7.861 €;9.827 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC double flux;3 pièces humides;;;pce;8.737 €;;6.600 €;7.260 €;9.075 €;8.168 €;8.984 €;11.230 €;7.861 €;8.647 €;10.809 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC double flux;4 pièces humides;;;pce;9.531 €;;7.200 €;7.920 €;9.900 €;8.910 €;9.801 €;12.251 €;8.576 €;9.433 €;11.792 €
+Chauffage / ECS / Ventilation;ventilation mécanique;VMC double flux;5 pièces humides;;;pce;10.326 €;;7.800 €;8.580 €;10.725 €;9.653 €;10.618 €;13.272 €;9.291 €;10.220 €;12.774 €
+Plomberie;Equipements sanitaires;Lavabo ;sans alimentation / évacuation;;;fft;397 €;;300 €;330 €;413 €;371 €;408 €;510 €;357 €;393 €;491 €
+Plomberie;Equipements sanitaires;Lavabo ;sans alimentation / évacuation;;;fft;927 €;;700 €;770 €;963 €;866 €;953 €;1.191 €;834 €;917 €;1.146 €
+Plomberie;Equipements sanitaires;Douche;sans alimentation / évacuation;;;fft;1.589 €;;1.200 €;1.320 €;1.650 €;1.485 €;1.634 €;2.042 €;1.429 €;1.572 €;1.965 €
+Plomberie;Equipements sanitaires;Douche;sans alimentation / évacuation;;;fft;2.118 €;;1.600 €;1.760 €;2.200 €;1.980 €;2.178 €;2.723 €;1.906 €;2.096 €;2.620 €
+Plomberie;Equipements sanitaires;Baignoire;sans alimentation / évacuation;;;fft;1.986 €;;1.500 €;1.650 €;2.063 €;1.856 €;2.042 €;2.552 €;1.787 €;1.965 €;2.457 €
+Plomberie;Equipements sanitaires;Baignoire;sans alimentation / évacuation;;;fft;2.515 €;;1.900 €;2.090 €;2.613 €;2.351 €;2.586 €;3.233 €;2.263 €;2.489 €;3.112 €
+Plomberie;Equipements sanitaires;WC sur pied;sans alimentation / évacuation;;;fft;794 €;;600 €;660 €;825 €;743 €;817 €;1.021 €;715 €;786 €;983 €
+Plomberie;Equipements sanitaires;WC sur pied;sans alimentation / évacuation;;;fft;1.324 €;;1.000 €;1.100 €;1.375 €;1.238 €;1.361 €;1.702 €;1.191 €;1.310 €;1.638 €
+Plomberie;Equipements sanitaires;WC suspendu;sans alimentation / évacuation;;;fft;1.589 €;;1.200 €;1.320 €;1.650 €;1.485 €;1.634 €;2.042 €;1.429 €;1.572 €;1.965 €
+Plomberie;Equipements sanitaires;WC suspendu;sans alimentation / évacuation;;;fft;2.118 €;;1.600 €;1.760 €;2.200 €;1.980 €;2.178 €;2.723 €;1.906 €;2.096 €;2.620 €

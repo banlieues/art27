@@ -1,0 +1,13 @@
+[
+    {
+        "type": "contact",
+        "label": "contact",
+        "labels": "contacts",
+        "key_primary": "id_contact",
+        "table_primary": "contact",
+        "rank": "1",
+        "condition_queries": null,
+        "uri_fiche_modelisation": null,
+        "jointure": "user_contacts"
+    }
+]

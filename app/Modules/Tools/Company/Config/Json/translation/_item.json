@@ -1,0 +1,290 @@
+{
+    "12h_a_14h": {
+        "label_fr": "12h à 14h"
+    },
+    "14h_a_16h": {
+        "label_fr": "14h à 16h"
+    },
+    "16h_a_18h": {
+        "label_fr": "16h à 18h"
+    },
+    "18h_a_20h": {
+        "label_fr": "18h à 20h"
+    },
+    "7h_a_9h": {
+        "label_fr": "7h à 9h"
+    },
+    "9h_a_12h": {
+        "label_fr": "9h à 12h"
+    },
+    "acces_a_la_profession": {
+        "label_fr": "Accès à la profession"
+    },
+    "accompagnement": {
+        "label_fr": "Accompagnement"
+    },
+    "achats_groupes": {
+        "label_fr": "Achats groupés"
+    },
+    "adresse_du_siege_social": {
+        "label_fr": "Adresse du siège social"
+    },
+    "agree": {
+        "label_fr": "Agréé"
+    },
+    "agrement_amiante": {
+        "label_fr": "Agrément amiante"
+    },
+    "appartements": {
+        "label_fr": "Appartements"
+    },
+    "asbl": {
+        "label_fr": "ASBL"
+    },
+    "a_traiter": {
+        "label_fr": "À traiter"
+    },
+    "buildcircular": {
+        "label_fr": "BuildCircular"
+    },
+    "carrelage_marbre_et_pierre_naturelle": {
+        "label_fr": "Carrelage, marbre et pierre naturelle"
+    },
+    "chaux-chanvre": {
+        "label_fr": "Chaux-chanvre"
+    },
+    "code_postal": {
+        "label_fr": "Code postal"
+    },
+    "commentaires": {
+        "label_fr": "Commentaires"
+    },
+    "commission_de_conciliation_de_la_confederation_des_entreprises": {
+        "label_fr": "Commission de conciliation de la confédération des entreprises"
+    },
+    "connaissance": {
+        "label_fr": "Connaissance"
+    },
+    "copropriete_(immeuble_a_appartements)": {
+        "label_fr": "Copropriété (immeuble à appartements)"
+    },
+    "date_de_creation": {
+        "label_fr": "Date de création"
+    },
+    "debut_d_apres-midi": {
+        "label_fr": "Début d'après-midi"
+    },
+    "denomination_sociale_ou_commerciale_de_l_entreprise": {
+        "label_fr": "Dénomination, sociale ou commerciale, de l'entreprise"
+    },
+    "dimensions_ecologiques": {
+        "label_fr": "Dimensions écologiques"
+    },
+    "documents_et_mails": {
+        "label_fr": "Documents et mails"
+    },
+    "email": {
+        "label_fr": "Email"
+    },
+    "engagement_code_de_bonnes_pratiques": {
+        "label_fr": "Engagement Code de Bonnes Pratiques"
+    },
+    "entreprise_generale": {
+        "label_fr": "Entreprise générale"
+    },
+    "fibres_d_herbe": {
+        "label_fr": "Fibres d'herbe"
+    },
+    "finition": {
+        "label_fr": "Finition"
+    },
+    "fin_d_apres-midi": {
+        "label_fr": "Fin d'après-midi"
+    },
+    "formations_suivies": {
+        "label_fr": "Formations suivies"
+    },
+    "forme_juridique": {
+        "label_fr": "Forme juridique",
+        "label_nl": "Vennootschapsvorm"
+    },
+    "forme_sociale": {
+        "label_fr": "Forme sociale"
+    },
+    "formulaire_du_siteweb": {
+        "label_fr": "Formulaire du siteweb"
+    },
+    "gestion_des_dechets": {
+        "label_fr": "Gestion des déchets"
+    },
+    "gros-oeuvre": {
+        "label_fr": "Gros-oeuvre"
+    },
+    "incomplet": {
+        "label_fr": "Incomplet"
+    },
+    "interet_pour_ce_genre_de_formation_": {
+        "label_fr": "Intérêt pour ce genre de formation ?"
+    },
+    "isolants_biosources": {
+        "label_fr": "Isolants biosourcés"
+    },
+    "jeudi": {
+        "label_fr": "Jeudi"
+    },
+    "labels_durabilite": {
+        "label_fr": "Labels durabilité"
+    },
+    "label_construction_quality_(cq-label)": {
+        "label_fr": "Label Construction Quality (CQ-Label)"
+    },
+    "label_energiebewuste_(eba-label)": {
+        "label_fr": "Label Energiebewuste (EBA-Label)"
+    },
+    "laine_de_bois": {
+        "label_fr": "Laine de bois"
+    },
+    "laine_de_chanvre": {
+        "label_fr": "Laine de chanvre"
+    },
+    "laine_de_lin": {
+        "label_fr": "Laine de lin"
+    },
+    "langue": {
+        "label_fr": "Langue"
+    },
+    "langue_de_contact": {
+        "label_fr": "Langue de contact"
+    },
+    "les_activites_d_electrotechnique_(art._28_a_30_ar_2007)": {
+        "label_fr": "Les activités d'électrotechnique (art. 28 à 30 AR 2007)"
+    },
+    "les_activites_d_entreprise_generale_(art._31_a_33_ar_2007)": {
+        "label_fr": "Les activités d'entreprise générale (art. 31 à 33 AR 2007)"
+    },
+    "les_activites_d_installation_de_chauffage_central_de_climatisation_de_gaz_et_de_sanitaire_(art._25_a_27_ar_2007)": {
+        "label_fr": "Les activités d'installation de chauffage central, de climatisation, de gaz et de sanitaire (art. 25 à 27 AR 2007)"
+    },
+    "liege": {
+        "label_fr": "Liège"
+    },
+    "limitation_des_nuisances_pour_l_environnement": {
+        "label_fr": "Limitation des nuisances pour l'environnement"
+    },
+    "liste_des_types_de_travaux_realises": {
+        "label_fr": "Liste des types de travaux réalisés"
+    },
+    "lundi": {
+        "label_fr": "Lundi"
+    },
+    "maison_unifamiliale": {
+        "label_fr": "Maison unifamiliale"
+    },
+    "mardi": {
+        "label_fr": "Mardi"
+    },
+    "materiaux_recycles": {
+        "label_fr": "Matériaux recyclés"
+    },
+    "matinee": {
+        "label_fr": "Matinée"
+    },
+    "menuiserie_et_vitrerie": {
+        "label_fr": "Menuiserie et vitrerie"
+    },
+    "mercredi": {
+        "label_fr": "Mercredi"
+    },
+    "moyen_de_contact_prefere": {
+        "label_fr": "Moyen de contact préféré"
+    },
+    "nom": {
+        "label_fr": "Nom"
+    },
+    "nombre_de_travailleurs": {
+        "label_fr": "Nombre de travailleurs"
+    },
+    "norme_nbn_s_01-400-1": {
+        "label_fr": "Norme NBN S 01-400-1"
+    },
+    "notes_internes": {
+        "label_fr": "Notes internes"
+    },
+    "numero_bce": {
+        "label_fr": "Numéro BCE"
+    },
+    "numero_de_l_entreprise_(bce)": {
+        "label_fr": "Numéro de l'entreprise (BCE)",
+        "label_nl": "Ondernemingsnummer"
+    },
+    "paille": {
+        "label_fr": "Paille"
+    },
+    "peintures_et_enduits_naturels": {
+        "label_fr": "Peintures et enduits naturels"
+    },
+    "periode_de_disponibilite": {
+        "label_fr": "Période de disponibilité"
+    },
+    "plafonnage_cimentage_et_pose_de_chapes": {
+        "label_fr": "Plafonnage, cimentage et pose de chapes"
+    },
+    "prenom": {
+        "label_fr": "Prénom",
+        "label_nl": "Voornaam"
+    },
+    "produits_et_materiaux_labellises": {
+        "label_fr": "Produits et matériaux labellisés"
+    },
+    "reemploi_des_materiaux": {
+        "label_fr": "Réemploi des matériaux"
+    },
+    "refuse": {
+        "label_fr": "Refusé"
+    },
+    "rescert": {
+        "label_fr": "Rescert"
+    },
+    "sa": {
+        "label_fr": "SA"
+    },
+    "site_web": {
+        "label_fr": "Site web"
+    },
+    "soiree": {
+        "label_fr": "Soirée"
+    },
+    "source_de_l_inscription": {
+        "label_fr": "Source de l'inscription"
+    },
+    "srl": {
+        "label_fr": "SRL"
+    },
+    "statut_de_la_fiche": {
+        "label_fr": "Statut de la fiche"
+    },
+    "telephone": {
+        "label_fr": "Téléphone"
+    },
+    "temps_de_midi": {
+        "label_fr": "Temps de midi"
+    },
+    "toiture_et_etancheite": {
+        "label_fr": "Toiture et étanchéité"
+    },
+    "tot_le_matin": {
+        "label_fr": "Tôt le matin"
+    },
+    "type_de_batiment": {
+        "label_fr": "Type de bâtiment"
+    },
+    "utilisation_d_isolants_biosources": {
+        "label_fr": "Utilisation d'isolants biosourcés"
+    },
+    "vendredi": {
+        "label_fr": "Vendredi"
+    },
+    "ville": {
+        "label_fr": "Ville"
+    }
+}

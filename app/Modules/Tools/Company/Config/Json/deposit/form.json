@@ -1,0 +1,70 @@
+{
+    "label": {
+        "label_fr" : "Dénomination, sociale ou commerciale, de l'entreprise", 
+        "label_nl" : "Maatschappelijke naam of handelsnaam van de onderneming", 
+        "type" : "text"
+    },
+    "id_juridic_form": {
+        "label_fr" : "Forme juridique", 
+        "label_nl" : "Vennootschapsvorm", 
+        "type" : "select"
+    },
+    "website": {
+        "label_fr" : "Site web", 
+        "label_nl" : "Website", 
+        "type" : "text"
+    },
+    "bce": {
+        "label_fr" : "Numéro de l'entreprise (BCE)", 
+        "label_nl" : "Ondernemingsnummer", 
+        "type" : "text"
+    },
+    "address_street": {
+        "label_fr" : "Adresse du siège social", 
+        "label_nl" : "Adres", 
+        "type" : "text"
+    },
+    "address_pc": {
+        "label_fr" : "Code postal", 
+        "type" : "text"
+    },
+    "address_city": {
+        "label_fr" : "Ville", 
+        "type" : "text"
+    },
+    "id_lang": {
+        "label_fr" : "Langue", 
+        "type" : "radio"
+    },
+    "contact_name": {
+        "label_fr" : "Prénom", 
+        "label_nl" : "Voornaam", 
+        "type" : "text"
+    },
+    "contact_lastname": {
+        "label_fr" : "Nom", 
+        "label_nl" : "Naam", 
+        "type" : "text"
+    },
+    "contact_phone": {
+        "label_fr" : "Téléphone", 
+        "label_nl" : "Telefoon", 
+        "type" : "text"
+    },
+    "contact_email": {
+        "label_fr" : "Email", 
+        "label_nl" : "Email", 
+        "type" : "email"
+    },
+    "ids_contact_type": {
+        "label_fr" : "Moyen de contact", 
+        "type" : "checkbox"
+    },
+    "ids_contact_schedule": {
+        "label_fr" : "Période de disponibilité"
+    },
+    "comment": {
+        "label_fr" : "Commentaires", 
+        "type" : "text"
+    }
+}

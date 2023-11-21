@@ -1,0 +1,12 @@
+{
+    "label_fr": {
+        "name": "label_fr",
+        "type": "text",
+        "primary_key": 1
+    },
+    "label_nl": {
+        "name": "label_nl",
+        "type": "text",
+        "default": "null"
+    }
+}

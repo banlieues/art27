@@ -1,0 +1,71 @@
+{
+    "id_report": {
+        "type": "hidden"
+    },
+    "label": {
+        "label_fr": "Label",
+        "type": "text",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_parent": {
+        "label_fr": "Source",
+        "type": "select",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        },
+        "annotation": "Une fois le modèle enregistré, vous ne pourrez plus modifier la source."
+    },
+    "ids_road_them": {
+        "label_fr": "Thématiques",
+        "type": "tesorus",
+        "tesorus": {
+            "road": "them",
+            "type": "tag"
+        },
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_person" : {
+        "label_fr": "Demandeur",
+        "type": "custom",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_request" : {
+        "label_fr": "Demande",
+        "type": "custom",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "blocks" : {
+        "label_fr": "Blocs associés",
+        "type": "custom",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_level": {
+        "type": "hidden"
+    },
+    "comment" : {
+        "label_fr": "Notes internes",
+        "type": "textarea",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    }
+}

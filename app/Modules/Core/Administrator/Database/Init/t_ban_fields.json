@@ -1,0 +1,71 @@
+{
+    "field_index": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "field_sql": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "label": {
+        "type": "text",
+        "nullable": true,
+        "default": "null"
+    },
+    "table": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "type_field": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "table_list": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "key_list": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "label_list": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "order_list": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": true,
+        "default": "null"
+    },
+    "rule": {
+        "type": "text",
+        "nullable": true,
+        "default": "null"
+    },
+    "type": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "timestamp",
+        "nullable": false,
+        "default": "current_timestamp()"
+    }
+}

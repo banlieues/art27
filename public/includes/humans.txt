@@ -1,0 +1,22 @@
+﻿/* The humans responsible & colophon */
+/* http://humanstxt.org/ */
+
+/* ABOUT ME */
+Username: Banlieues Asbl
+Website: https://www.banlieues.be/
+Twitter: https://twitter.com/banlieues_asbl
+Facebook: https://www.facebook.com/Banlieues-ASBL-163164273723527/
+Github: https://github.com/banlieues-asbl
+Location: Brussels - Belgium
+
+/* THANKS */
+CodeIgniter : (https://codeigniter.com/)
+Bootstrap : (http://getbootstrap.com/)
+jQuery : (https://jquery.com/)
+...
+
+/* SITE */
+Last update: 01/09/2021
+Standards: HTML5, CSS3, PHP7 ...
+Components: CodeIgniter, Bootstrap, jQuery ...
+Software: Visual Studio Code, ...

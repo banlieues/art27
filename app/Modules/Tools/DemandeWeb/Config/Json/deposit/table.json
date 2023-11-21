@@ -1,0 +1,124 @@
+{
+    "id_deposit": {
+        "name": "id_deposit",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "is_deleted": {
+        "name": "is_deleted",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "0"
+    },
+    "id_request_type": {
+        "name": "id_request_type",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "2"
+    },
+    "id_gender": {
+        "name": "id_gender",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "contact_name": {
+        "name": "contact_name",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "contact_lastname": {
+        "name": "contact_lastname",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "id_lang": {
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "contact_phone": {
+        "name": "contact_phone",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "contact_email": {
+        "name": "contact_email",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "address_street": {
+        "name": "address_street",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "address_pc": {
+        "name": "address_pc",
+        "type": "varchar",
+        "max_length": 10,
+        "default": "null"
+    },
+    "address_city": {
+        "name": "address_city",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "id_building_type": {
+        "name": "id_building_type",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "ids_profile": {
+        "name" : "ids_profile",
+        "type" : "text",
+        "default": "null"
+    },
+    "subject": {
+        "name" : "subject",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "comment": {
+        "name": "comment",
+        "type": "text",
+        "default": "null"
+    },
+    "id_moyen_contact": {
+        "name": "id_moyen_contact",
+        "type": "tinyint",
+        "max_length": 4
+    },
+    "id_demande_origine": {
+        "name": "id_demande_origine",
+        "type": "tinyint",
+        "max_length": 4
+    },
+    "urls_file": {
+        "name" : "urls_file",
+        "type" : "text",
+        "default": "null"
+    },
+    "date_import": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "gf_id": {
+        "name": "gf_id",
+        "type": "int",
+        "max_length": 11
+    },
+    "gf_date_created": {
+        "name": "gf_date_created",
+        "type": "timestamp"
+    }
+}

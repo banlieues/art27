@@ -1,0 +1,34 @@
+{
+    "id": {
+        "name": "id",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "id_report": {
+        "name": "id_report",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_block": {
+        "name": "id_block",
+        "type": "int",
+        "max_length": 11
+    },
+    "id_file": {
+        "name": "id_file",
+        "type": "int",
+        "max_length": 11
+    },
+    "is_old": {
+        "name": "is_old",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "rank": {
+        "name": "rank",
+        "type": "int",
+        "max_length": 11
+    }
+}

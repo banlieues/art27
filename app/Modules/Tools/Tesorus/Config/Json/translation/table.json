@@ -1,0 +1,22 @@
+{
+    "ref": {
+        "name": "ref",
+        "type": "varchar",
+        "max_length": "500",
+        "primary_key": 1
+    },
+    "label_fr": {
+        "name": "label_fr",
+        "type": "text"
+    },
+    "label_nl": {
+        "name": "label_nl",
+        "type": "text",
+        "default": "null"
+    },
+    "comment": {
+        "name": "comment",
+        "type": "text",
+        "default": "null"
+    }
+}

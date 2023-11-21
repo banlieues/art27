@@ -1,0 +1,163 @@
+{
+    "id_template": {
+        "type": "hidden"
+    },
+    "id_lang": {
+        "type": "hidden"
+    },
+    "ref": {
+        "label_fr": "Référence du modèle",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-auto"
+        },
+        "isRequired": 1,
+        "form_type" : {
+            "new": {
+                "annotation": "La référence doit être sans accent, caractères spéciaux, ni espace. Une fois encodée, elle ne pourra plus être modifiée."
+            },
+            "details": {
+                "isReadonly": 1
+            }
+        }
+    },
+    "is_activated": {
+        "label_fr": "Actif",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-auto"
+        }
+    },
+    "label" : {
+        "label_fr": "Label",
+        "label_nl": "Label",
+        "type": "text",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-auto"
+        }
+    },
+    "subject_ref": {
+        "label_fr": "Référence du sujet",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "subject_fr": {
+        "label_fr": "Sujet FR",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "hello_fr": {
+        "label_fr": "Salutations début FR",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "content_fr": {
+        "label_fr": "Contenu FR",
+        "type": "editor",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "greetings_fr": {
+        "label_fr": "Salutations fin FR",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },    
+    "subject_nl": {
+        "label_fr": "Sujet NL",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "hello_nl": {
+        "label_fr": "Salutations début NL",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "content_nl": {
+        "label_fr": "Contenu NL",
+        "type": "editor",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "greetings_nl": {
+        "label_fr": "Salutations fin NL",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "subject_en": {
+        "label_fr": "Sujet EN",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "hello_en": {
+        "label_fr": "Salutations début EN",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "content_en": {
+        "label_fr": "Contenu EN",
+        "type": "editor",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "greetings_en": {
+        "label_fr": "Salutations fin EN",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-2", 
+            "answer_col" : "col-10"
+        }
+    },
+    "updated_at": {
+        "label_fr": "Dernière modification",
+        "type": "info"
+    },
+    "updated_by": {
+        "label_fr": "par",
+        "type": "info"
+    },
+    "created_at": {
+        "label_fr": "Création",
+        "type": "info"
+    },
+    "created_by": {
+        "label_fr": "par",
+        "type": "info"
+    }
+}

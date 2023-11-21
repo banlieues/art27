@@ -1,0 +1,31 @@
+{
+    "id_user_contacts": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "id_user": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "id_contact": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    },
+    "created_at": {
+        "type": "timestamp",
+        "nullable": false,
+        "default": "current_timestamp()"
+    },
+    "created_by": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    }
+}

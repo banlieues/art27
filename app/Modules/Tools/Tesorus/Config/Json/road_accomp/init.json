@@ -1,0 +1,74 @@
+[
+    { "label_fr": "Prêt vert", "children": [
+        { "label_fr": "Objet du PVB", "children": [
+            { "label_fr": "Isolation toit" },
+            { "label_fr": "Isolation murs" },
+            { "label_fr": "Isolation sol" },
+            { "label_fr": "Châssis" },
+            { "label_fr": "Chauffage" },
+            { "label_fr": "Ventilation" },
+            { "label_fr": "Energies renouvelables" }
+        ]},
+        { "label_fr": "Date d'envoi dossier PVB à BE" },
+        { "label_fr": "Organisme de Crédit PVB", "children": [
+            { "label_fr": "Crédal" },
+            { "label_fr": "FdL" }
+        ]},
+        { "label_fr": "Catégorie de revenus du demandeur", "children": [
+            { "label_fr": "Faibles revenus" },
+            { "label_fr": "Revenus moyens" }
+        ]}
+    ]},
+    { "label_fr": "Facilitateur urbanisme", "children": [
+        { "label_fr": "Régularisation" },
+        { "label_fr": "Objet du permis", "children": [
+            { "label_fr": "Terrasse" },
+            { "label_fr": "Zone de recul" },
+            { "label_fr": "Isolation du toit" },
+            { "label_fr": "Isolation de façade" },
+            { "label_fr": "Aspect à rue" },
+            { "label_fr": "Châssis" },
+            { "label_fr": "Démolition" },
+            { "label_fr": "Relief du jardin" },
+            { "label_fr": "Modification de destination" },
+            { "label_fr": "Modification nombre de logements" },
+            { "label_fr": "Abattage d'arbre" },
+            { "label_fr": "Piscine" },
+            { "label_fr": "Mitoyenneté" },
+            { "label_fr": "Autre objet du permis" }
+        ]},
+        { "label_fr": "Raison du permis", "children": [
+            { "label_fr": "Infraction" },
+            { "label_fr": "Demande communale" },
+            { "label_fr": "Vente" },
+            { "label_fr": "Plein gré" },
+            { "label_fr": "Autre raison du permis" }
+        ]}
+    ]},
+    { "label_fr": "Petites copropriétés", "children": [
+        { "label_fr": "Nombre de copropriétaires" },
+        { "label_fr": "Participation à l'assemblée générale" }
+    ]},
+    { "label_fr": "Be-exemplary", "children": [
+        { "label_fr": "Type de projet", "children": [
+            { "label_fr": "Construction" },
+            { "label_fr": "Rénovation" }
+        ]}
+    ]},
+    { "label_fr": "Allocation loyer" },
+    { "label_fr": "Petit patrimoine", "children": [
+        { "label_fr": "Balcon" },
+        { "label_fr": "Corniche" },
+        { "label_fr": "Décor peint" },
+        { "label_fr": "Garde-corps en bois" },
+        { "label_fr": "Jardinet" },
+        { "label_fr": "Loggia" },
+        { "label_fr": "Mosaïques" },
+        { "label_fr": "Moulures" },
+        { "label_fr": "Porte" },
+        { "label_fr": "Sgraffites" },
+        { "label_fr": "Vitraux" },
+        { "label_fr": "Autre petit patrimoine" }
+    ]},
+    { "label_fr": "Facilitation locataire-propriétaire" }
+]

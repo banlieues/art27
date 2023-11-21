@@ -1,0 +1,10 @@
+{
+    "id_answer_status" : [
+        { "id": "1", "label_fr": "En attente", "annotation_fr": "Envoyés, non consultés, non répondus" },
+        { "id": "2", "label_fr": "Consultés", "annotation_fr": "Envoyés, non répondus" },
+        { "id": "3", "label_fr": "Répondus", "annotation_fr": "" }
+    ],
+    "id_lang": {
+        "table": "liste_langue"
+    }
+}

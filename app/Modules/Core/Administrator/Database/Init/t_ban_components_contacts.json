@@ -1,0 +1,36 @@
+{
+    "id_components": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "primary_key": 1
+    },
+    "type": {
+        "type": "varchar",
+        "max_length": 255,
+        "nullable": false,
+        "default": "null"
+    },
+    "fields": {
+        "type": "text",
+        "nullable": false,
+        "default": "null"
+    },
+    "title": {
+        "type": "text",
+        "nullable": false,
+        "default": "null"
+    },
+    "column": {
+        "type": "int",
+        "max_length": 1,
+        "nullable": false,
+        "default": "null"
+    },
+    "rank": {
+        "type": "int",
+        "max_length": 11,
+        "nullable": false,
+        "default": "null"
+    }
+}

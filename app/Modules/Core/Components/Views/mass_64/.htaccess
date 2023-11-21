@@ -1,0 +1,6 @@
+
+# Disable Indexing
+Options -Indexes
+
+# Incrase Script Execution Time
+# php_value max_execution_time 5000

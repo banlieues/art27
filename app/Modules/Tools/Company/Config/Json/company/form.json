@@ -1,0 +1,387 @@
+{
+    "id_company" : {
+        "type": "hidden"
+    },
+    "is_general_enterprise" : {
+        "label_fr": "Entreprise générale",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-auto", 
+            "answer_col" : "col-auto"
+        }
+    },
+    "id_status" : {
+        "label_fr": "Statut de la fiche",
+        "type": "select",
+        "grid": {
+            "label_col" : "col-auto", 
+            "answer_col" : "col-auto"    
+        }
+    },
+    "label" : {
+        "label_fr": "Dénomination, sociale ou commerciale, de l'entreprise",
+        "label_nl": "Maatschappelijke naam of handelsnaam van de onderneming",
+        "type": "text",
+        "isRequired": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "website" : {
+        "label_fr": "Site web",
+        "label_nl": "Website",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },
+    "address" : {
+        "label_fr": "Rechercher une adresse via Brugis",
+        "type": "text",
+        "isBrugis": 1,
+        "annotation": "Veuillez encoder le nom de la rue et le numéro. Le système va alors rechercher sur Brugis les correspondances en français et néerlandais. Le numéro de la boîte doit être encodé séparément.",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },
+    "address_fr" : {
+        "label_fr": "Adresse FR",
+        "label_nl": "Adres FR",
+        "type": "text",
+        "isReadonly": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },    
+    "address_nl" : {
+        "label_fr": "Adresse NL",
+        "label_nl": "Adres NL",
+        "type": "text",
+        "isReadonly": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },    
+    "address_number" : {
+        "label_fr": "Numéro et boîte",
+        "label_nl": "Nummer",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-2"    
+        }
+    },
+    "address_street" : {
+        "label_fr": "Rue",
+        "label_nl": "Straat",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },
+    "address_pc" : {
+        "label_fr": "Code postal",
+        "label_nl": "Postcode",
+        "type": "text",
+        "isRequired": 1,
+        "mask" : "9{1,4}",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "address_city" : {
+        "label_fr": "Ville",
+        "label_nl": "Stad",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_juridic_form" : {
+        "label_fr": "Forme sociale",
+        "label_nl": "Vennootschapsvorm",
+        "type": "select",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"    
+        }
+    },
+    "bce" : {
+        "label_fr": "Numéro de l'entreprise (BCE)",
+        "label_nl": "Ondernemingsnummer",
+        "type": "text",
+        "mask": "9999-999-999",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "birthdate" : {
+        "label_fr": "Date de création de l'entreprise",
+        "label_nl": "Oprichtingsdatum van de onderneming",
+        "type": "date",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "nb_workers" : {
+        "label_fr": "Nombre de travailleurs",
+        "label_nl": "Aantal werknemers",
+        "type": "text",
+        "mask" : "9{1,4}",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_access_prof" : {
+        "label_fr": "Accès à la profession",
+        "label_nl": "Toegang tot het beroep",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-1 invisible", 
+            "answer_col" : "col-11"
+        }
+    },
+    "id_contact_source" : {
+        "label_fr": "Source de l'inscription",
+        "type": "select",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_lang" : {
+        "label_fr": "Langue de contact",
+        "label_nl": "Contacttaal",
+        "type": "radio",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "id_file_lang" : {
+        "label_fr": "Documents et mails",
+        "type": "radio",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "contact_name" : {
+        "label_fr": "Prénom",
+        "label_nl": "Voornaam",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "contact_lastname" : {
+        "label_fr": "Nom",
+        "label_nl": "Naam",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "contact_phone" : {
+        "label_fr": "Téléphone",
+        "label_nl": "Telefoon",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "contact_email" : {
+        "label_fr": "Email",
+        "type": "email",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_contact_type" : {
+        "label_fr": "Moyen de contact préféré",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_contact_schedule" : {
+        "label_fr": "Période de disponibilité",
+        "type": "custom",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_building_type" : {
+        "label_fr": "Type de bâtiment",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_road_work" : {
+        "label_fr": "Type de travaux",
+        "label_nl": "Type van werken",
+        "type": "tesorus",
+        "tesorus": {
+            "road": "work",
+            "type": "tag"
+        },
+        "grid": {
+            "label_col" : "d-none", 
+            "answer_col" : "col-12"
+        }
+    },
+    "ids_road_eco_impact" : {
+        "label_fr": "Impact environnemental",
+        "label_nl": "Milieu-impact",
+        "type": "tesorus",
+        "tesorus": {
+            "road": "eco_impact",
+            "type": "checkbox",
+            "has_text": 1
+        },
+        "grid": {
+            "label_col" : "col-1 invisible", 
+            "answer_col" : "col-11"
+        }
+    },
+    "is_asbestos_label" : {
+        "label_fr": "Agrément amiante",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_build_circular" : {
+        "label_fr": "BuildCircular",
+        "fieldset": "renovation_and_build_circular",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_durability_label" : {
+        "label_fr": "Labels durabilité",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_ecological_dim" : {
+        "label_fr": "Dimensions écologiques",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "workshop_renovation" : {
+        "label_fr": "Formations suivies",
+        "fieldset": "renovation_and_build_circular",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "is_interest_workshop_renovation" : {
+        "label_fr": "Intérêt pour ce genre de formation ?",
+        "fieldset": "renovation_and_build_circular",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "workshop_acoustic" : {
+        "label_fr": "Formations suivies",
+        "fieldset": "acoustic",
+        "type": "text",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "is_nbn_s_01_400_1" : {
+        "label_fr": "Norme NBN S 01-400-1",
+        "fieldset": "acoustic",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "is_code_practice" : {
+        "label_fr": "Engagement Code de Bonnes Pratiques",
+        "fieldset": "acoustic",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "is_group_buying" : {
+        "label_fr": "Achats groupés",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "is_ccce" : {
+        "label_fr": "Commission de conciliation de la confédération des entreprises",
+        "fieldset": "litigation_insurance",
+        "type": "radio_dual",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "comment" : {
+        "label_fr": "Notes internes",
+        "type": "textarea",
+        "grid": {
+            "label_col" : "d-none", 
+            "answer_col" : "col-12"
+        }
+    },
+    "ids_declaration" : {
+        "label_fr": "Le candidat entrepreneur déclare",
+        "label_nl": "De kandidaat-aannemer verklaart",
+        "type": "checkbox",
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    },
+    "ids_file" : {
+        "label_fr": "Dépôt de fichiers",
+        "type": "file",
+        "is_multiple": 1,
+        "grid": {
+            "label_col" : "col-3", 
+            "answer_col" : "col-9"
+        }
+    }
+}

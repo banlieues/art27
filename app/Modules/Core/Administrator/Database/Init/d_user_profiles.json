@@ -1,0 +1,28 @@
+[
+    {
+        "user_id": "1",
+        "role_id": "1",
+        "gender_id": "1",
+        "country_id": "22",
+        "avatar": "1648058660_623b612444c2a.jpg",
+        "website": "www.banlieues.be",
+        "created_at": "2020-02-20 20:20:20",
+        "updated_at": "2020-02-20 20:20:20",
+        "created_by": "0",
+        "updated_by": "0",
+        "is_actif": "1"
+    },
+    {
+        "user_id": "2",
+        "role_id": "1",
+        "gender_id": "2",
+        "country_id": "22",
+        "avatar": "1659388795_62e8437b53e5e.jpg",
+        "website": "www.banlieues.be",
+        "created_at": "2020-02-20 20:20:20",
+        "updated_at": "2020-02-20 20:20:20",
+        "created_by": "0",
+        "updated_by": "0",
+        "is_actif": "1"
+    }
+]

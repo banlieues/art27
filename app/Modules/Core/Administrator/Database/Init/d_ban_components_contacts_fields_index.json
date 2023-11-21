@@ -1,0 +1,98 @@
+[
+    {
+        "id_component": "1",
+        "field_index": "date_creation"
+    },
+    {
+        "id_component": "1",
+        "field_index": "date_naissance"
+    },
+    {
+        "id_component": "1",
+        "field_index": "nom_contact"
+    },
+    {
+        "id_component": "1",
+        "field_index": "prenom"
+    },
+    {
+        "id_component": "1",
+        "field_index": "nom_court_institution"
+    },
+    {
+        "id_component": "1",
+        "field_index": "fonction"
+    },
+    {
+        "id_component": "1",
+        "field_index": "@#<hr>"
+    },
+    {
+        "id_component": "2",
+        "field_index": "email"
+    },
+    {
+        "id_component": "2",
+        "field_index": "email2"
+    },
+    {
+        "id_component": "2",
+        "field_index": "tel1"
+    },
+    {
+        "id_component": "2",
+        "field_index": "tel2"
+    },
+    {
+        "id_component": "2",
+        "field_index": "gsm1"
+    },
+    {
+        "id_component": "2",
+        "field_index": "gsm2"
+    },
+    {
+        "id_component": "2",
+        "field_index": "adresse"
+    },
+    {
+        "id_component": "2",
+        "field_index": "codepostal"
+    },
+    {
+        "id_component": "2",
+        "field_index": "localite"
+    },
+    {
+        "id_component": "2",
+        "field_index": "pays"
+    },
+    {
+        "id_component": "2",
+        "field_index": "@#<hr>"
+    },
+    {
+        "id_component": "3",
+        "field_index": "adherent"
+    },
+    {
+        "id_component": "3",
+        "field_index": "membre"
+    },
+    {
+        "id_component": "3",
+        "field_index": "enordredecotisation"
+    },
+    {
+        "id_component": "3",
+        "field_index": "envoi_diffusion"
+    },
+    {
+        "id_component": "3",
+        "field_index": "diffusion"
+    },
+    {
+        "id_component": "3",
+        "field_index": "@#<hr>"
+    }
+]

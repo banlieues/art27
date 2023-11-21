@@ -1,0 +1,265 @@
+{
+    "is_general_enterprise" : {
+        "name": "is_general_enterprise",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "id_company": {
+        "name": "id_company",
+        "type": "int",
+        "max_length": 11,
+        "primary_key": 1
+    },
+    "id_status": {
+        "name": "id_status",
+        "type": "int",
+        "max_length": 11,
+        "default": "1"
+    },
+    "label": {
+        "name": "label",
+        "type": "varchar",
+        "max_length": 255
+    },
+    "id_juridic_form": {
+        "name": "id_juridic_form",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "website": {
+        "name": "website",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "bce": {
+        "name": "bce",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "birthdate": {
+        "name": "birthdate",
+        "type": "date",
+        "default": "null"
+    },
+    "nb_workers": {
+        "name": "nb_workers",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "address_fr": {
+        "name": "address_fr",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "address_nl": {
+        "name": "address_nl",
+        "type": "varchar",
+        "max_length": 500,
+        "default": "null"
+    },
+    "address_number": {
+        "name": "address_number",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "address_street": {
+        "name": "address_street",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "address_pc": {
+        "name": "address_pc",
+        "type": "varchar",
+        "max_length": 10
+    },
+    "address_city": {
+        "name": "address_city",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "id_contact_source": {
+        "name": "id_contact_source",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "id_lang": {
+        "name": "id_lang",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "id_file_lang": {
+        "name": "id_lang",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "contact_name": {
+        "name": "contact_name",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "contact_lastname": {
+        "name": "contact_lastname",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "contact_email": {
+        "name": "contact_email",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "contact_phone": {
+        "name": "contact_phone",
+        "type": "varchar",
+        "max_length": 255,
+        "default": "null"
+    },
+    "id_langage": {
+        "name": "id_langage",
+        "type": "int",
+        "max_length": 11,
+        "default": "null"
+    },
+    "ids_contact_type": {
+        "name": "ids_contact_type",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_contact_schedule": {
+        "name": "ids_contact_schedule",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_access_prof": {
+        "name": "ids_access_prof",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_building_type": {
+        "name": "ids_building_type",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_road_work": {
+        "name": "ids_road_work",
+        "type": "text",
+        "default": "null"
+    },
+    "is_asbestos_label": {
+        "name": "is_asbestos_label",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "ids_use_bio_insulation": {
+        "name": "ids_use_bio_insulation",
+        "type": "text",
+        "default": "null",
+        "has_text": 1
+    },
+    "ids_durability_label": {
+        "name": "ids_durability_label",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_ecological_dim": {
+        "name": "ids_ecological_dim",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_build_circular": {
+        "name": "ids_build_circular",
+        "type": "text",
+        "default": "null"
+    },
+    "workshop_renovation": {
+        "name": "workshop_renovation",
+        "type": "text",
+        "default": "null"
+    },
+    "is_interest_workshop_renovation": {
+        "name": "is_interest_workshop_renovation",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "workshop_acoustic": {
+        "name": "workshop_acoustic",
+        "type": "text",
+        "default": "null"
+    },
+    "is_nbn_s_01_400_1": {
+        "name": "is_nbn_s_01_400_1",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "is_code_practice": {
+        "name": "is_code_practice",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "is_group_buying": {
+        "name": "is_group_buying",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "is_ccce": {
+        "name": "is_ccce",
+        "type": "tinyint",
+        "max_length": 4,
+        "default": "null"
+    },
+    "updated_at": {
+        "name": "updated_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "updated_by": {
+        "name": "updated_by",
+        "type": "int",
+        "max_length": 11
+    },
+    "import_datetime": {
+        "name": "import_datetime",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "created_at": {
+        "name": "created_at",
+        "type": "timestamp",
+        "default": "current_timestamp()"
+    },
+    "comment": {
+        "name": "comment",
+        "type": "text",
+        "default": "null"
+    },
+    "ids_road_eco_impact": {
+        "name": "ids_road_eco_impact",
+        "type": "text",
+        "default": "null",
+        "has_text": 1
+    },
+    "ids_file": {
+        "name": "ids_file",
+        "type": "text",
+        "default": "null"
+    }
+}

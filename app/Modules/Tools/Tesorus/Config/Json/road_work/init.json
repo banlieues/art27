@@ -1,0 +1,151 @@
+[
+    { "label_fr": "Travaux structurels", "children": [
+        { "label_fr": "Démolition" },
+        { "label_fr": "Fondation" },
+        { "label_fr": "Assainissement" },
+        { "label_fr": "Structures" },
+        { "label_fr": "Humidité" },
+        { "label_fr": "Autre", "label_nl": "Andere" }
+    ]},
+    { "label_fr": "Travaux de toiture", "label_nl": "Dak werken", "children": [
+        { "label_fr": "Toiture inclinée", "label_nl": "Hellend dak", "children": [ 
+            { "label_fr": "Structure", "label_nl": "Structuur " },
+            { "label_fr": "Isolation et pare-vapeur", "children": [ 
+                { "label_fr": "Isolation intérieure", "children": [ 
+                    { "label_fr": "Semi-rigide/rigide" },
+                    { "label_fr": "Insufflation", "label_nl": "Inblazing" }
+                ]},
+                { "label_fr": "Isolation extérieure" },
+                { "label_fr": "Autre", "label_nl": "Andere" }
+            ]},
+            { "label_fr": "Revêtement de toiture", "label_nl": "Dakbedekking", "children": [
+                { "label_fr": "Tuiles", "label_nl": "Dakpannen" },
+                { "label_fr": "Ardoises naturelles", "label_nl": "Natuurleien" },
+                { "label_fr": "Ardoises artificielles", "label_nl": "Kunstleien" },
+                { "label_fr": "Zinc", "label_nl": "Zink" },
+                { "label_fr": "Récupération" },
+                { "label_fr": "Autre", "label_nl": "Andere" }
+            ]}
+        ]},
+        { "label_fr": "Toiture plate", "label_nl": "Plat dak", "children": [
+            { "label_fr": "Structure", "label_nl": "Structuur" },
+            { "label_fr": "Isolation et pare-vapeur", "children": [ 
+                { "label_fr": "Isolation intérieure" },
+                { "label_fr": "Isolation extérieure" },
+                { "label_fr": "Autre", "label_nl": "Andere" }
+            ]},
+            { "label_fr": "Revêtement", "children": [ 
+                { "label_fr": "Roofing" },
+                { "label_fr": "EPDM" },
+                { "label_fr": "Membrane PVC" }
+            ]}
+        ]},
+        { "label_fr": "Toiture verte", "children": [
+            { "label_fr": "Extensive" },
+            { "label_fr": "Intensive" },
+            { "label_fr": "Toiture Jardin" }
+        ]},
+        { "label_fr": "Autres", "children": [
+            { "label_fr": "Isolation plancher des greniers", "label_nl": "Isolatie zoldervloer" },
+            { "label_fr": "Puits de lumière, dômes, lucarnes" },
+            { "label_fr": "Rénovation de cheminées" }
+        ]}
+    ]},
+    { "label_fr": "Matériaux d'isolation", "children" : [
+        { "label_fr": "Type", "children" : [
+            { "label_fr": "Rigide" },
+            { "label_fr": "Semi-rigide" },
+            { "label_fr": "Souple" },
+            { "label_fr": "En vrac" },
+            { "label_fr": "Mousse projetée" }
+        ]},
+        { "label_fr": "Origine", "children" : [
+            { "label_fr": "Synthétique", "children" : [ 
+                { "label_fr": "Polyuréthane (PUR/PIR)" },
+                { "label_fr": "Polystyrène (EPS/XPS)" },
+                { "label_fr": "Mousse phénolique / résolique" }
+            ]},
+            { "label_fr": "Minéral", "children" : [ 
+                { "label_fr": "Blocs type « multipor »" },
+                { "label_fr": "Laine de roche / laine de verre" },
+                { "label_fr": "Verre cellulaire" },
+                { "label_fr": "Perlite / Vermiculite" }
+            ]},
+            { "label_fr": "Végétal", "children" : [ 
+                { "label_fr": "Cellulose" },
+                { "label_fr": "Chanvre" },
+                { "label_fr": "Lin" },
+                { "label_fr": "Laine / Fibre de bois" },
+                { "label_fr": "Liège" },
+                { "label_fr": "Coton/ Textile recyclé" },
+                { "label_fr": "Herbe" }
+            ]},
+            { "label_fr": "Animal", "children" : [ 
+                { "label_fr": "Laine de mouton" },
+                { "label_fr": "Plumes de canard" }
+            ]}
+        ]}
+    ]},
+    { "label_fr": "Travaux de façades", "children" : [
+        { "label_fr": "Isolation", "children" : [
+            { "label_fr": "Par l'intérieur" },
+            { "label_fr": "Murs creux" },
+            { "label_fr": "Par l'extérieur" }                
+        ]},
+        { "label_fr": "Finition", "children" : [
+            { "label_fr": "Crépi / enduit" },
+            { "label_fr": "Bardage bois" },
+            { "label_fr": "Bardage autre que bois" },
+            { "label_fr": "Briques de parement" },
+            { "label_fr": "Briquettes" },
+            { "label_fr": "Enduit sur isolant (méthode ETICS)" },
+            { "label_fr": "Autre", "label_nl": "Andere" }                
+        ]},
+        { "label_fr": "Façades anciennes", "children" : [
+            { "label_fr": "Enduit" },
+            { "label_fr": "Peinture" },
+            { "label_fr": "Autre", "label_nl": "Andere" }                
+        ]},
+        { "label_fr": "Façades vertes" }
+    ]},
+    { "label_fr": "Travaux techniques", "children" : [
+        { "label_fr": "Electricité", "children" : [
+            { "label_fr": "Bio électricité" },
+            { "label_fr": "Domotique" }
+        ]},
+        { "label_fr": "Ventilation", "children" : [
+            { "label_fr": "Naturelle (A)" },
+            { "label_fr": "Simple flux (B,C)" },
+            { "label_fr": "Simple flux centralisé (B,C)" },
+            { "label_fr": "Double flux (D)" }
+        ]},
+        { "label_fr": "Plomberie" },
+        { "label_fr": "Chauffage, chaudière et distribution de chaleur" },
+        { "label_fr": "Chauffage par le sol / les murs" },
+        { "label_fr": "Production ECS" },
+        { "label_fr": "Récupération d'eau de pluie" },
+        { "label_fr": "Rénovation citerne d'eau de pluie" },
+        { "label_fr": "Panneaux photovoltaïques" },
+        { "label_fr": "Pompe à chaleur" },
+        { "label_fr": "Chauffe-eau solaire" }
+    ]},
+    { "label_fr": "Travaux intérieurs et de finition", "children" : [
+        { "label_fr": "Menuiserie intérieure" },
+        { "label_fr": "Escaliers" },
+        { "label_fr": "Murs intérieurs, plaque de plâtre" },
+        { "label_fr": "Enduisage", "children" : [
+            { "label_fr": "Plâtre" },
+            { "label_fr": "Chaux" },
+            { "label_fr": "Argile" }
+        ]},
+        { "label_fr": "Carrelage", "children" : [
+            { "label_fr": "Mur" },
+            { "label_fr": "Sol" }
+        ]},
+        { "label_fr": "Planchers" },
+        { "label_fr": "Mobilier de cuisine" },
+        { "label_fr": "Finition de la salle de bain" },
+        { "label_fr": "Agencement des greniers" },
+        { "label_fr": "Peintures" }
+    ]}
+]
