@@ -293,14 +293,14 @@ class Ticket extends BaseController
     public function decoup_pdf_imagick()
     {
         // Chemin du PDF d'entrée
-        $inputPdfPath = APPPATH . 'Tickets/source_brut/test.pdf';
+        $inputPdfPath = APPPATH . 'test/source_brut/test.pdf';
 
         // Chemin du dossier de sortie pour les images temporaires
-        $tempImagePath = APPPATH . 'Tickets/temp/';
+        $tempImagePath = APPPATH . 'test/temp/';
 
 
         // Chemin du dossier de sortie pour les PDF découpés
-        $outputPdfPath = APPPATH . 'Tickets/individuel/';
+        $outputPdfPath = APPPATH . 'test/individuel/';
 
         // Nom de base pour les fichiers de sortie
         $outputFileName = 'page_decoupee_';
