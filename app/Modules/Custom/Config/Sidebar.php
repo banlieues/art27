@@ -282,32 +282,39 @@ class Sidebar
                         ],
                     ],
                 ],*/
-              /*  [
+               [
                     'label' => 'Modèle de documents',
                     'ref' => 'report',
                     'autorisation' => 'administrator',
-                    'href' => 'report',
+                    'href' => 'autorisation/no_autorisation',
                     'children' => [
                         [
                             'label' => 'Schéma',
                             'ref' => 'schema',
                             'autorisation' => 'administrator',
-                            'href' => 'report/schemas',
+                            'href' => 'autorisation/no_autorisation',
                         ],
                         [
                             'label' => 'Modèle',
                             'ref' => 'template',
                             'autorisation' => 'administrator',
-                            'href' => 'report/templates',
+                            'href' => 'autorisation/no_autorisation',
                         ],
                         [
                             'label' => 'Publication',
                             'ref' => 'publication',
                             'autorisation' => 'administrator',
-                            'href' => 'report/publications',
+                            'href' => 'autorisation/no_autorisation',
                         ],
                     ],
-                ],*/
+                ],
+
+                [
+                    'label' => 'Formulaires',
+                    'ref' => 'enquete',
+                    'autorisation' => 'partenaire_social',
+                    'href' => 'autorisation/no_autorisation',
+                ],
               /*  [
                     'label' => "Modèle d'email",
                     'ref' => 'mailing',
@@ -414,12 +421,12 @@ class Sidebar
                 //     'autorisation' => 'member',
                 //     'href' => 'doublons',
                 // ],
-                // [
-                //     'label' => 'Importation',
-                //     'ref' => 'import',
-                //     'autorisation' => 'member',
-                //     'href' => 'import',
-                // ],
+                 [
+                    'label' => 'Importation',
+                     'ref' => 'import',
+                     'autorisation' => 'member',
+                     'href' => 'import',
+                 ],
                 // [
                 //     'label' => 'Papopi',
                 //     'ref' => 'papopi',

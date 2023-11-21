@@ -79,7 +79,9 @@
                         href="<?php echo base_url('partenaire_social/convention_barcode_modif/' . $partenaire_social->id_partenaire_social.'/'.$annee_select);?>"
                         >
                         <?php echo $themes->partenaire_social->icon;?>
-                           Produire PDF
+                        
+                        
+                        
                     </a>
 
                     <a 

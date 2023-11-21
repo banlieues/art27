@@ -513,7 +513,7 @@ class Partenaire_social extends BaseController
             
            // "delete"=>[null,false,"partenaire_socials_culturel_d"],
             
-
+            ""=>["<button>Imprimer</button>",false],
             "label_mois"=>["Mois concerné",true],
             "num_code"=>["Référence",TRUE],
             "barcode"=>["Code Barre",false],

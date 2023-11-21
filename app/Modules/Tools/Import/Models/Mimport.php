@@ -105,16 +105,29 @@ class MImport extends Model{
 			'auto_increment' => true,
 		];
 
+		$i=1;
+
 		foreach($csv[0] as $label=>$value)
 		{
-			$fields[slugify_name_file($label,"_")]=['type' => 'TEXT'];
-			$label_origine[]=slugify_name_file($label,"_");
+		
+			$name_field=slugify_name_file($label,"_");
+			
+			if(empty(trim($name_field))||is_numeric(trim($name_field)))
+			{
+				$name_field="untitled_$i";
+				$i=$i+1;
+			}
+			
+			$fields[$name_field]=['type' => 'TEXT','null'=> true];
+
+
+			$label_origine[]=$name_field;
 
 		}
 
-		
+		//debugd($fields);
 
-		$fields["ban_index_is_import"]=[
+	/*	$fields["ban_index_is_import"]=[
 			'type'       => 'INT',
 			'constraint'=> 1,
 		];
@@ -145,11 +158,15 @@ class MImport extends Model{
 		$fields["ban_select_new_value"]=[
 			'type'       => 'text',
 			'null'		=> true
+		];*/
+
+
+		$fields["is_imported"]=[
+			'type'       => 'int',
+			'null'		=> false
 		];
-
-
-		
-		
+		//debugd($fields);
+	
 		$forge->addField($fields);
 		$forge->addPrimaryKey("id_$name_temp");
 		
@@ -161,7 +178,7 @@ class MImport extends Model{
 					"name_table"=>$name_temp,
 					"created_at"=>date("Y-m-d H:i:s"),
 					"created_by"=>session()->get("loggedUserId"),
-					"name_fields_origin"=>implode(",",$label_origine)
+					//"name_fields_origin"=>implode(",",$label_origine)
 
 			];
 
@@ -173,13 +190,33 @@ class MImport extends Model{
 			//debug($csv);
 			//je copie les données
 			$data_insert=[];
+		
 			foreach($csv as $cs)
 			{
+				$i=1;
+				
+				
 				foreach($cs as $label=>$value)
 				{
-					$label=slugify_name_file($label,"_");
+					$is_empty=false;
+					$name_field=slugify_name_file($label,"_");
+			
+					if(empty(trim($name_field))||is_numeric(trim($name_field)))
+					{
+						$name_field="untitled_$i";
+						$is_empty=true;
+					}
+					
+					$label=$name_field;
+
+
 					$data_ligne[$label]=$value;
+					if($is_empty)
+					{
+						$i=$i+1;
+					}
 				}
+				
 				//debug($data_ligne);
 				array_push($data_insert,$data_ligne);
 				$data_ligne=[];
@@ -211,10 +248,9 @@ class MImport extends Model{
 	public function getMetaDataTable($name_temp=NULL)
 	{
 		$builder=$this->db->table("ban_import");
-		
+	
 		if(!is_null($name_temp))
 		{
-
 			$builder->where("name_table",$name_temp);
 			return $builder->get()->getRow();
 		}
@@ -239,7 +275,7 @@ class MImport extends Model{
 	}
 
 
-	public function getTableImportOnlyFieldCsv($name_temp)
+	public function getTableImportOnlyFieldCsv($name_temp,$ids_primary=null)
 	{
 		$metadata=$this->getMetaDataTable($name_temp);
 
@@ -249,7 +285,12 @@ class MImport extends Model{
 
 			$builder=$this->db->table($name_temp);
 			$builder->select($name_fiels_origin);
-			$builder->limit(5);
+			if(!is_null($ids_primary))
+			{
+				$builder->whereIn("id_$name_temp",$ids_primary);
+			}
+	
+			$builder->where("is_imported",0);
 			$builder->OrderBy("id_$name_temp");
 			return $builder->get()->getResult();
 
@@ -318,5 +359,238 @@ class MImport extends Model{
 		return $values_csv;
 	}
 
+	public function set_date_created()
+	{
+		$query="
+			UPDATE activities SET created_at=date WHERE date!='0000-00-00'
+		";
+
+		$this->db->query($query);
+
+		$query="
+			UPDATE activities SET updated_at=maj WHERE maj!='0000-00-00'
+		";
+
+		$this->db->query($query);
+
+
+		$query="
+			UPDATE contacts SET created_at=date_creation WHERE date_creation!='0000-00-00'
+		";
+
+		$this->db->query($query);
+
+		$query="
+			UPDATE contacts SET updated_at=maj WHERE maj!='0000-00-00'
+		";
+
+
+		$query="
+			UPDATE inscriptions SET created_at=(SELECT date_creation FROM contacts WHERE date_creation!='0000-00-00' AND contacts.id_contact=inscriptions.id_contact )
+		";
+
+		$this->db->query($query);
+
+		$query="
+			UPDATE inscriptions SET updated_at=(SELECT maj FROM contacts WHERE maj!='0000-00-00' AND contacts.id_contact=inscriptions.id_contact )
+		";
+
+		$this->db->query($query);
+
+
+		$query="
+			UPDATE lieu SET created_at=date_created WHERE date_created!='0000-00-00'
+		";
+
+		$this->db->query($query);
+
+		$query="
+			UPDATE lieu SET updated_at=date_updated WHERE date_updated!='0000-00-00'
+		";
+
+
+		$this->db->query($query);
+
+		$query="
+			UPDATE activities SET statut_action=3 WHERE cloturer='oui'
+		";
+
+		$this->db->query($query);
+
+
+	}
+
+
+	function getIndexActif($entities)
+	{
+		$indexes=[];
+		foreach($entities as $entity)
+		{
+			$builder=$this->db->table("ban_components_$entity");
+			$builder->select("fields");
+			$builder->where("type",$entity);
+
+			$result=$builder->get()->getResult();
+
+			if(!empty($result))
+			{
+				foreach($result as $r)
+				{
+					if(!empty($r->fields))
+					{
+						$explode=explode(",",$r->fields);
+						//$explode=ksort($explode);
+						foreach($explode as $index)
+						{
+							
+							if($index!="@#<hr>")
+							{
+								if($entity=="registrations")
+								{
+									$entity="inscriptions";
+								}
+								$indexes[$index]=$entity." - $index";
+								
+							}
+						}
+					}
+					
+				}
+			}
+		
+		}
+		return $indexes;
+	}
     
+
+	public function change_index($index_crm,$index_csv,$table_csv)
+	{
+		$forge = \Config\Database::forge();
+
+		$fields=[
+			$index_csv=>[
+				'name'=>$index_crm,
+				'type'=>"TEXT",
+				'null'=>true
+			]
+		];
+
+		$forge->modifyColumn($table_csv,$fields);
+
+
+	}
+
+	public function search_utilisateur($search)
+	{
+		if(!empty(trim($search)))
+		{
+			$builder=$this->db->table("user_accounts");
+
+			$builder->select("
+				user_accounts.id, 
+				user_accounts.nom,
+				user_accounts.prenom
+					");
+				
+					$items=explode(" ",$search);
+						
+					$fieldSearchs=array(
+						"user_accounts.nom",
+						"user_accounts.prenom",
+					
+					);
+					
+					$builder->groupStart();
+						foreach($items as $item):
+							$builder->groupStart();
+							foreach($fieldSearchs as $fieldSearch):
+								$builder->orLike($fieldSearch,$item);
+							endforeach;
+							$builder->groupEnd();
+						endforeach;
+					$builder->groupEnd();
+
+				return $builder->get()->getResult();
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public function search_contact($search)
+	{
+		if(!empty(trim($search)))
+		{
+			$builder=$this->db->table("contacts");
+
+			$builder->select("
+					contacts.id_contact, 
+					contacts.nom,
+					contacts.prenom,
+					contacts.nom_court_institution
+					");
+				
+					$items=explode(" ",$search);
+						
+					$fieldSearchs=array(
+						"contacts.nom",
+						"contacts.prenom",
+					
+					);
+					
+					$builder->groupStart();
+						foreach($items as $item):
+							$builder->groupStart();
+							foreach($fieldSearchs as $fieldSearch):
+								$builder->orLike($fieldSearch,$item);
+							endforeach;
+							$builder->groupEnd();
+						endforeach;
+					$builder->groupEnd();
+
+				return $builder->get()->getResult();
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public function getActivitesPossible($id_activite=null,$is_only_futur=true)
+	{
+
+		if(is_null($id_activite)) $id_activite=0;
+		$builder=$this->db->table("activities");
+		$builder->select( "
+				activities.id_activity,
+				titre,
+				idact
+		");
+		$builder->where("statut<>","poubelle");
+      
+		
+		if($is_only_futur)
+		{
+			$builder->where("(date_debut>NOW() OR id_activity=$id_activite)");
+		}
+		else
+		{
+			$builder->where("(date_debut>SUBDATE(NOW(), INTERVAL 1 YEAR) OR id_activity=$id_activite)");
+		}
+		
+
+		$builder->orderBy('date_debut');
+		return $builder->get()->getResult();
+
+	}
+
+	public function insert_user($values)
+	{
+		$builder=$this->db->table("user_accounts");
+		$builder->insert($values);
+
+		return $this->db->insertId();
+	}
+
 }

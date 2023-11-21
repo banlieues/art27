@@ -1,4 +1,4 @@
-<?php $this->extend('Layout\index'); ?>
+<?php $this->extend("Layout\index"); ?>
 
 <?php $this->section("body"); ?>
 <h3><i class="<?=icon("import")?>"></i> <?=$titleView?></h3>
@@ -49,8 +49,6 @@
 									<th>Date d'importation</th>
 									<th>Total lignes</th>
 									<th>Importés</th>
-									<th>Update</th>
-									<th>Insert</th>
 									<th>Reste</th>
 									<th></th>
 								</tr>
@@ -62,8 +60,6 @@
 										<td><?=convert_date_en_to_fr_with_h($table->created_at)?></td>
 										<td><?=$table->number_line?></td>
 										<td><?=$table->number_total_import?></td>
-										<td><?=$table->number_total_insert?></td>
-										<td><?=$table->number_total_update?></td>
 										<td><?=$table->number_total_reste?></td>
 										<td>
 											<a href="<?=base_url()?>/import/table_importation/<?=$table->name_table?>" class="btn btn-dark btn-sm">Voir tableau d'importation</a>
@@ -83,7 +79,7 @@
 
 <?php $this->endSection(); ?>
 
-<?php $this->section("script_foot_injected"); ?>
+<?php $this->section("js_inject"); ?>
 
 <script>
 	

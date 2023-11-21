@@ -47,7 +47,9 @@
                             <tbody>
                             <?php foreach($list_BarCodes as $barCode):?>
                                 <tr>
-    
+                                    <td>
+                                        <input type="checkbox" name="">
+                                    </td>
                                     <td>
                                         <?=$barCode->label_mois?>
                                     </td>
