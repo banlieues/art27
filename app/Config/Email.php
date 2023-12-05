@@ -4,6 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
+
 class Email extends BaseConfig
 {
     public string $fromEmail  = '';
@@ -28,17 +29,17 @@ class Email extends BaseConfig
     /**
      * SMTP Server Address
      */
-    public string $SMTPHost = 'smtp.office365.com';
+    public string $SMTPHost = 'in-v3.mailjet.com';
 
     /**
      * SMTP Username
      */
-    public string $SMTPUser = CRMAIL;
+    public string $SMTPUser = "e3293a1c435d5d758ab5629ac3b5f2a4";
 
     /**
      * SMTP Password
      */
-    public string $SMTPPass = CRMAILMDP;
+    public string $SMTPPass = "fb343d0fc8acca7fa57df5d6c2102f35";
 
     /**
      * SMTP Port

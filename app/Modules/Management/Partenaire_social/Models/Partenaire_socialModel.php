@@ -273,6 +273,8 @@ class Partenaire_socialModel extends Model
 			$builder=$this->db->table("convention");
 			$post["created_at"]=date("Y-m-d H:i:s");
 			$post["created_by"]=session()->get("loggedUserId");
+			unset($post["ci_session"]);
+			unset($post["csrf_cookie_name"]);
 			$builder->insert($post);
 		}
 		else
@@ -281,6 +283,9 @@ class Partenaire_socialModel extends Model
 			$post["updated_by"]=session()->get("loggedUserId");
 			$builder=$this->db->table("convention");
 			$builder->where("id_convention",$convention->id_convention);
+			unset($post["ci_session"]);
+			unset($post["csrf_cookie_name"]);
+
 			$builder->update($post);
 		}
 		

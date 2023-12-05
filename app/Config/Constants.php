@@ -37,17 +37,15 @@ defined('MODULE_DIR') || define('MODULE_DIR', APPPATH . 'Modules/');
 defined('URL_DOCUMENT')        || define('URL_DOCUMENT', "demandes/documents/");
 defined('PATH_DOCU_UPLOAD')        || define('PATH_DOCU_UPLOAD', "./tickets/");
 
-defined('CRM_NAME') || define("CRM_NAME","Homegrade");
-defined('PUBLIC_MAIL') || define("PUBLIC_MAIL","info@homegrade.brussels");
+defined('CRM_NAME') || define("CRM_NAME","CRM");
+defined('PUBLIC_MAIL') || define("PUBLIC_MAIL","crm@banlieues.be");
 
 //version non production
 
-defined('CRMAIL') || define("CRMAIL","contact.crm@homegrade.brussels");
-defined('CRMAILMDP') || define("CRMAILMDP","HG@crmbe@77");
-defined('IDCRMFOLDER') || define("IDCRMFOLDER",'AAMkADcyZTI0Y2RiLWY3M2ItNDBlNi1iOTVjLTQ4NDliZTg3MzA2YgAuAAAAAADTwe3XSzxUT5kvUE_d7j4kAQDMZDxJfIBVRotvg_vSKyPnAAAF6ATMAAA=');
+defined('CRMAIL') || define("CRMAIL","crm@banlieues.be");
+defined('CRMAILMDP') || define("CRMAILMDP","fb343d0fc8acca7fa57df5d6c2102f35");
+defined('IDCRMFOLDER') || define("IDCRMFOLDER",'sssssssss');
 
-defined('HAS_OUTLOOK') || define("HAS_OUTLOOK",true);
-defined('HAS_NOTE_NOTIFICATION') || define("HAS_NOTE_NOTIFICATION",true);
 
 
 defined('HAS_OUTLOOK') || define("HAS_OUTLOOK",false);

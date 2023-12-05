@@ -361,6 +361,8 @@ class Partenaire_social extends BaseController
 
     public function convention_barcode($id_partenaire_social,$annee_select)
     {
+
+
         $partenaire_social=$this->partenaire_socialModel->partenaire_social($id_partenaire_social);
         $has_convention=$this->partenaire_socialModel->has_convention($id_partenaire_social,$annee_select);
          
@@ -384,7 +386,7 @@ class Partenaire_social extends BaseController
            
             $this->datas->info_log=date_log($convention->created_at,$convention->updated_at,$convention->createur,$convention->updateur);
 
-            //debugd($this->info_log);
+           
         }
         else
         {

@@ -4,7 +4,7 @@ namespace Custom\Config;
 
 class Email
 {
-    public $fromName = "Homegrade Team";
+    public $fromName = "CRM Notification";
     public $fromEmail;
     public $mailType = 'html';
     public $protocol = 'smtp';

@@ -12,7 +12,7 @@
 <?php else:?>
     <?php if($autorisationManager->is_autorise("partenaire_social_r")):?>
        
-        <?php foreach($status as $statut):?>
+        <?php foreach($statut_ticket as $statut):?>
        <?php if($ticket->statut_ticket==$statut->id):?><?=$statut->label?><?php endif;?>
         <?php endforeach;?> 
 

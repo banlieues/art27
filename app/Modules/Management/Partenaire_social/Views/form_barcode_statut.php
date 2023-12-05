@@ -11,7 +11,7 @@
     </select>
 </form>
 <?php else:?>
-    <?php if($autorisationManager->is_autorise("partenaire_socil_r")):?>
+    <?php if($autorisationManager->is_autorise("partenaire_social_r")):?>
        
         <?php foreach($status as $statut):?>
        <?php if($barcode->statut==$statut->id):?><?=$statut->label?><?php endif;?>

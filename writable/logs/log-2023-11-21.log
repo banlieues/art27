@@ -9744,3 +9744,5 @@ in APPPATH/Modules/Management/Ticket/Controllers/Ticket.php on line 334.
  3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(Ticket\Controllers\Ticket))
  4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-21 20:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-21 20:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

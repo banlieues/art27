@@ -33,6 +33,7 @@
         <div class="col align-self-center">
             <div class="text-end">
                 <?php if($typeDataView=="read"&&$tab=="fiche"):?>
+                    <?php if($Autorisation->is_autorise("partenaire_social_u")):?>
                     <a 
                         class="btn btn-<?php echo $themes->partenaire_social->color;?> btn-sm" 
                         href="<?php echo base_url('partenaire_social/modif/' . $partenaire_social->id_partenaire_social);?>"
@@ -40,6 +41,7 @@
                         <?php echo $themes->partenaire_social->icon;?>
                         Modifier la fiche
                     </a>
+                    <?php endif;?>
                     <?php elseif($typeDataView=="associe"&&$tab=="fiche"):?>
                         <button id="btn_new_form" class="btn btn-success btn-sm"><i class="<?=icon("save")?>"></i> Enregistrer</button>
                       
