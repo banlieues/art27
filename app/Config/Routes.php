@@ -34,6 +34,8 @@ $routes->setTranslateURIDashes(false);
 
 $routes->match(['get', 'post'], 'home', 'Home::index');
 
+$routes->match(['get', 'post'], 'readBarcode', 'BarcodeReader::readBarcode');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
