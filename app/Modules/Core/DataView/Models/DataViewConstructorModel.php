@@ -2258,11 +2258,11 @@ class dataViewConstructorModel extends Model
         $builder->orderBy("$id_primary_name DESC");
         $old_values=$builder->get()->getRow();
 
-        $is_debug=TRUE;
+        $is_debug=false;
         if($is_debug)
         {
-           // debug($old_values);
-            //debugd($newValues);
+           debug($old_values);
+            debugd($newValues);
         }
      
 
@@ -2271,176 +2271,179 @@ class dataViewConstructorModel extends Model
         {
             foreach($old_values as $index=>$old_value)
             {
-                $type_field=$descriptor[$index]["type_field"];
-
-                if(isset($newValues[$index]))
+                if(isset($descriptor[$index]["type_field"]))
                 {
-                    $new_values_index=$newValues[$index];
+                    $type_field=$descriptor[$index]["type_field"];
 
-                }
-                else
-                {
-                    $new_values_index="";
-                }
+                    if(isset($newValues[$index]))
+                    {
+                        $new_values_index=$newValues[$index];
 
-
-                switch($type_field)
-                {
-                    case "check":
-
-                        if(is_null($old_value)||$old_value==0||empty($old_value))
-                        {
-                            $old_value="";
-                        }
-
-                        if(is_null($new_values_index)||$new_values_index==0||empty($new_values_index))
-                        {
-                            $new_values_index="";
-                        }
+                    }
+                    else
+                    {
+                        $new_values_index="";
+                    }
 
 
-                        break;
-                            
+                    switch($type_field)
+                    {
+                        case "check":
 
-                    case "radio":
-                    case "select":
-                        if(is_null($old_value)||$old_value==0||empty($old_value))
-                        {
-                            $old_value="";
-                        }
-
-                        if(is_null($new_values_index)||$new_values_index==0||empty($new_values_index))
-                        {
-                            $new_values_index="";
-                        }
-                        break;
-
-                    case "birthday":      
-                    case "date":
-                        if(is_null($old_value)||$old_value=="0000-00-00 00:00:00"||$old_value=="0000-00-00"||empty($old_value))
-                        {
-                            $old_value="";
-                        }
-
-                        if(is_null($new_values_index)||$new_values_index=="0000-00-00 00:00:00"||$new_values_index=="0000-00-00"||empty($new_values_index))
-                        {
-                            $new_values_index="";
-                        }
-                        break;
-
-                    default:
-
-                            if(is_null($old_value)||empty($old_value))
+                            if(is_null($old_value)||$old_value==0||empty($old_value))
                             {
                                 $old_value="";
                             }
 
-                            if(is_null($new_values_index)||empty($new_values_index))
+                            if(is_null($new_values_index)||$new_values_index==0||empty($new_values_index))
                             {
                                 $new_values_index="";
                             }
 
 
-
-                }
-
-                if((isset($new_values_index)&&$new_values_index!=$old_value) || !isset($new_values_index))
-                {
-                    //On récupère les valeurs
-                
-
-                    switch($type_field)
-                    {
-                        case "check":
-                            $old_value_label='';
-                            
-                            if(!empty($old_value))
-                            {
-                                $old_value_array=explode(",",$old_value);
-                                $old_value_labels=[];
-
-                                foreach($old_value_array as $ov)
-                                {
-                                    if($ov>0)
-                                    {
-                                        array_push($old_value_labels,$this->get_label_of_value($ov,$descriptor,$index));
-
-                                    }
-                                }
-
-                                if(!empty($old_value_labels))
-                                {
-                                    $old_value_label=implode(", ",$old_value_labels);
-                                }
-                            }
-
-                            $new_value_label='';
-                            
-                            if(!empty($new_values_index))
-                            {
-                                $new_value_array=explode(",",$new_values_index);
-                                $new_value_labels=[];
-
-                                foreach($new_value_array as $nv)
-                                {
-                                    if($nv>0)
-                                    {
-                                        array_push($new_value_labels,$this->get_label_of_value($nv,$descriptor,$index));
-
-                                    }
-                                }
-
-                                if(!empty($new_value_labels))
-                                {
-                                    $new_value_label=implode(", ",$new_value_labels);
-                                }
-                            }
                             break;
-
+                                
 
                         case "radio":
                         case "select":
-                            //On récupère le label pour old_value
-                            if(!empty($old_value))
+                            if(is_null($old_value)||$old_value==0||empty($old_value))
                             {
-                            
-                                $old_value_label=$this->get_label_of_value($old_value,$descriptor,$index);
-                            }
-                            else
-                            {
-                                $old_value_label='';
-                            }
-                        
-                            //On récupère le label pour new_value
-                            if(!isset($new_values_index))
-                            {
-                                $new_value_label='';
-                            }
-                            else
-                            {
-                                if(!empty($new_values_index))
-                                {
-                                
-                                    $new_value_label=$this->get_label_of_value($new_values_index,$descriptor,$index);
-                                }
-                                else
-                                {
-                                    $new_value_label='';
-                                }
+                                $old_value="";
                             }
 
+                            if(is_null($new_values_index)||$new_values_index==0||empty($new_values_index))
+                            {
+                                $new_values_index="";
+                            }
+                            break;
 
+                        case "birthday":      
+                        case "date":
+                            if(is_null($old_value)||$old_value=="0000-00-00 00:00:00"||$old_value=="0000-00-00"||empty($old_value))
+                            {
+                                $old_value="";
+                            }
+
+                            if(is_null($new_values_index)||$new_values_index=="0000-00-00 00:00:00"||$new_values_index=="0000-00-00"||empty($new_values_index))
+                            {
+                                $new_values_index="";
+                            }
                             break;
 
                         default:
 
-                            $old_value_label=$old_value;
-                            $new_value_label=$new_values_index;
-                        
-                            
+                                if(is_null($old_value)||empty($old_value))
+                                {
+                                    $old_value="";
+                                }
+
+                                if(is_null($new_values_index)||empty($new_values_index))
+                                {
+                                    $new_values_index="";
+                                }
+
+
+
                     }
-                    $data_changes[$index]=["value_old"=>$old_value_label,"value_new"=>$new_value_label];
-                // debugd($data_changes);
+
+                    if((isset($new_values_index)&&$new_values_index!=$old_value) || !isset($new_values_index))
+                    {
+                        //On récupère les valeurs
+                    
+
+                        switch($type_field)
+                        {
+                            case "check":
+                                $old_value_label='';
+                                
+                                if(!empty($old_value))
+                                {
+                                    $old_value_array=explode(",",$old_value);
+                                    $old_value_labels=[];
+
+                                    foreach($old_value_array as $ov)
+                                    {
+                                        if($ov>0)
+                                        {
+                                            array_push($old_value_labels,$this->get_label_of_value($ov,$descriptor,$index));
+
+                                        }
+                                    }
+
+                                    if(!empty($old_value_labels))
+                                    {
+                                        $old_value_label=implode(", ",$old_value_labels);
+                                    }
+                                }
+
+                                $new_value_label='';
+                                
+                                if(!empty($new_values_index))
+                                {
+                                    $new_value_array=explode(",",$new_values_index);
+                                    $new_value_labels=[];
+
+                                    foreach($new_value_array as $nv)
+                                    {
+                                        if($nv>0)
+                                        {
+                                            array_push($new_value_labels,$this->get_label_of_value($nv,$descriptor,$index));
+
+                                        }
+                                    }
+
+                                    if(!empty($new_value_labels))
+                                    {
+                                        $new_value_label=implode(", ",$new_value_labels);
+                                    }
+                                }
+                                break;
+
+
+                            case "radio":
+                            case "select":
+                                //On récupère le label pour old_value
+                                if(!empty($old_value))
+                                {
+                                
+                                    $old_value_label=$this->get_label_of_value($old_value,$descriptor,$index);
+                                }
+                                else
+                                {
+                                    $old_value_label='';
+                                }
+                            
+                                //On récupère le label pour new_value
+                                if(!isset($new_values_index))
+                                {
+                                    $new_value_label='';
+                                }
+                                else
+                                {
+                                    if(!empty($new_values_index))
+                                    {
+                                    
+                                        $new_value_label=$this->get_label_of_value($new_values_index,$descriptor,$index);
+                                    }
+                                    else
+                                    {
+                                        $new_value_label='';
+                                    }
+                                }
+
+
+                                break;
+
+                            default:
+
+                                $old_value_label=$old_value;
+                                $new_value_label=$new_values_index;
+                            
+                                
+                        }
+                        $data_changes[$index]=["value_old"=>$old_value_label,"value_new"=>$new_value_label];
+                    // debugd($data_changes);
+                    }
                 }
             }
         

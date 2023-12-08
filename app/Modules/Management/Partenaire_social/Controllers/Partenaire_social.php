@@ -222,7 +222,7 @@ class Partenaire_social extends BaseController
 
 
        
-       
+      
         return view($this->viewpath.'view-partenaire_social-form_update', (array) $this->datas);
     }
     
@@ -246,7 +246,7 @@ class Partenaire_social extends BaseController
        // $user=$this->inscriptionModel->get_user_by_id_partenaire_social($id_partenaire_social);
 
       
-        $titleView="Nouveau partenaire_social";
+        $titleView="Ajouter un partenaire social";
 
         $this->datas->partenaire_social = null;
         $this->datas->fields = $this->partenaire_socialModel->getFields();
@@ -258,7 +258,7 @@ class Partenaire_social extends BaseController
         $this->datas->id_partenaire_social=0;
         $this->datas->viewpath=$this->viewpath;
         $this->datas->components=$dataView->getComponents("partenaire_social");
-
+        $this->datas->tab="fiche";
 
      
         $this->datas->partenaire_social_component=$partenaire_social_component;

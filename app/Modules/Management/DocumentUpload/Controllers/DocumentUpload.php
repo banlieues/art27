@@ -52,7 +52,7 @@ class DocumentUpload extends BaseController
     }
 
    
-    public function listDocument()
+    public function listDocument($entity=NULL,$id_entity=NULL)
     {
        /* $segment="document";
 
@@ -80,7 +80,7 @@ class DocumentUpload extends BaseController
             "document_upload.name"=>["Nom du fichier",true],
             "document_upload.commentaire"=>["Commentaire",true],
             "document_upload.id_type"=>["Type",true],
-            "demande.nom"=>["Demande liée",true]
+        
            
            
 
@@ -89,7 +89,7 @@ class DocumentUpload extends BaseController
 
 
         
-        $this->datas->documents=$this->documentModel->getListDocument($this->request,$orderBy,$orderDirection);
+        $this->datas->documents=$this->documentModel->getListDocument($this->request,$orderBy,$orderDirection,$entity,$id_entity);
         $this->datas->pager=$this->documentModel->pager;
         $this->datas->nbDocuments= $this->datas->pager->getTotal();
         $this->datas->fields= $this->documentModel->getFields();
@@ -99,11 +99,22 @@ class DocumentUpload extends BaseController
         $this->datas->getTh=$this->componentOrderBy->orderTh($fieldsOrder,$orderBy,$orderDirection,$this->request);
         $this->datas->type_document=$this->documentModel->get_liste_type_document();
         $this->datas->module=$this->module;
+        $this->datas->entity=$entity;
+        $this->datas->id_entity=$id_entity;
 
 
         return view($this->module . '\list-document', (array) $this->datas );
     }
 
+    public function listes_documents_entity($entity=null,$id_entity=null)
+    {
+        
+        $this->datas->documents=$this->documentModel->getListDocuments($entity,$id_entity);
+    
+
+        return view($this->module . '\listes_documents_entity', (array) $this->datas);
+
+    }
 
     public function liste_demande($id_document)
     {
@@ -174,14 +185,14 @@ class DocumentUpload extends BaseController
 
     public function upload_file()
     {
-       $write_path=PATH_DOCU_DEMANDE;
+       $write_path=PATH_DOCU;
 
        //$write_path="./assets/test_upload/";
 
 
-        $id_demande=$this->request->getVar("id_demande");
+        $entity=$this->request->getVar("entity");
        
-        $id_message=$this->request->getVar("id_message");
+        $id_entity=$this->request->getVar("id_entity");
         
         if ($this->request->getFile("file")) {
              
@@ -200,8 +211,8 @@ class DocumentUpload extends BaseController
                     'id_user' =>session()->get('loggedUserId'),
                     'date_created'=>date("Y-m-d H:i:s"),
                     'display'   => 1,
-                    'id_message' => $id_message,
-                    'id_demande' => $id_demande
+                    'entity' => $entity,
+                    'id_entity' => $id_entity
                  
                 ];
                 $id_upload_file = $this->documentModel->upload_file($data);

@@ -5,8 +5,8 @@
         <?php if(!is_array($value)): $value=explode(",",$value); endif;?>
         <div class="form-check <?php if(count($checks)<4):?> form-check-inline <?php endif;?>">
             <input name_visibility="<?=$index?>"
-                name_checkbox="<?=$index?>"
-                name="<?=$index?>[]"
+                name_checkbox="<?=$index?><?=$numero_multiple?>"
+                name="<?=$index?><?=$numero_multiple?>[]"
                 class="ssth_direct form-check-input"
                 type="checkbox" value="<?=$check->key?>"
                 id="Check<?=$index.$i?>"

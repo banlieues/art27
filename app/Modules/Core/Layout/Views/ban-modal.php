@@ -1,65 +1,4 @@
-<div style="display:none" id="loading_layer">
-  <div style='z-index:9999999;  position:fixed; width:100%; height:100%; background-color:black; opacity:0.5' class='loading_layer'> <div style='top:50%; left:50%; position:fixed'> <i class="fas fa-circle-notch fa-spin fa-4x"></i> <br> Loading… </div> </div>
-  <div style='z-index:19999999; position:fixed; width:100%; height:100%; background-color:transparent; ' class='loading_layer'> <div style='top:50%; left:50%; position:fixed'> <i class="fas fa-circle-notch fa-spin fa-4x"></i> <br> Loading… </div> </div>
-</div>
-<div class="modal fade" id="modalAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div style="background-color:#565e64" class="modal-header">
-                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlertTitre"></span></h5>
-            </div>
-            <div id="modalAlertBody" class="modal-body">
-                Voulez-vous <span  id="dataAlertContent"></span>&nbsp;?
-            </div>
-            <div class="modal-footer">
-                <button id="ModalAlertConfirm" data-type-confirm="" data-id-from="" type="button" class="btn btn-secondary">Oui</button>
-                <button id="ModalAlertCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
-            </div>
-        </div>
-    </div>
-</div>
-<?php //modal pour delete url?>
-<div class="modal fade" id="modalAlertDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div style="background-color:#565e64" class="modal-header">
-                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlerDeleteTitre"></span></h5>
-            </div>
-            <div id="modalAlertDeleteBody" class="modal-body">
-                Voulez-vous effacer <span  id="dataAlertContentDelete"></span>&nbsp;? 
-            </div>
-            <div class="modal-footer">
-                <a href="" id="ModalAlertDeleteConfirm" data-type-confirm="" data-id-from="" type="button" class="btn btn-secondary">Oui</a>
-                <button id="ModalAlertDeleteCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<?php //modal pour delete systeme de form plus sécrurisé A PRIVILIGIE ?>
-<div class="modal fade" id="modalAlertDeleteForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div style="background-color:#565e64" class="modal-header">
-                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlertFormDeleteTitre"></span>Demande de suppression</h5>
-            </div>
-            <div id="modalAlertDeleteBody" class="modal-body">
-                Voulez-vous effacer <span  id="dataAlertFormContentDelete"></span>&nbsp;? 
-            </div>
-            <div class="modal-footer">
-                <form action="#" id="formDelete" method="post">
-                    <input type="hidden" id="idDelete" name="idDelete" value="">
-                    <input type="hidden"  name="uriReturn" value="<?=current_url(true)?>">
-                    <button href="" id="ModalAlertFormDeleteConfirm" data-type-confirm="" data-id-from="" type="submit" class="btn btn-secondary">Oui</button>
-                    <button id="ModalAlertFormDeleteCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
-                </form>   
-                <div style="display:none" class="text-center ModalFormDeleteLoader">
-                    <i class="fa fa-spin fa-spinner fa-2x"></i> En cours de suppression…
-                </div> 
-            </div>
-        </div>
-    </div>
-</div>
 <!--- Collection of view  --->
 <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -182,7 +121,8 @@
 
             <form method="POST" enctype="multipart/form-data" action="<?=base_url()?>/documentUpload/upload_file" class="dropzone" id="my-dropzone">
               <div class="dz-message" data-dz-message><span><h4>Uploader des documents</h4>Cliquer ici pour ajouter des documents ou Glisser et déposer vos document dans cette fenêtre</span>
-                  <input type="hidden" class="drop_zone_id_demande" value="" name="id_demande">
+                  <input type="hidden" class="drop_zone_entity" value="" name="entity">
+                  <input type="hidden" class="drop_zone_id_entity" value="" name="id_entity">
             </div>
           </form>
       </div>
@@ -195,7 +135,7 @@
 </div>
 
 
-<!-- modal pour inserer un document -->
+<!-- modal pour inserer un ticket -->
 <div class="modal fade" id="AjouterTicketModal" tabindex="-1" aria-labelledby="AjouterTicketModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
@@ -262,7 +202,7 @@
     <div class="modal-content">
 
     <div style="background-color:#565e64" class="modal-header">
-                <h5 class="modal-title text-white">Liste des documents de la demande n°<span id="id_demande_GererDocumentModalCRM"></span></h5>
+                <h5 class="modal-title text-white">Documents liés à la fiche</h5>
             </div>
      
       <div class="modal-body p-0 container_GererDocumentModalCRM">
@@ -355,6 +295,69 @@
       </div>
     </div>
   </div>
+</div>
+
+<div style="display:none" id="loading_layer">
+  <div style='z-index:9999999;  position:fixed; width:100%; height:100%; background-color:black; opacity:0.5' class='loading_layer'> <div style='top:50%; left:50%; position:fixed'> <i class="fas fa-circle-notch fa-spin fa-4x"></i> <br> Loading… </div> </div>
+  <div style='z-index:19999999; position:fixed; width:100%; height:100%; background-color:transparent; ' class='loading_layer'> <div style='top:50%; left:50%; position:fixed'> <i class="fas fa-circle-notch fa-spin fa-4x"></i> <br> Loading… </div> </div>
+</div>
+<div class="modal fade" id="modalAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div style="background-color:#565e64" class="modal-header">
+                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlertTitre"></span></h5>
+            </div>
+            <div id="modalAlertBody" class="modal-body">
+                Voulez-vous <span  id="dataAlertContent"></span>&nbsp;?
+            </div>
+            <div class="modal-footer">
+                <button id="ModalAlertConfirm" data-type-confirm="" data-id-from="" type="button" class="btn btn-secondary">Oui</button>
+                <button id="ModalAlertCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php //modal pour delete url?>
+<div class="modal fade" id="modalAlertDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div style="background-color:#565e64" class="modal-header">
+                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlerDeleteTitre"></span></h5>
+            </div>
+            <div id="modalAlertDeleteBody" class="modal-body">
+                Voulez-vous effacer <span  id="dataAlertContentDelete"></span>&nbsp;? 
+            </div>
+            <div class="modal-footer">
+                <a href="" id="ModalAlertDeleteConfirm" data-type-confirm="" data-id-from="" type="button" class="btn btn-secondary">Oui</a>
+                <button id="ModalAlertDeleteCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php //modal pour delete systeme de form plus sécrurisé A PRIVILIGIE ?>
+<div class="modal fade" id="modalAlertDeleteForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div style="background-color:#565e64" class="modal-header">
+                <h5 class="modal-title text-white"><i class="fas fa-exclamation-triangle"></i> <span id="dataAlertFormDeleteTitre"></span>Demande de suppression</h5>
+            </div>
+            <div id="modalAlertDeleteBody" class="modal-body">
+                Voulez-vous effacer <span  id="dataAlertFormContentDelete"></span>&nbsp;? 
+            </div>
+            <div class="modal-footer">
+                <form action="#" id="formDelete" method="post">
+                    <input type="hidden" id="idDelete" name="idDelete" value="">
+                    <input type="hidden"  name="uriReturn" value="<?=current_url(true)?>">
+                    <button href="" id="ModalAlertFormDeleteConfirm" data-type-confirm="" data-id-from="" type="submit" class="btn btn-secondary">Oui</button>
+                    <button id="ModalAlertFormDeleteCancel" data-type-confirm="" data-id-from="" data-value-origin="" type="button" class="btn btn-danger">Non</button>
+                </form>   
+                <div style="display:none" class="text-center ModalFormDeleteLoader">
+                    <i class="fa fa-spin fa-spinner fa-2x"></i> En cours de suppression…
+                </div> 
+            </div>
+        </div>
+    </div>
 </div>
 
 

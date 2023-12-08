@@ -12,6 +12,7 @@ use Historique\Controllers\Historique;
 use Outlook\Models\OutlookModel;
 use Outlook\Controllers\Outlook;
 use Messagerie\Controllers\Messagerie;
+use Import\Controllers\Import;
 /**
  * Services Configuration file.
  *
@@ -121,6 +122,15 @@ class Services extends BaseService
         }
 
         return new Messagerie();
+    }
+
+    public static function  import($getShared = true)
+    {
+        if ($getShared) {
+            return self::getSharedInstance('Import');
+        }
+   
+        return new Import();
     }
  
 }

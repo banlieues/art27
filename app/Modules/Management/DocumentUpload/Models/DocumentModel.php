@@ -27,7 +27,7 @@ class DocumentModel extends Model
 
 	public function getTable(){return $this->table;}
 
-	public function getListDocument($request,$orderBy=NULL,$orderDirection=NULL)
+	public function getListDocument($request,$orderBy=NULL,$orderDirection=NULL,$entity=NULL,$id_entity=NULL)
 	{
 		$this->select("
 				
@@ -43,7 +43,7 @@ class DocumentModel extends Model
 				CONCAT(user_accounts.prenom,' ',user_accounts.nom) as user,
 
 
-				(SELECT GROUP_CONCAT(document_upload_lien.id_demande) FROM document_upload_lien WHERE document_upload_lien.id_document=document_upload.id) as id_demandes
+				
 				
 			
 				"
@@ -54,8 +54,20 @@ class DocumentModel extends Model
 		//$this->join("demande","demande.id_demande=document.id_demande","left");
 		$this->join("list_types_depot","list_types_depot.id=document_upload.id_type","left");
 		$this->join("user_accounts","user_accounts.id=document_upload.id_user","left");
+
+		$this->join("document_upload_lien","document_upload_lien.id_document=document_upload.id","left");
 		
 		$this->where("display","1");
+
+		if(!is_null($entity))
+		{
+			$this->where("document_upload_lien.entity",$entity);
+		}
+
+		if(!is_null($id_entity))
+		{
+			$this->where("document_upload_lien.id_entity",$id_entity);
+		}
 
 		 if($request->getVar("itemSearch")&&!empty(trim($request->getVar("itemSearch"))))
 		 {
@@ -243,7 +255,6 @@ class DocumentModel extends Model
 				CONCAT(user_accounts.prenom,' ',user_accounts.nom) as user,
 
 
-				(SELECT GROUP_CONCAT(document_upload_lien.id_demande) FROM document_upload_lien WHERE document_upload_lien.id_document=document_upload.id) as id_demandes
 
 			
 				"
@@ -262,7 +273,7 @@ class DocumentModel extends Model
 		return $this->find($id_document);
 	}
 
-	public function getListDocuments($id_demande=NULL, $id_message=NULL)
+	public function getListDocuments($entity=NULL,$id_entity=NULL)
 	{
 	/*	$builder=$this->db->table("email_outlook_lien");
 		$builder->join("document","document.id_message=email_outlook_lien.id_email");
@@ -280,11 +291,11 @@ class DocumentModel extends Model
 
 		$builder->join("document_upload","document_upload.id=document_upload_lien.id_document");
 		$builder->groupBy("document_upload_lien.id_document");
-		if($id_demande>0)
-			$builder->where("document_upload_lien.id_demande",$id_demande);
+		if(!is_null($entity))
+			$builder->where("entity",$entity);
 
-		if($id_message>0)
-			$builder->where("document_upload_lien.id_message",$id_message);
+		if(!is_null($entity))
+			$builder->where("id_entity",$id_entity);
 
 		return $builder->get()->getResult();
 
@@ -293,8 +304,8 @@ class DocumentModel extends Model
 	public function upload_file($data)
 	{
 		$data_insert_document=$data;
-		unset($data_insert_document["id_message"]);
-		unset($data_insert_document["id_demande"]);
+		unset($data_insert_document["entity"]);
+		unset($data_insert_document["id_entity"]);
 
 		$builder=$this->db->table("document_upload");
 		$builder->insert($data_insert_document);
@@ -302,23 +313,23 @@ class DocumentModel extends Model
 
 
 		
-		if(!isset($data["id_demande"])||(isset($data["id_demande"])&&is_null($data["id_demande"])))
+		if(!isset($data["entity"])||(isset($data["entity"])&&is_null($data["entity"])))
 		{
-			$data["id_demande"]=0;
+			$data["entity"]=NULL;
 		}
 			
 
-		if(!isset($data["id_message"])||(isset($data["id_message"])&&is_null($data["id_message"])))
+		if(!isset($data["id_entity"])||(isset($data["id_entity"])&&is_null($data["id_entity"])))
 		{
-			$data["id_message"]=0;
+			$data["id_entity"]=0;
 		}
 			
 
-		if($data["id_demande"]>0||$data["id_message"]>0)
+		if(!is_null($data["entity"])||$data["id_entity"]>0)
 		{
 			$data_insert["id_document"]=$id_document;
-			$data_insert["id_demande"]=$data["id_demande"];
-			$data_insert["id_message"]=$data["id_message"];
+			$data_insert["entity"]=$data["entity"];
+			$data_insert["id_entity"]=$data["id_entity"];
 
 			$builder=$this->db->table("document_upload_lien");
 			$builder->insert($data_insert);

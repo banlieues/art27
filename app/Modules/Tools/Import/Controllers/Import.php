@@ -2,16 +2,12 @@
 
 namespace Import\Controllers;
 use Base\Controllers\BaseController;
-
+use Layout\Libraries\LayoutLibrary;
 
 use Import\Models\Mimport;
 
 use Config\Config_import; 
-
-
 use DataView\Models\DataViewConstructorModel;
-
-use Layout\Libraries\LayoutLibrary;
 
 
 
@@ -20,26 +16,19 @@ class Import extends BaseController  {
 
 	public function __construct()
 	{
-		/*if(session()->get("loggedUserRoleId")!=1)
+		if(session()->get("loggedUserRoleId")!=1)
         {
              header("Location:".base_url("identification/logout"));
         }
 
-		$this->autorisationManager = \Config\Services::autorisationModel();*/
+		$this->autorisationManager = \Config\Services::autorisationModel();
 
-	/*	if(!$this->autorisationManager->is_autorise("importation_a"))
+		if(!$this->autorisationManager->is_autorise("importation_a"))
         {
             header("Location:".base_url("autorisation/no_autorisation"));
-        }*/
+        }
 
 		parent::__construct(__NAMESPACE__);
-
-        $layout_l = new LayoutLibrary();
-
-
-        $this->datas->theme = $layout_l->getThemeByRef("import");
-        $this->datas->context = "import";
-
 		$this->Mimport=new Mimport();
 
 		$this->Mimport->init();
@@ -61,17 +50,15 @@ class Import extends BaseController  {
 
 	public function index()
 	{
-		
 		$tables_importer=$this->Mimport->getMetaDataTable();
-
-		
-			$this->datas->context=$this->context;
-			$this->datas->titleView=$this->titre;
-			$this->datas->tables_importer=$tables_importer;
 	
-		//debug($tables_importer);
-		return view($this->path."/I_index",(array) $this->datas);
+		$this->datas->context=$this->context;
+		$this->datas->titleView=$this->titre;
+		$this->datas->tables_importer=$tables_importer;
+
+		return view($this->path."I_index",(array) $this->datas);
 	}
+
 
 	public function execute()
 	{
@@ -112,11 +99,11 @@ class Import extends BaseController  {
 			if($this->Mimport->createTableBaseFromCsv($name_temp,$csv->data,$basename_file))
 			{
 				$table_name="ban_import_$name_temp";
-				return redirect()->to(base_url()."/import/table_importation/$table_name");
+				return redirect()->to(base_url()."import/table_importation/$table_name");
 			}
 			else
 			{
-				return redirect()->to(base_url()."/import/index")->with("danger","Le fichier n'est pas valide" );
+				return redirect()->to(base_url()."import/index")->with("danger","Le fichier n'est pas valide" );
 			}
 			 
 		}	
@@ -129,11 +116,11 @@ class Import extends BaseController  {
 	{
 		$primary_name_temp="id_".$name_temp;
 
-
-		
+		$doublon_indexes=$this->import_config->config["doublons"];
+	
 		
 		if(is_null($name_temp))
-			return redirect()->to(base_url()."/import/index")->with("danger","Le fichier n'est pas valide" );
+			return redirect()->to(base_url()."import/index")->with("danger","Le fichier n'est pas valide" );
 
 		
 		$csvData=$this->Mimport->getTableImportOnlyFieldCsv($name_temp);
@@ -142,7 +129,7 @@ class Import extends BaseController  {
 		
 
 		if(empty($csvData)||is_null($csvData))
-			return redirect()->to(base_url()."/import/index")->with("danger","Je n'ai pas trouvé de données concernant ce fichier csv!" );
+			return redirect()->to(base_url()."import/index")->with("danger","Je n'ai pas trouvé de données concernant ce fichier csv!" );
 
 			if($etape==2)
 			{
@@ -194,6 +181,35 @@ class Import extends BaseController  {
 
 						}
 					}
+
+					if(!empty($doublon_indexes))
+					{
+						//debugd($doublon_indexes);
+						foreach($doublon_indexes as $doublon_index)
+						{
+							if(isset($csvData[$i]->$doublon_index))
+							{
+								$search=$csvData[$i]->$doublon_index;
+								$doublons=$this->Mimport->search_doublon($search,$doublon_index);
+								if(!empty($doublons))
+								{
+									$csvData[$i]->nom_contact=$csvData[$i]->$doublon_index;
+									foreach($doublons as $doublon)
+									{
+										$j=0;
+
+										if($j==0): $checked='checked'; else: $checked=null; endif;
+										$csvData[$i]->$doublon_index.="<div><input $checked name='data[$doublon_index][".$csvData[$i]->$primary_name_temp."]' value='$doublon->key_primary_doublon' type='checkbox'> <a target='_blank' href='".base_url("contacts/viewContact/$doublon->key_primary_doublon")."'>Trouver $doublon->label_doublon </a></div>";
+									
+										$j=$j++;
+									
+									}
+
+								}
+
+							}
+						}
+					};
 
 					if(isset($csvData[$i]->prenom_contact)&&isset($csvData[$i]->nom_contact))
 					{
@@ -283,27 +299,23 @@ class Import extends BaseController  {
 		
 		natcasesort($indexes);
 
-		$indexes["nom_utilisateur"]="utilisateur - nom";
-		$indexes["prenom_utilisateur"]="utilisateur - prenom";
+		//$indexes["nom_utilisateur"]="utilisateur - nom";
+		//$indexes["prenom_utilisateur"]="utilisateur - prenom";
 		//$indexes=sort($indexes);
 		//debugd($indexes);
+
+		$this->datas->context=$this->context;
+		$this->datas->titleView=$this->titre;
+		$this->datas->csv=$csvData;
+		$this->datas->csView=$csView;
+		$this->datas->indexes=$indexes;
+		$this->datas->dataModel=$this->dataModel;
+		$this->datas->name_temp=$name_temp;
+		$this->datas->primary_name_temp=$primary_name_temp;
+		$this->datas->etape=$etape;
 		
-		$id_activite=0;
-		return view($this->path."/I_tableau_import",[
-			"context"=>$this->context,
-			"titleView"=>$this->titre,
-			"csv"=>$csvData,
-			'csView'=>$csView,
-			"indexes"=>$indexes,
-			"dataModel"=>$this->dataModel,
-			"name_temp"=>$name_temp,
-			"primary_name_temp"=>$primary_name_temp,
-			"etape"=>$etape,
-			"activitePossible"=>$this->Mimport->getActivitesPossible($id_activite=0,false),
-			"value_id_activite"=>$id_activite
-
-
-		]);
+		
+		return view($this->path."/I_tableau_import",(array) $this->datas);
 
 
 		
@@ -461,12 +473,12 @@ class Import extends BaseController  {
 
 							if(!empty($diff))
 							{
-								$message= view($this->path."/I_tableau_import_value",[
-									"diff"=>$diff,
-									"list_crm"=>$descriptor_index_crm,
-									"table_csv"=>$table_csv,
-									"index_csv"=>$index_csv
-								]);
+								$this->datas->diff=$diff;
+								$this->datas->list_crm=$descriptor_index_crm;
+								$this->datas->table_csv=$table_csv;
+								$this->datas->index_csv=$index_csv;
+
+								$message= view($this->path."/I_tableau_import_value",(array)$this->datas);
 
 								if (!$request->isAJAX())
 								{
@@ -514,6 +526,13 @@ class Import extends BaseController  {
 
 	public function insert()
 	{
+		//echo "toto";
+		//debugd($this->request->getVar()); 
+		
+		//je dois reclasser par index ->table
+
+		//J'envoye vers le système de savedelivred...
+
 		if($this->request->getVar("name_temp"))
 		{
 			//variable
@@ -523,7 +542,7 @@ class Import extends BaseController  {
 			$id_primary_csv="id_".$this->request->getVar("name_temp");
 			$table_primary_csv=$this->request->getVar("name_temp");
 
-			$id_activity=$this->request->getVar("id_activite");
+			
 
 			//on récupére les données
 			$csv=$this->Mimport->getTableImportOnlyFieldCsv($table_primary_csv,$this->request->getVar("id_primary"));
@@ -533,7 +552,7 @@ class Import extends BaseController  {
 			$descriptor=$DataModel->getDescriptorIndexByFields();
 			//$descriptorEntities=$DataModel->getDescriptorEntity();
 			
-			//debugd($descriptor);
+
 
 			$db=db_connect();
 
@@ -553,19 +572,7 @@ class Import extends BaseController  {
 
 			//debug($descriptor_contacts);
 
-			//Etape 3 : On récupére les index présents dans le descriptor pour les registrations
-
-			if($id_activity>0)
-			{
-				foreach($fields as $index_csv )
-				{
-					if(isset($descriptor[$index_csv])&&$descriptor[$index_csv]["table"]=="inscriptions")
-					{
-						$descriptor_inscriptions[$index_csv][]=$descriptor[$index_csv];
-					}
-				}
-			}
-
+			
 			//debugd($descriptor_inscriptions);
 
 
@@ -580,7 +587,7 @@ class Import extends BaseController  {
 
 			//debugd($descriptor_utilisateurs);
 
-			// Etape 5: on va créer les contacts ou upadter les contactas
+			// Etape 5: on va créer les
 
 			foreach($csv as $index=>$value)
 			{
@@ -608,18 +615,7 @@ class Import extends BaseController  {
 					}
 				}
 
-				if($id_activity>0)
-				{
-					$data_inscriptions["id_activity"]=$this->request->getVar("id_activite");
-					if(isset($descriptor_inscriptions))
-					{
-						foreach($descriptor_inscriptions as $index=>$metadata)
-						{
-							$field_sql=$descriptor[$index]["field_sql"];
-							$data_inscriptions[$field_sql]=$this->getValue($value->$index,$descriptor[$index]);
-						}
-					}
-				}
+			
 				
 
 				if(isset($descriptor_utilisateurs))
@@ -849,7 +845,7 @@ class Import extends BaseController  {
 		}
 		
 		
-
+		return redirect()->back()->with("danger","Impossible d'importer les données. Aucune donnée à importer");
 
 		
 	}

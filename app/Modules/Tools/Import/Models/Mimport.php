@@ -2,7 +2,7 @@
 namespace Import\Models;
 
 use CodeIgniter\Model;
-
+use DataView\Models\DataViewConstructorModel;
 
 class MImport extends Model{
 
@@ -359,7 +359,7 @@ class MImport extends Model{
 		return $values_csv;
 	}
 
-	public function set_date_created()
+	/*public function set_date_created()
 	{
 		$query="
 			UPDATE activities SET created_at=date WHERE date!='0000-00-00'
@@ -418,7 +418,7 @@ class MImport extends Model{
 		$this->db->query($query);
 
 
-	}
+	}*/
 
 
 	function getIndexActif($entities)
@@ -475,7 +475,9 @@ class MImport extends Model{
 			]
 		];
 
-		$forge->modifyColumn($table_csv,$fields);
+		if (!$this->db->fieldExists($index_crm, $table_csv)) {
+			$forge->modifyColumn($table_csv,$fields);
+		}
 
 
 	}
@@ -557,33 +559,51 @@ class MImport extends Model{
 		}
 	}
 
-	public function getActivitesPossible($id_activite=null,$is_only_futur=true)
-	{
 
-		if(is_null($id_activite)) $id_activite=0;
-		$builder=$this->db->table("activities");
-		$builder->select( "
-				activities.id_activity,
-				titre,
-				idact
-		");
-		$builder->where("statut<>","poubelle");
-      
-		
-		if($is_only_futur)
+	public function search_doublon($search,$index)
+	{
+		//Je dois récuperer le descriptor
+		$dataViewModel=new DataViewConstructorModel();
+		$descriptor=$this->dataViewModel->getOneField($index);
+		debugd($descriptor);
+
+		if(!empty(trim($search)))
 		{
-			$builder->where("(date_debut>NOW() OR id_activity=$id_activite)");
+			$builder=$this->db->table("contacts");
+
+			$builder->select("
+					contacts.id_contact, 
+					contacts.nom,
+					contacts.prenom,
+					contacts.nom_court_institution
+					");
+				
+					$items=explode(" ",$search);
+						
+					$fieldSearchs=array(
+						"contacts.nom",
+						"contacts.prenom",
+					
+					);
+					
+					$builder->groupStart();
+						foreach($items as $item):
+							$builder->groupStart();
+							foreach($fieldSearchs as $fieldSearch):
+								$builder->orLike($fieldSearch,$item);
+							endforeach;
+							$builder->groupEnd();
+						endforeach;
+					$builder->groupEnd();
+
+				return $builder->get()->getResult();
 		}
 		else
 		{
-			$builder->where("(date_debut>SUBDATE(NOW(), INTERVAL 1 YEAR) OR id_activity=$id_activite)");
+			return null;
 		}
-		
-
-		$builder->orderBy('date_debut');
-		return $builder->get()->getResult();
-
 	}
+
 
 	public function insert_user($values)
 	{

@@ -72,7 +72,27 @@
                             endif;
                         ?>
                         <?php if(isset($fields[$index])):?>
-                            <?=$dataView->getElementForm($index,$fields[$index],$valueIndex);?>
+                            <?php 
+                                if(!isset($is_multiple)): $is_multiple=false; endif;
+                                if(!isset($numero_tour)): $numero_tour=0; endif;
+                               
+
+
+                            ?>
+                                
+                            <?=$dataView->getElementForm(
+                                $index,
+                                $fields[$index],
+                                $valueIndex,
+                                $num_container=NULL,
+                                $is_ligne=FALSE,
+                                $is_dselect=TRUE,
+                                $is_ajax=FALSE,
+                                $is_multiple=$is_multiple,
+                                $numero_tour=$numero_tour
+                            );?>
+
+                          
                         <?php endif;?>
                         <?php /* Input with list of index of form, to use for verification of checkbox empty */ ?>
                         <input name="indexesForm[]" type="hidden" value="<?=$index?>">

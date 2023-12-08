@@ -5,7 +5,7 @@
 <?php $this->section("body"); ?>
 
 <?php if(in_array($typeDataView,["create","update"])&&$tab=="fiche"): ?>
-    <form method="post" action="<?=base_url()?>/partenaire_social/save" >
+    <form method="post" action="<?=base_url()?>/partenaire_social/save">
 <?php endif;?>
 
 <?php if(in_array($typeDataView,["create","update"])&&$tab=="convention"): ?>

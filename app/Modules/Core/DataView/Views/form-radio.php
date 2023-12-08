@@ -5,9 +5,9 @@
         <?php if(!is_array($value)): $value=explode(",",$value); endif;?>
         <div class="form-check <?php if(count($checks)<4):?> form-check-inline <?php endif;?>">
             <input 
-                name_visibility="<?=$index?>" 
-                name_checkbox="<?=$index?>" 
-                name="<?=$index?>" 
+                name_visibility="<?=$index?><?=$numero_multiple?>" 
+                name_checkbox="<?=$index?><?=$numero_multiple?>" 
+                name="<?=$index?><?=$numero_multiple?>" 
                 class="<?php if(!is_null($value) && in_array($check->key,$value)):?>hasCheck<?php endif;?> 
                 ssth_direct form-check-input" type="radio" value="<?=$check->key?>" id="Check<?=$index.$i?>" 
                 <?php if(!is_null($value) && in_array($check->key,$value)):?>checked<?php endif;?>

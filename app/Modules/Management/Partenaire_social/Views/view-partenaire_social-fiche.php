@@ -25,7 +25,10 @@
                                         "data"=>$$datas_value,
                                         "validation"=>$validation,
                                         "fields"=>$fields,
-                                        "typeDataView"=>$typeDataView
+                                        "typeDataView"=>$typeDataView,
+                                        "entity"=>'partenaire_social',
+                                        "id_entity"=>$id_partenaire_social,
+                                        "name_id_entity"=>"id_partenaire_social"
                                     ] );
                         ?>
 

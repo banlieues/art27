@@ -4,6 +4,7 @@ namespace Partenaire_social\Models;
 
 use CodeIgniter\Model;
 use DataView\Libraries\DataViewConstructor;
+use DataView\Libraries\DataViewDelivre;
 use DataView\Models\DataViewConstructorModel;
 
 
@@ -33,6 +34,8 @@ class Partenaire_socialModel extends Model
 		$this->fields=$dataViewConstructor->getFields();
 
 		$this->DataViewModel=new DataViewConstructorModel();
+		$this->dataViewDelivre=new DataViewDelivre();
+		
 
 	}
 
@@ -124,9 +127,6 @@ class Partenaire_socialModel extends Model
 		$builder->select("
 		partenaire_social.*, 
 		concat(creator.prenom,' ',creator.nom) as createur, concat(updater.prenom,' ',updater.nom) as updateur
-
-			
-
 			");
 
 		$builder->where("id_partenaire_social",$id_partenaire_social);
@@ -141,20 +141,22 @@ class Partenaire_socialModel extends Model
 	{
 		$builder=$this->db->table("partenaire_social_convention");
 		$builder->where("id_partenaire_social",$id_partenaire_social);
-		$builder->orderBy("annee","DESC");
+		$builder->orderBy("annee_convention_partenaire_social","DESC");
 		$conventions= $builder->get()->getResult();
 
 
 
 		if(empty($conventions))
 		{
-			$data["annee"]=date("Y");
-			$data["date_created_by"]=date("Y-m-d H:i:s");
-			$data["date_created_at"]=session()->get("loggedUserId");
+			/*$data["annee_convention_partenaire_social"]=null;
+			$data["created_by"]=date("Y-m-d H:i:s");
+			$data["created_at"]=session()->get("loggedUserId");
 			$data["id_partenaire_social"]=$id_partenaire_social;
 			$builder=$this->db->table("partenaire_social_convention");
 			$builder->insert($data);
-			$this->partenaire_social_convention($id_partenaire_social);
+			$this->partenaire_social_convention($id_partenaire_social);*/
+
+			return null;
 		}
 		else
 		{
@@ -189,50 +191,34 @@ class Partenaire_socialModel extends Model
      
 		//debugd($data_insert_partenaire_social);
         
-		$data_insert_partenaire_social_with_index=$dataView->prepareData($indexesForm,$data_insert_partenaire_social,$fields,"partenaire_social",true,false);
-        $data_insert_partenaire_social=$dataView->prepareData($indexesForm,$data_insert_partenaire_social,$fields,"partenaire_social",true);
+		$id_partenaire_social=$this->dataViewDelivre->save_delivre(
+				$indexesForm,
+				$data_insert_partenaire_social,
+				$table="partenaire_social",
+				$name_key_primary="id_partenaire_social",
+				$value_key_primary=$id_partenaire_social,
+				$table_entity="partenaire_social",
+				$name_entity_key="id_partenaire_social",
+				$value_entity_primary=$id_partenaire_social
+				);
 
+		$tables_possibles_multiples=["partenaire_social_convention"];
 
+		foreach($tables_possibles_multiples as $table_possible )
+		{
+			$this->dataViewDelivre->save_delivre_multiple(
+				$indexesForm,
+				$data_insert_partenaire_social,
+				$table=$table_possible,
+				$name_key_primary="id_$table_possible",
+				$value_key_primary=NULL,
+				$table_entity="partenaire_social",
+				$name_entity_key="id_partenaire_social",
+				$value_entity_primary=$id_partenaire_social,
+				);
+		}
 
-        $builder=$this->db->table("partenaire_social");
-
-        if($id_partenaire_social>0)
-        {
-			
-			$data_changes=$this->DataViewModel->set_log_fiche("partenaire_social",$data_insert_partenaire_social_with_index,"id_partenaire_social",$id_partenaire_social,"partenaire_social","partenaire_social");
-
-			$data_insert_partenaire_social["updated_at"]=date("Y-m-d H:i:s");
-            $data_insert_partenaire_social["updated_by"]=session()->get("loggedUserId");
-			//debug($id_partenaire_social);
-			//debugd($data_insert_partenaire_social);
-            $builder->where("id_partenaire_social",$id_partenaire_social);
-			unset($data_insert_partenaire_social["id_partenaire_social"]);
-            $builder->update($data_insert_partenaire_social);
-			
-			
-	
-			$this->DataViewModel->set_logs_fiche_insert_bd("partenaire_social",$data_changes,date("Y-m-d H:i:s"),$id_partenaire_social,$id_partenaire_social);
-
-
-        }
-        else
-        {
-
-			$data_insert_partenaire_social["date_created_at"]=date("Y-m-d H:i:s");
-			$data_insert_partenaire_social["date_created_by"]=session()->get("loggedUserId");
-	
-            //$data_insert_partenaire_social["id_type_personne"]=1;
-            
-            $builder->insert($data_insert_partenaire_social);
-            $id_partenaire_social=$this->db->insertId();
-
-			$data_changes=$this->DataViewModel->set_log_fiche_insert($data_insert_partenaire_social_with_index);
-			$this->DataViewModel->set_logs_fiche_insert_bd("partenaire_social",$data_changes,date("Y-m-d H:i:s"),$id_partenaire_social,$id_partenaire_social);
-
-        }
- 
- 
-		 return $id_partenaire_social;
+		return $id_partenaire_social;
 	}
 
 

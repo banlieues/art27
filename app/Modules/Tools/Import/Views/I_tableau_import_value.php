@@ -15,13 +15,26 @@
                     <input value="<?php echo $d?>" type="hidden" name="list[csv][]">
                 </td>
                 <td class="col-6">
-                    <select name="list[crm][]">
+                    <select class="chose" name="list[crm][]">
                         <option value="0">Corriger par</option>
                         <option value="notraduction">Effacer la valeur dans le CSV</option>
                         <?php foreach($list_crm as $list):?>
                             <option value="<?=$list->label?>"><?=$list->label?></option>
                         <?php endforeach;?> 
                     </select>
+                    <script>
+                                        $(document).ready( function () {
+  
+                                        $(".chose").chosen({
+                                                disable_search_threshold: 5,
+                                                search_contains: true,
+                                                no_results_text: "Pas de résultats pour ",
+                                                placeholder_text_multiple: "Vous pouvez choisir plusieurs éléments",
+                                                width: "100%"
+                                            }); 
+                                        
+                                        } );
+                        </script>
                 </td> 
             </tr>
             <?php endforeach;?>

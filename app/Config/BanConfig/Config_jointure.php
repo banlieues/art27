@@ -1,5 +1,54 @@
 <?php
 
+     /** ----------------          Jointure de partenaire social      -------------------------------------------*/
+     $jointure["partenaire_social"]["partenaire_social_convention"]=
+    [ 
+        ["table"=>"partenaire_social_convention","condition"=> "partenaire_social_convention.id_partenaire_social=partenaire_social.id_partenaire_social"]
+    ];
+
+
+    $jointure["partenaire_social"]["partenaire_culturel"]=
+    [ 
+        ["table"=>"convention_barcode","condition"=> "convention_barcode.id_partenaire_social=partenaire_social.id_partenaire_social"],
+        ["table"=>"ticket","condition"=> "ticket.id_ticket=convention_barcode.id_ticket"],
+        ["table"=>"partenaire_culturel","condition"=> "partenaire_culturel.id_partenaire_culturel=ticket.id_partenaire_culturel"],
+      
+    ];
+     /** ----------------          Jointure de partenaire social convention     -------------------------------------------*/
+
+     $jointure["partenaire_social_convention"]["partenaire_social"]=
+     [ 
+         ["table"=>"partenaire_social","condition"=> "partenaire_social.id_partenaire_social=partenaire_social_convention.id_partenaire_social"]
+     ];
+
+     $jointure["partenaire_social_convention"]["partenaire_culturel"]=
+     [ 
+        ["table"=>"partenaire_social","condition"=> "partenaire_social.id_partenaire_social=partenaire_social_convention.id_partenaire_social"],
+        ["table"=>"convention_barcode","condition"=> "convention_barcode.annee=partenaire_social_convention.annee_convention_partenaire_social"],
+         ["table"=>"convention_barcode","condition"=> "convention_barcode.id_partenaire_social=partenaire_social.id_partenaire_social"],
+         ["table"=>"ticket","condition"=> "ticket.id_ticket=convention_barcode.id_ticket"],
+         ["table"=>"partenaire_culturel","condition"=> "partenaire_culturel.id_partenaire_culturel=ticket.id_partenaire_culturel"],
+       
+     ];
+
+     /** ----------------          Jointure de partenaire culturel      -------------------------------------------*/
+     $jointure["partenaire_culturel"]["partenaire_social"]=
+    [ 
+        ["table"=>"ticket","condition"=> "ticket.id_partenaire_culturel=partenaire_culturel.id_partenaire_culturel"],
+        ["table"=>"convention_barcode","condition"=> "convention_barcode.id_ticket=ticket.id_ticket"],
+        ["table"=>"partenaire_social","condition"=> "partenaire_social.id_partenaire_social=convention_barcode.id_partenaire_social"],
+    ];
+
+    $jointure["partenaire_culturel"]["partenaire_social_convention"]=
+    [ 
+        ["table"=>"ticket","condition"=> "ticket.id_partenaire_culturel=partenaire_culturel.id_partenaire_culturel"],
+        ["table"=>"convention_barcode","condition"=> "convention_barcode.id_ticket=ticket.id_ticket"],
+        ["table"=>"partenaire_social","condition"=> "partenaire_social.id_partenaire_social=convention_barcode.id_partenaire_social"],
+        ["table"=>"partenaire_social_convention","condition"=> "partenaire_social_convention.annee_convention_partenaire_social=convention_barcode.annee"]
+
+    ];
+
+
     /** ----------------          Jointure de contact       -------------------------------------------*/
 
     $jointure["contact"]["contact_profil"]=

@@ -1,13 +1,13 @@
 
     <div class="row">
         <div class="col-6">
-        <input id="<?=$index?>" name="<?=$index?>" 
+        <input id="<?=$index?>" name="<?=$index?><?=$numero_multiple?>" 
         type="text" placeholder="dd/mm/yyyy" class="form-control datepicker" value="<?=$value?>">
         
     </div>
 
     <div class="col-6">
-    <input id="<?=$index?>_h" name="<?=$index?>_h" 
+    <input id="<?=$index?>_h" name="<?=$index?>_h<?=$numero_multiple?>" 
     type="text" placeholder="hh:mm" class="form-control" value="<?=date_only_h_m($value)?>">
     </div>
 

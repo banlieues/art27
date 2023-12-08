@@ -73,7 +73,7 @@
 <?php echo view('Components\js/table-fullview');?>
 <?php echo view('Components\js/textarea-autosize');?>
 <?php echo view('Components\js/zindex-max');?>
-
+<?php echo view('Components\js/documentUpload');?>
 
 <?php echo view("Outlook\js/message_view"); ?>
 <?php echo view("Outlook\js/outlook"); ?>

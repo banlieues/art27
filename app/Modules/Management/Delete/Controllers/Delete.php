@@ -78,6 +78,65 @@ class Delete extends BaseController
 
     }
 
+     public function deleteDocument()
+    {
+        
+        if($this->request->getPost("idDelete")&&$this->request->getPost("idDelete")>0)
+        {
+            $document=$this->deleteModele->getDocument($this->request->getPost("idDelete"));
+
+           
+                $name_document=$document->name;
+            
+          
+           $is_delete=$this->deleteModele->deleteDocument($this->request->getPost("idDelete"));
+
+           if($is_delete)
+            {
+                return redirect()->to($this->request->getPost("uriReturn"))->with("success","$name_document a été supprimé CRM");
+
+            }
+            else
+            {
+                return redirect()->to($this->request->getPost("uriReturn"))->with("danger","Impossible d'effacer $name_document");
+            }
+        }
+        else
+        {
+            return redirect()->to($this->request->getPost("uriReturn"))->with("danger","Impossible d'effacer $name_document");
+        }
+
+    }
+
+    public function partenaire_social_convention()
+    {
+        
+        if($this->request->getPost("idDelete")&&$this->request->getPost("idDelete")>0)
+        {
+            $partenaire_social_convention=$this->deleteModele->get_partenaire_social_convention($this->request->getPost("idDelete"));
+
+           
+                $name=$partenaire_social_convention->annee_convention_partenaire_social;
+            
+          
+           $is_delete=$this->deleteModele->delete_partenaire_social_convention($this->request->getPost("idDelete"));
+
+           if($is_delete)
+            {
+                return redirect()->to($this->request->getPost("uriReturn"))->with("success","La convention de l'année $name a été supprimée");
+
+            }
+            else
+            {
+                return redirect()->to($this->request->getPost("uriReturn"))->with("danger","Impossible d'effacer la convention de l'année $name");
+            }
+        }
+        else
+        {
+            return redirect()->to($this->request->getPost("uriReturn"))->with("danger","Impossible d'effacer la convention de l'année $name");
+        }
+
+    }
     
 
     public function deleteEmail()

@@ -2,9 +2,11 @@
     // --------------------------
     // Delete
     // --------------------------
-    $(document).ready(function() 
+
+    function delete_form()
     {
         $(".ban_deleteForm").click(function() {
+          
             const id_delete = $(this).attr("id_delete");
             const action = $(this).attr("href");
             const text_alert = $(this).attr("text_alert");
@@ -40,5 +42,10 @@
 
             return false;
         });
+    }
+
+    $(document).ready(function() 
+    {   
+        delete_form();
     });
 </script>

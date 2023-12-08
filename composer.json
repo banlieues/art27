@@ -9,7 +9,8 @@
         "codeigniter4/framework": "^4.0",
         "dompdf/dompdf": "^2.0",
         "laminas/laminas-barcode": "^2.12",
-        "mpdf/mpdf": "^8.2"
+        "mpdf/mpdf": "^8.2",
+        "parsecsv/php-parsecsv": "^1.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",

@@ -257,6 +257,76 @@
 
             return false;
         });
+
+        $(document).on("click", ".btn_ajout_multiple", function()
+        {
+                var btn=$(this);
+                var container_ajout_multiple=btn.closest(".container_ajout_multiple");
+                var container_multiple=btn.closest(".container_multiple");
+
+                var count_data=$(".count_data",container_multiple).val();
+                var new_count_data=parseInt(count_data)+1;
+                var url=btn.attr("href");
+
+                $(".count_data",container_multiple).val(new_count_data);
+                
+
+                btn.hide();
+                $(".loader_ajout_multiple",container_ajout_multiple).show();
+
+        
+
+                //on crée le datastring
+                var fields=$(".fields",container_ajout_multiple).val();
+                var label_multiple_title=$(".label_multiple_title",container_ajout_multiple).val();
+                var champ_multiple_title=$(".champ_multiple_title",container_ajout_multiple).val();
+                var name_id_multiple=$(".name_id_multiple",container_ajout_multiple).val();
+                var id_components=$(".id_components",container_ajout_multiple).val();
+             
+
+                var dataString="new_count_data="+new_count_data+"&id_components="+id_components+"&fields="+fields+"&label_multiple_title="+label_multiple_title+"&champ_multiple_title="+champ_multiple_title+"&name_id_multiple="+name_id_multiple;
+               // alert(dataString);
+
+               jQuery.ajax
+                ({	
+                        type:'POST',
+                        data:dataString,
+                        url: url,
+                        cache: false,
+                        success: function(html)
+                        { 
+                            $(".accordion",container_multiple).append(html);
+                            btn.show();
+                            $(".loader_ajout_multiple",container_ajout_multiple).hide();
+
+                        }
+
+                });
+                
+                return false;
+
+            
+
+        });
+
+        $(document).on("click", ".btn_annuler_multiple_new", function()
+        {
+            var btn=$(this);
+            var container_multiple=btn.closest(".container_multiple");
+            var accordion_item=btn.closest(".accordion-item");
+
+            var count_data=$(".count_data",container_multiple).val();
+            var new_count_data=parseInt(count_data)-1;
+            $(".count_data",container_multiple).val(new_count_data);
+
+            alert(new_count_data);
+
+            accordion_item.remove();
+            remonte_page(container_multiple);
+            return false;
+
+
+        });
     
         //$(this).attr("style","");
     });

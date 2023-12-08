@@ -55,7 +55,7 @@
 
                     <?php elseif($typeDataView=="create"&&$tab=="fiche"):?>
                         
-                        <button form="form_component_actif" class="btn btn-success btn-sm btn_save_save" ><i class="<?=icon("save")?>"></i> Enregistrer</button>
+                        <button class="btn btn-success btn-sm" ><i class="<?=icon("save")?>"></i> Enregistrer</button>
 
 
                       

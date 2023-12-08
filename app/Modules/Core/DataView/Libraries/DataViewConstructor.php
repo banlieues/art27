@@ -213,9 +213,9 @@ class DataViewConstructor
      }
 
     //Element pour formulaire
-    public function getElementForm($index,$fields=array(),$value=NULL,$num_container=NULL,$is_ligne=FALSE,$is_dselect=TRUE,$is_ajax=FALSE)
+    public function getElementForm($index,$fields=array(),$value=NULL,$num_container=NULL,$is_ligne=FALSE,$is_dselect=TRUE,$is_ajax=FALSE,$is_multiple=FALSE,$numero_tour)
     {
-       
+       if($is_multiple){$numero_multiple="[$numero_tour]";}else{$numero_multiple=NULL;}
         $label=$fields["label"]." …";
        
         if(!isset($fields["multiple"]))
@@ -235,6 +235,7 @@ class DataViewConstructor
                 [   "value"=>$value,
                     "index"=>trim($index),
                     "label"=>$label,
+                    "numero_multiple"=>$numero_multiple
                   
                 ]);
 
@@ -243,6 +244,8 @@ class DataViewConstructor
                     [   "value"=>$value,
                         "index"=>trim($index),
                         "label"=>$label,
+                        "numero_multiple"=>$numero_multiple
+
                       
                     ]);
 
@@ -251,6 +254,8 @@ class DataViewConstructor
                                                 "index"=>trim($index),
                                                 "label"=>$label,
                                                 "num_container"=>$num_container,
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]);
 
            case "select":      return view('DataView\form-selection', 
@@ -261,7 +266,9 @@ class DataViewConstructor
                                                 "is_dselect"=>$is_dselect,
                                                 "multiple"=>$multiple,
                                                 'is_ajax'=>$is_ajax,
-                                                "autorisation"=>$fields["autorisation"]
+                                                "autorisation"=>$fields["autorisation"],
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]);  
 
             case "radio":      return view('DataView\form-radio', 
@@ -269,7 +276,9 @@ class DataViewConstructor
                                                 "index"=>trim($index),
                                                 "checks"=>$this->dataViewConstructorModel->getCheck($fields,$value),
                                                 "num_container"=>$num_container,
-                                                "is_ligne"=>$is_ligne
+                                                "is_ligne"=>$is_ligne,
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]);                                 
 
             case "check":      return view('DataView\form-check', 
@@ -277,7 +286,9 @@ class DataViewConstructor
                                                 "index"=>trim($index),
                                                 "checks"=>$this->dataViewConstructorModel->getCheck($fields,$value),
                                                 "num_container"=>$num_container,
-                                                "is_ligne"=>$is_ligne
+                                                "is_ligne"=>$is_ligne,
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]); 
             case "boolean": return view('DataView\form-boolean', [
                 "value"=>$value,
@@ -290,6 +301,8 @@ class DataViewConstructor
                                                 "index"=>trim($index),
                                                 "label"=>$label,
                                                 "num_container"=>$num_container,
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]); 
                                        
             case "date_with_heure":        return view('DataView\form-date-with-heure', 
@@ -297,6 +310,8 @@ class DataViewConstructor
                                                     "index"=>trim($index),
                                                     "label"=>$label,
                                                     "num_container"=>$num_container,
+                                                    "numero_multiple"=>$numero_multiple
+
                                                 ]); 
             case "calcul":        return 'Champ calculé - non modifiable'; 
             case "files" :
@@ -321,6 +336,8 @@ class DataViewConstructor
                                                 "index"=>trim($index),
                                                 "label"=>$label,
                                                 "num_container"=>$num_container,
+                                                "numero_multiple"=>$numero_multiple
+
                                             ]);
         } 
     }
@@ -536,7 +553,7 @@ class DataViewConstructor
        
       
         $indexes=$this->get_index_for_component($indexes,$table);
-
+      
             $dataForSave=$this->tablesPossible($indexes,$fields,$table);
 
 

@@ -93,6 +93,7 @@ class DataQuery extends BaseController
             // Utilisez la fonction parse_str pour convertir la chaîne de requête en tableau PHP
             parse_str($query, $getget);
 
+            $getVar=[];
             //On inject les résultats dans getVarVar
             if(!empty($getget))
             {
@@ -106,7 +107,7 @@ class DataQuery extends BaseController
             unset($getVarForUri["page"]);
             $uri=http_build_query($getVar);
 
-            $id_requete_provisoire=$this->dataQueryModel->insert_provisoire($uri);
+            //$id_requete_provisoire=$this->dataQueryModel->insert_provisoire($uri);
           
         }
        
@@ -144,7 +145,7 @@ class DataQuery extends BaseController
                 $getVarForUri=$getVar;
                 unset($getVarForUri["page"]);
                 $uri=http_build_query($getVar);
-
+                //On met la requete en cours
                 $id_requete_provisoire=$id_requete_provisoire=$this->dataQueryModel->insert_provisoire($uri);
 
 
@@ -152,7 +153,8 @@ class DataQuery extends BaseController
         else
         {
             $getVar=null;
-            $id_requete_provisoire=$id_requete_provisoire=$this->dataQueryModel->insert_provisoire(null);
+            //$id_requete_provisoire=$this->dataQueryModel->insert_provisoire(null);
+           // $id_requete_provisoire=null;
         }
 
         if(!empty($getVar))
@@ -310,10 +312,12 @@ class DataQuery extends BaseController
                 else
                 {
                     $getVar=$this->request->getVar();
+                    
                     $getVarForUri=$getVar;
                     unset($getVarForUri["page"]);
                     $uri=http_build_query($getVar);
-                    $this->datas->id_requete_provisoire=$id_requete_provisoire=$this->dataQueryModel->insert_provisoire($uri,$id_requete_provisoire);
+                    //debugd($uri);
+                    $this->datas->id_requete_provisoire=$this->dataQueryModel->insert_provisoire($uri,$id_requete_provisoire);
 
                 }
 

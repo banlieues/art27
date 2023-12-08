@@ -2,7 +2,7 @@
 <?php $validation = \Config\Services::validation(); ?>
 <?php $request = \Config\Services::request(); ?>
 
-<?php $this->extend('templates/index'); ?>
+<?php $this->extend('Layout\index'); ?>
 
 <?php $this->section("body"); ?>
 <?php if($etape==1):?>
@@ -15,7 +15,7 @@
 
 
 <?php if($etape==2):?>
-<form id="form_insert_data" method="post" action="<?=base_url("import/insert/")?>" >
+<form id="form_insert_data" method="get" action="<?=base_url("import/insert")?>" >
 <?php endif;?>
 
 <div class="text-center">
@@ -23,31 +23,14 @@
     <div style="display:none" id="erreur_bloquant" class="alert alert-danger">Pour passer à l'étape suivante de l'importation, veuillez corriger les problèmes détectés avec les index!</div>
     <a style="display:none" id="bt_etape_2" href="<?=base_url("import/table_importation/$name_temp/2")?>" class="btn btn-dark btn-sm m-3"> Vers Etape 2 : Traitement des données ! </a>
 <?php else:?>
-    <a href="<?=base_url("import/table_importation/$name_temp/1")?>" class="btn btn-dark btn-sm m-3"> Revenr étape 1 : Correspondance des champs </a>
+    <a href="<?=base_url("import/table_importation/$name_temp/1")?>" class="btn btn-dark btn-sm m-3"> Revenir étape 1 : Correspondance des champs </a>
 
     <button  type="submit" class="btn btn-dark btn-sm m-3"> Importer les données dans le CRM</a>
 <?php endif;?>
 
 </div>
 
-<?php if($etape==2):?>
-<div class="mb-3"> 
 
-    <span style="display:none" id="erreur_choix_action" class="text-danger"><i class="<?=icon("triangle_warning")?>"></i> Vous devez indiquer une action ou choisir Ne pas créer d'inscription</span>
-    <br>
-
-
-    <select id="choix_action" name="id_activite">
-        <option value="sans_choix">Choisir une action </option>
-        <option value="0">Ne pas créer d'inscription</option>
-        <?php foreach($activitePossible as $activite):?>
-            <option <?php if($value_id_activite==$activite->id_activity):?> selected <?php endif;?> value="<?=$activite->id_activity?>"><?=$activite->idact?> <?=$activite->titre?></option>
-        <?php endforeach;?>    
-    </select>
-           
-
-</div>
-<?php endif;?>
 
 <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -79,7 +62,7 @@
                         <?php if($label!=$primary_name_temp&&$label!="is_imported"):?>
                             <td class="col-3 value_select_container">
                                 <form class="form_value_select">
-                                    <select name="index_crm" class="dselectdddd load_value_select">
+                                    <select id="" name="index_crm" class="dselectdddd load_value_select">
                                             <option value="0">Sélectionner un index</option>
                                             <option <?php if($import->ne_pas_importer($label)=="ban666luci"): $value_index_encours=$label?>selected<?php endif;?> value="ban666luci">Ne pas importer</option>
                                         <?php foreach($indexes as $index=>$label_index_crm):?>
@@ -87,6 +70,19 @@
 
                                         <?php endforeach;?>
                                     </select>  
+                                    <script>
+                                        $(document).ready( function () {
+  
+                                        $(".load_value_select").chosen({
+                                                disable_search_threshold: 5,
+                                                search_contains: true,
+                                                no_results_text: "Pas de résultats pour ",
+                                                placeholder_text_multiple: "Vous pouvez choisir plusieurs éléments",
+                                                width: "100%"
+                                            }); 
+                                        
+                                        } );
+                                    </script>
                                     <input type="hidden" name="index_csv" value="<?=$label?>">
                                     <input type="hidden" name="table_csv" value="<?=$name_temp?>">
                                     <input class="new_index_csv" type="hidden" name="new_index_csv" value="">
@@ -129,11 +125,6 @@
 <?php if($etape==2):?>
 </form>
 <?php endif;?>
-
-
-<?php $this->endSection(); ?>
-
-<?php $this->section("js_inject"); ?>
 <script>
 
         
@@ -300,11 +291,15 @@
         
         );
 
+
        
     });   
 
 
 </script>
 
-
 <?php $this->endSection(); ?>
+
+
+
+

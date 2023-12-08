@@ -30,7 +30,8 @@
                                         "data"=>$$datas_value,
                                         "validation"=>$validation,
                                         "fields"=>$fields,
-                                        "typeDataView"=>$typeDataView
+                                        "typeDataView"=>$typeDataView,
+                                        
                                     ] );
                         ?>
                         <input type="hidden" value="<?=$id_partenaire_social?>" name="id_partenaire_social">

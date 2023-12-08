@@ -18,6 +18,11 @@ $routes->group('document', ['namespace' => 'DocumentUpload\Controllers', 'filter
     $routes->match(['get', 'post'], 'index', 'DocumentUpload::listDocument');
     $routes->match(['get', 'post'], 'list_document', 'DocumentUpload::listDocument');
 
+    $routes->match(['get', 'post'], 'listDocument/(:any)', 'DocumentUpload::listDocument/$1');
+    $routes->match(['get', 'post'], 'listDocument/(:any)/(:any)', 'DocumentUpload::listDocument/$1/$2');
+
+    $routes->match(['get', 'post'], 'listes_documents_entity/(:any)', 'DocumentUpload::listes_documents_entity/$1');
+    $routes->match(['get', 'post'], 'listes_documents_entity/(:any)/(:any)', 'DocumentUpload::listes_documents_entity/$1/$2');
 
     $routes->match(['get', 'post'], 'fiche/(:any)', 'DocumentUpload::fiche/$1');
 

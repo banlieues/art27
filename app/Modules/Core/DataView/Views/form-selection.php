@@ -19,7 +19,7 @@ if(!empty(trim($autorisation))&&!$autorisationManager->is_autorise($autorisation
     class="form-select form-control" 
     <?php if(!$is_autorise):?> disabled <?php endif;?>
        <?php if($multiple):?>multiple<?php endif;?>
-        name="<?php echo trim($index)?><?php if($multiple):?>[]<?php endif;?>">
+        name="<?php echo trim($index)?><?=$numero_multiple?><?php if($multiple):?>[]<?php endif;?>">
       
         <?php if(!$multiple):?>
             <option value="0">Choisir</Option>

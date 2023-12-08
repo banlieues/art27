@@ -624,11 +624,11 @@ jQuery(document).ready(function()
       }); 
 
       //modal pour gérer les documents de la demande
-      function gerer_document_modal(id_demande)
+      function gerer_document_modal(entity,id_entity)
       {
         $(".container_GererDocumentModalCRM").html('<div class="text-center m-4"><i class="fa fa-circle-notch fa-spin"></i><br>Chargement</div>');
-            $("#id_demande_GererDocumentModalCRM").html(id_demande);
-            var url= "<?=base_url()?>/demande/liste_document_gerer_demande/"+id_demande;
+            $("#id_demande_GererDocumentModalCRM").html(id_entity);
+            var url= "<?=base_url()?>/document/liste_document_gerer/"+entity+"/"+id_entity;
 
             
 
@@ -661,9 +661,10 @@ jQuery(document).ready(function()
 
       $(document).off("click",".gerer_document_modal").on("click",".gerer_document_modal", function(e){
      
-            var id_demande=$(this).attr("id_demande");
+            var entity=$(this).attr("entity");
+            var id_entity=$(this).attr("id_entity");
 
-            gerer_document_modal(id_demande);
+            gerer_document_modal(entity,id_entity);
 
 
 

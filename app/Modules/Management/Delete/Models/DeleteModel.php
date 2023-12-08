@@ -48,6 +48,67 @@ class DeleteModel extends Model
 
     }
 
+    public function get_partenaire_social_convention($id_partenaire_social_convention)
+    {
+        $builder=$this->db->table("partenaire_social_convention");
+        $builder->where("id_partenaire_social_convention",$id_partenaire_social_convention);
+
+        return $builder->get()->getRow();
+    }
+
+    public function delete_partenaire_social_convention($id_partenaire_social_convention)
+    {
+        $builder=$this->db->table("partenaire_social_convention");
+        $builder->delete(["id_partenaire_social_convention"=>$id_partenaire_social_convention]);
+
+        $builder=$this->db->table("partenaire_social_convention");
+        $builder->where("id_partenaire_social_convention",$id_partenaire_social_convention);
+
+        $r=$builder->get()->getRow();
+
+        if(!empty($r))
+        {
+            return FALSE;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
+    public function getDocument($id_document)
+    {
+        $builder=$this->db->table("document_upload");
+        $builder->where("id",$id_document);
+
+        return $builder->get()->getRow();
+    }
+
+    public function deleteDocument($id_document)
+    {
+        $builder=$this->db->table("document_upload");
+        $builder->delete(["id"=>$id_document]);
+
+        $builder=$this->db->table("document_upload_lien");
+        $builder->delete(["id_document"=>$id_document]);
+
+        $builder=$this->db->table("document_upload");
+        $builder->where("id",$id_document);
+
+        $r=$builder->get()->getRow();
+
+        if(!empty($r))
+        {
+            return FALSE;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
    
 
     /*--- Ici les deletes traversaux commun à tous les CRM -----*/

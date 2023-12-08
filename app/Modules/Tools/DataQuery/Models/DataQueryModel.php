@@ -806,19 +806,29 @@ class dataQueryModel extends Model
 
         if($is_update)
         {
-            $builder=$this->db->table("user_requete_provisoire");
-            $data["uri"]=$uri;
-            $builder->where("id_requete_provisoire",$id_requete_provisoire);
-            $builder->update($data);
-            return $id_requete_provisoire;
+            
+            if(!empty($uri))
+            {
+                
+                $builder=$this->db->table("user_requete_provisoire");
+                $data["uri"]=$uri;
+                $builder->where("id_requete_provisoire",$id_requete_provisoire);
+                $builder->update($data);
+            }
+                return $id_requete_provisoire;
+          
 
         }
         else{
-
-            $builder=$this->db->table("user_requete_provisoire");
-            $data["uri"]=$uri;
-            $builder->insert($data);
-            return $this->db->InsertId();
+            if(!empty($uri))
+            {
+                $builder=$this->db->table("user_requete_provisoire");
+                $data["uri"]=$uri;
+            
+                $builder->insert($data);
+                return $this->db->InsertId();
+            }    
+            
 
         }
 

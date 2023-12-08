@@ -14,7 +14,9 @@ $routes->group('delete', ['namespace' => 'Delete\Controllers','filter' => 'UserR
 
     $routes->match(["get", "post"], "deleteEmail", "Delete::deleteEmail");
 
+    $routes->match(["get", "post"], "deleteDocument", "Delete::deleteDocument");
 
+    $routes->match(["get", "post"], "partenaire_social_convention", "Delete::partenaire_social_convention");
 
 });
 

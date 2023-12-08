@@ -36,6 +36,10 @@ defined('COMPOSER_PATH') || define('COMPOSER_PATH', ROOTPATH . 'vendor/autoload.
 defined('MODULE_DIR') || define('MODULE_DIR', APPPATH . 'Modules/');
 defined('URL_DOCUMENT')        || define('URL_DOCUMENT', "demandes/documents/");
 defined('PATH_DOCU_UPLOAD')        || define('PATH_DOCU_UPLOAD', "./tickets/");
+defined('PATH_DOCU')        || define('PATH_DOCU', "./uploads/");
+defined('PATH_DOCU_URL')        || define('PATH_DOCU_URL', "uploads/");
+
+
 
 defined('CRM_NAME') || define("CRM_NAME","CRM");
 defined('PUBLIC_MAIL') || define("PUBLIC_MAIL","crm@banlieues.be");

@@ -1,4 +1,4 @@
-<?php $this->extend("Layout\index"); ?>
+<?php $this->extend('Layout\index'); ?>
 
 <?php $this->section("body"); ?>
 <h3><i class="<?=icon("import")?>"></i> <?=$titleView?></h3>
